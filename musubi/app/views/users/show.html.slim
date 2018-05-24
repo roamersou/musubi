@@ -1,11 +1,16 @@
 - provide(:title, @user.name)
 .row.prof
     .user-info
-        - if current_user == @user
+        / - if current_user == @user
             .prof-edit-icon = link_to image_tag("/images/profile-edit-icon.png"), "/users/#{@user.id}/edit"
+            / 
                 / = gravatar_for @user
+            / 
         div.prof-icon-box
+            / 
             / = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture.url}" if @user.picture?
+            / 
+
             = image_tag "/images/kao_default.jpg", :class => "prof-icon"
         p.prof-name = @user.name
         .prof-sns
@@ -21,11 +26,11 @@
             li.prof-item Coming soon
         ul.prof-text-list
             li.prof-text-item
-                .content
+                / .content
                        ol.thanksletters
                            = render @thanksletters
                        = will_paginate @thanksletters
-                .tag
+                / .tag
                     - if current_user != @user
                         = link_to new_thanksletter_path({user_id: @user.id})
                                 |
