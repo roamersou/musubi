@@ -1,0 +1,24 @@
+.edit-user
+    h1.form-heading プロフィール編集
+.container
+  = form_with model: @user, url: user_path, local: true do |f|
+    = render 'shared/error_messages', object: f.object 
+    .field.field-first
+        = f.label :名前, :class => "field-title"
+        = f.text_field :name, placeholder: "フルネーム", :class => "name-text"
+    .field
+        = f.label :画像, :class => "field-title"
+        = f.file_field :picture, :class => "picture"
+    .field
+        = f.label :自己紹介, :class => "field-title"
+        = f.text_field :self_intro, placeholder: "60字以内", :class => "self-intro-text"
+    .field
+        = f.label :Facebookアカウント, :class => "field-title"
+        = f.text_field :fb_account, placeholder: "URLを貼ってください", :class => "fb-account-text"
+    .field
+        = f.label :Twitterアカウント, :class => "field-title"
+        = f.text_field :tw_account, placeholder: "URLを貼ってください", :class => "tw-account-text"
+    .field
+        = f.label :Instagramアカウント, :class => "field-title"
+        = f.text_field :insta_account, placeholder: "URLを貼ってください", :class => "insta-account-text"
+    .actions = f.submit '編集を保存する'

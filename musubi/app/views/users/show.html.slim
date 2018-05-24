@@ -1,0 +1,59 @@
+- provide(:title, @user.name)
+.row.prof
+    .user-info
+        - if current_user == @user
+            .prof-edit-icon = link_to image_tag("/images/profile-edit-icon.png"), "/users/#{@user.id}/edit"
+                / = gravatar_for @user
+        div.prof-icon-box
+            / = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture.url}" if @user.picture?
+            = image_tag "/images/kao_default.jpg", :class => "prof-icon"
+        p.prof-name = @user.name
+        .prof-sns
+            a.prof-sns-icon.prof-fb> href = "@user.fb_account" Facebook
+            a.prof-sns-icon.prof-tw> href = "@user.tw_account" Twitter
+            a.prof-sns-icon.prof-insta> href = "@user.insta_account" Instagram
+        p.prof-detail-text
+            = @user.self_intro
+    .container
+        ul.prof-list.clearfix
+            li.prof-item.active-prof-list サンクスレター
+            li.prof-item 恩贈りリスト
+            li.prof-item Coming soon
+        ul.prof-text-list
+            li.prof-text-item
+                .content
+                       ol.thanksletters
+                           = render @thanksletters
+                       = will_paginate @thanksletters
+                .tag
+                    - if current_user != @user
+                        = link_to new_thanksletter_path({user_id: @user.id})
+                                |
+                                button.thanks-letter サンクスレターを贈る
+            li.prof-text-item.hide
+                ありがとう
+            li.prof-text-item.hide
+                オリゴ糖
+
+
+javascript:
+ //クリックしたときのファンクション
+    $('.prof-list li').click(function(){
+        //.index()を使いクリックされたタブが何番目かを調べ、
+          //indexという変数に代入します。
+        var index = $('.prof-list li').index($(this));
+        //コンテンツを一度すべて非表示にし、
+        $('.prof-text-list li').css('display','none');
+        //クリックされたタブと同じ順番のコンテンツを表示します。
+        $('.prof-text-list li').eq(index).css('display','block');
+        //一度タブについているクラスactive-prof-listを消し、
+        $('.prof-list li').removeClass('active-prof-list');
+          //クリックされたタブのみにクラスactive-prof-listをつけます。
+        $(this).addClass('active-prof-list')
+    });
+    //         li.bar-item comming soon
+    // .tag
+    //     - if current_user != @user
+    //         = link_to new_thanksletter_path({user_id: @user.id})
+    //             |
+    //             button.thanks-letter サンクスレターを贈る
