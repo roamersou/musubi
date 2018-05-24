@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :thanksletters, dependent: :destroy
-    attr_accessor :remember_token
+    # has_many :thanksletters, dependent: :destroy
+    # attr_accessor :remember_token
     before_save { self.email = email.downcase }
     # mount_uploader :picture, PictureUploader
     validates :name, presence: true, length:{maximum: 50}
@@ -8,8 +8,8 @@ class User < ApplicationRecord
     validates :email, presence: true, length:{maximum: 255},
                format: { with: VALID_EMAIL_REGEX },
                uniqueness: { case_sensitive: false }
-    # has_secure_password
-    # validates :password, presence: true, length:{minimum:6}, allow_nil: true
+    has_secure_password
+    validates :password, presence: true, length:{minimum:6}, allow_nil: true
     validates :self_intro, length:{maximum: 60}
 
     #fixture向けのdigestメソッド追加
