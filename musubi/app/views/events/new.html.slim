@@ -1,0 +1,6 @@
+= form_with model: @events, multipart: true, local: true do |f|
+
+  .field
+    = f.label :詳細, :class => "field-body"
+    = f.text_area :body, placeholder: 'イベントURL', :class => "body-url"
+  .actions = f.submit '公開する'
