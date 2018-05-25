@@ -23,4 +23,10 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  # ログアウトを実装する段階に入ったらコメント外す
+#  def log_out
+#    session.delete(:user_id)
+#    @current_user = nil
+#  end
+
 end
