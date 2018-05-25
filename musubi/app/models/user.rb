@@ -12,13 +12,13 @@ class User < ApplicationRecord
     validates :password, presence: true, length:{minimum:6}, allow_nil: true
     validates :self_intro, length:{maximum: 60}
 
-    #fixture向けのdigestメソッド追加
+    # fixture向けのdigestメソッド追加
     # 渡された文字列のハッシュ値を返す
-    # def User.digest(string)
-    #   cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-    #                             BCrypt::Engine.cost
-    #   BCrypt::Password.create(string, cost: cost)
-    # end
+    def User.digest(string)
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
 
     # ランダムなトークンを返す
     # def User.new_token
