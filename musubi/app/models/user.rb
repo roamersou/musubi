@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     # has_many :thanksletters, dependent: :destroy
-    # attr_accessor :remember_token
+    attr_accessor :remember_token
     before_save { self.email = email.downcase }
     # mount_uploader :picture, PictureUploader
     validates :name, presence: true, length:{maximum: 50}
@@ -25,17 +25,17 @@ class User < ApplicationRecord
       SecureRandom.urlsafe_base64
     end
 
-    # 永続セッションのためにユーザーをデータベースに記憶する
-    # def remember
-    #   self.remember_token = User.new_token
-    #   update_attribute(:remember_digest, User.digest(remember_token))
-    # end
+    永続セッションのためにユーザーをデータベースに記憶する
+    def remember
+      self.remember_token = User.new_token
+      update_attribute(:remember_digest, User.digest(remember_token))
+    end
 
-     # 渡されたトークンがダイジェストと一致したらtrueを返す
-    # def authenticated?(remember_token)
-    #   return false if remember_digest.nil?
-    #   BCrypt::Password.new(remember_digest).is_password?(remember_token)
-    # end
+     渡されたトークンがダイジェストと一致したらtrueを返す
+    def authenticated?(remember_token)
+      return false if remember_digest.nil?
+      BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    end
 
      # ユーザーのログイン情報を破棄する
     # def forget
