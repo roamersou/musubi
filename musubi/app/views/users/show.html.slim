@@ -1,11 +1,9 @@
 - provide(:title, @user.name)
 .row.prof
     .user-info
-        / - if current_user == @user
+        - if current_user == @user
             .prof-edit-icon = link_to image_tag("/images/profile-edit-icon.png"), "/users/#{@user.id}/edit"
-            / 
                 / = gravatar_for @user
-            / 
         div.prof-icon-box
             / 
             / = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture.url}" if @user.picture?
