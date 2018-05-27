@@ -1,0 +1,9 @@
+.thanks-letter
+    .content
+        .user
+            = link_to thanksletter.user.name, thanksletter.user
+        = thanksletter.content
+    span.timestamp
+        = time_ago_in_words(thanksletter.created_at) + "前"
+    / - if current_user?(thanksletter.user)
+        = link_to "削除", thanksletter, method: :delete, data:{confirm:"本当に削除しますか？"}

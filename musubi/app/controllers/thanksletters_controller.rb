@@ -1,0 +1,2 @@
+class ThankslettersController < ApplicationController
+end
