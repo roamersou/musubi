@@ -21,7 +21,7 @@ class ThankslettersController < ApplicationController
     def destroy
         @thanksletter.destroy
         flash[:success] = "サンクスレターを削除しました"
-        redirect_to request.referrer || users_url
+        redirect_to user_url
     end
 
     private
@@ -32,6 +32,6 @@ class ThankslettersController < ApplicationController
 
     def correct_user
         @thanksletter = current_user.thanksletters.find_by(id: params[:id])
-        redirect_to users_url if @thanksletter.nil?
+        redirect_to user_url if @thanksletter.nil?
     end
 end
