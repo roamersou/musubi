@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @receiver_id = Thanksletter.where(receiver_id: @user.id)
-    # @thanksletters = @receiver_id.paginate(page: params[:page])
+    @receiver_id = Thanksletter.where(receiver_id: @user.id)
+    @thanksletters = @receiver_id.paginate(page: params[:page])
   end
 
   def new
