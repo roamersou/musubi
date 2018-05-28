@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528032059) do
+ActiveRecord::Schema.define(version: 20180528072437) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180528032059) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "place"
+    t.string "date"
     t.index ["user_id", "created_at"], name: "index_pay_forwards_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_pay_forwards_on_user_id"
   end
