@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
-  # root 'application#hello'
   root "home#index"
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+  # root 'application#hello'
   resources :users
   resources :events
+  resources :thanksletters, only: [:new, :create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

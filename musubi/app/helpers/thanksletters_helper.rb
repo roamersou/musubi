@@ -1,0 +1,2 @@
+module ThankslettersHelper
+end

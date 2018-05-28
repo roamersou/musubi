@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180524195155) do
+ActiveRecord::Schema.define(version: 20180528000758) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "place"
     t.string "title"
+  end
+
+  create_table "thanksletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "receiver_id"
+    t.index ["user_id", "created_at"], name: "index_thanksletters_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_thanksletters_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -29,7 +39,11 @@ ActiveRecord::Schema.define(version: 20180524195155) do
     t.string "fb_account"
     t.string "insta_account"
     t.string "password_digest"
+    t.string "remember_digest"
+    t.boolean "admin", default: false
+    t.string "picture"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "thanksletters", "users"
 end
