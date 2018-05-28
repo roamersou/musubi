@@ -41,4 +41,13 @@ class User < ApplicationRecord
     def forget
       update_attribute(:remember_digest, nil)
     end
+
+    private
+
+      # アップロードされた画像のサイズをバリデーションする
+      def picture_size
+        if picture.size > 5.megabytes
+          errors.add(:picture, "5MB以下でお願いします")
+        end
+      end
 end
