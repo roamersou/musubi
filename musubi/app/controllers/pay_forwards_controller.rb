@@ -1,0 +1,2 @@
+class PayForwardsController < ApplicationController
+end
