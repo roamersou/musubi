@@ -1,0 +1,21 @@
+.edit-pf
+	h1.edit-pf-title 恩贈りの情報を編集
+.container
+   = form_with model: @pay_forward, url: pay_forward_path, local: true do |f|
+    / .top-image
+    /   =f.label :画像
+    /   = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
+
+    .field.field-first
+      = f.label :タイトル, :class => "field-title"
+      = f.text_field :title, placeholder: @pay_forward.title, :class => "title-text"
+    .field
+      = f.label :日時, :class => "field-title"
+      = f.text_field :date, placeholder: @pay_forward.date, :class => "date-text"
+    .field
+      = f.label :場所, :class => "field-title"
+      = f.text_field :place, placeholder: @pay_forward.place, :class => "place-text"
+    .field
+      = f.label :詳細, :class => "field-title"
+      = f.text_area :content, placeholder: @pay_forward.content, :class => "body-text"
+    .actions = f.submit '編集を保存する'
