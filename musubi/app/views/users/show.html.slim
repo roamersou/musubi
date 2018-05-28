@@ -3,13 +3,13 @@
     .user-info
         - if current_user == @user
             .prof-edit-icon
-                = link_to image_tag "/images/profile-edit-icon.png", "/users/#{@user.id}/edit"
+                = link_to image_tag("/images/profile-edit-icon.png"), "/users/#{@user.id}/edit"
                 / = gravatar_for @user
         div.prof-icon-box
             - if @user.picture?
-                = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture.url}"
+                = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture}", :class => "prof-icon"
             - else
-                = image_tag "/images/kao_default.jpg", :class => "prof-icon"
+                = image_tag "/images/prfile-default.png", :class => "prof-icon"
         p.prof-name = @user.name
         .prof-sns
             a.prof-sns-icon.prof-fb> href = "@user.fb_account" Facebook
