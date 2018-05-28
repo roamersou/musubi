@@ -7,7 +7,7 @@
                 / = gravatar_for @user
         div.prof-icon-box
             - if @user.picture?
-                = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture}", :class => "prof-icon"
+                = image_tag "/uploads/user/picture/#{@user.id}/#{@user.picture.url}", :class => "prof-icon"
             - else
                 = image_tag "/images/prfile-default.png", :class => "prof-icon"
         p.prof-name = @user.name
