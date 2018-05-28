@@ -1,5 +1,6 @@
 class PayForwardsController < ApplicationController
-    before_action :logged_in_user, only: [:new, :create, :destroy]
+    before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+    before_action :correct_user, only: :destroy
 
     def index
         @pay_forwards = PayForward.paginate(page:params[:page])
@@ -50,5 +51,10 @@ class PayForwardsController < ApplicationController
 
     def pay_forward_params
         params.require(:pay_forward).permit(:title, :content, :date, :place)
+    end
+
+    def correct_user
+        @pay_forward = current_user.pay_forwards.find_by(id: params[:id])
+        redirect_to user_url if @pay_forward.nil?
     end
 end
