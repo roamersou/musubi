@@ -30,7 +30,7 @@
       = link_to events_path
         |
         li.menu-item.active-menu-list イベント
-      = link_to pay_forwards_path
+      / = link_to pay_forwards_path
         |
         li.menu-item みんなの恩贈り
 
@@ -43,9 +43,7 @@
           - @events.each do |ev|
             li
               = link_to event_path(ev)
-                h2= ev.title
-                p= ev.event_date
-                p= ev.place
+                h2= ev.url
 
 
   = link_to '新しくつくる', new_event_path

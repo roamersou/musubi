@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    # @events = Event.all
+    @events = Event.all
   end
 
   def show
@@ -14,9 +14,15 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-        redirect_to @event, notice: 'event was successfully created.'
+        redirect_to events_url, notice: 'event was successfully created.'
     else
         render :new
     end
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:url)
   end
 end
