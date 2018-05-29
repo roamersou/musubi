@@ -17,8 +17,4 @@
 	        h2.pf-about-title 恩贈りへの想い
 	        p.pf-about-text= simple_format(pay_forward.content)
     span.timestamp
-        = time_ago_in_words(pay_forward.created_at) + "前"
-    = link_to '一覧へ', pay_forwards_path
-    = link_to '編集', edit_pay_forward_path
-    - if current_user?(pay_forward.user)
-        = link_to "削除", pay_forward, method: :delete, data:{confirm:"本当に削除しますか？"}
+        = time_ago_in_words(pay_forward.created_at) + "前" 

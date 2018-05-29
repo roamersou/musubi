@@ -41,7 +41,6 @@ class PayForwardsController < ApplicationController
     end
 
     def destroy
-        @pay_forward = PayForward.find_by(params[:id])
         @pay_forward.destroy
         flash[:success] = "恩贈りを削除しました"
         redirect_to pay_forwards_url
