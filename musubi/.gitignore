@@ -22,4 +22,4 @@
 
 .byebug_history
 # アップロードされたテスト画像を無視する
-/public/upload
+/public/uploads

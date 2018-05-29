@@ -1,6 +1,9 @@
 .pay_forward_icon
     .pf-mv
-        = image_tag '/images/default.png', :class => "pf-img"
+        - if @pay_forward.picture?
+            = image_tag @pay_forward.picture.url
+        - else
+            = image_tag '/images/default.png', :class => "pf-img"
         h1.pf-title　= @pay_forward.title
     .pf-body
     	h2.pf-date-title 日時

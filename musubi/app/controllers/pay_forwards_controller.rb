@@ -50,7 +50,7 @@ class PayForwardsController < ApplicationController
     private
 
     def pay_forward_params
-        params.require(:pay_forward).permit(:title, :content, :date, :place)
+        params.require(:pay_forward).permit(:title, :content, :date, :place, :picture)
     end
 
     def correct_user

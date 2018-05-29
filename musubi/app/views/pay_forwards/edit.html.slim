@@ -2,9 +2,9 @@
 	h1.edit-pf-title 恩贈りの情報を編集
 .container
    = form_with model: @pay_forward, url: pay_forward_path, local: true do |f|
-    / .top-image
-    /   =f.label :画像
-    /   = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
+    .top-image
+      =f.label :画像
+      = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
 
     .field.field-first
       = f.label :タイトル, :class => "field-title"

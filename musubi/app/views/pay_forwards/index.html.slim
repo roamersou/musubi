@@ -8,7 +8,10 @@
           - @pay_forwards.each do |pf|
             li.item-list
               = link_to pay_forward_path(pf)
-                = image_tag "/images/default.png"
+                - if pf.picture?
+                  = image_tag pf.picture.url
+                - else
+                  = image_tag "/images/default.png"
                 h2.pf-place= pf.place
                 h2.pf-title= pf.title
   = will_paginate

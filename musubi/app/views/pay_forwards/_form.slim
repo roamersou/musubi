@@ -1,7 +1,7 @@
 = form_with model: @pay_forward, multipart: true, local: true do |f|
-  / .top-image
-  /   = f.label :画像, :class => "field-title"
-  /   = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
+  .top-image
+    = f.label :画像, :class => "field-title"
+    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
 
   .field.field-first
     = hidden_field_tag(:user_id, @user_id)

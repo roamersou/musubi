@@ -7,7 +7,7 @@
                 / = gravatar_for @user
         div.prof-icon-box
             - if @user.picture?
-                = image_tag @user.picture.url if @user.picture?
+                = image_tag @user.picture.url
             - else
                 = image_tag "/images/prfile-default.png", :class => "prof-icon"
         p.prof-name = @user.name
@@ -44,7 +44,7 @@
                                 |
                                 button.thanks-letter サンクスレターを贈る
             li.prof-text-item.hide
-                オリゴ糖
+                もうちょっと待っててね
 
 
 javascript:
