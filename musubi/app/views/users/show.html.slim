@@ -25,6 +25,7 @@
         ul.prof-text-list
             li.prof-text-item
                 .content
+                    - if @user.thanksletters.any?
                        ol.thanksletters
                            = render @thanksletters
                        = will_paginate @thanksletters
@@ -34,7 +35,16 @@
                                 |
                                 button.thanks-letter サンクスレターを贈る
             li.prof-text-item.hide
-                ありがとう
+                .content
+                    - if @user.payforwards.any?
+                        ol.payforwards
+                            = render @payforwards
+                        = will_paginate @payforwards
+                .tag
+                    - if current_user != @user
+                        = link_to new_thanksletter_path({user_id: @user.id})
+                                |
+                                button.thanks-letter サンクスレターを贈る
             li.prof-text-item.hide
                 オリゴ糖
 
