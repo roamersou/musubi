@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530043430) do
+ActiveRecord::Schema.define(version: 20180530054050) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "url"
+  end
+
+  create_table "payforwards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_payforwards_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_payforwards_on_user_id"
   end
 
   create_table "thanksletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -44,5 +53,6 @@ ActiveRecord::Schema.define(version: 20180530043430) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "payforwards", "users"
   add_foreign_key "thanksletters", "users"
 end
