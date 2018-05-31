@@ -1,0 +1,104 @@
+
+//******** 利用規約とプライバシーポリシー********//
+@mixin common-page-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	text-align: center;
+	padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+@mixin common-page-text {
+	font-size: 12px;
+	color: #444;
+	padding: 15px;
+}
+.privecy-title, .terms-title {
+	@include common-page-title;
+}
+.privacy-text, .terms-text {
+	@include common-page-text;
+}
+
+//******** 理念********//
+.vision {
+	background: url("../images/ideology.jpeg");
+	height: 667px;
+	&::before{
+	  /* 透過した黒を重ねる */
+	  background-color: rgba(0,0,0,0.3s);
+	  /* どの範囲に重ねるかを指定 */
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  content: ' ';
+	}
+	.vision-title {
+		font-size: 20px;
+		font-weight: 200;
+		color: #fff;
+		text-align: center;
+		padding-top: 25px;
+	    padding-bottom: 5px;
+	    border-bottom: 1px solid #fff;
+	    position: relative;
+	    &::before {
+			content: "";
+			background: url("../images/musubi-logo-type-white.png");
+			display: inline-block;
+			background-size: contain;
+			background-position: center 2px;
+			width: 105px;
+		    height: 30px;
+		    position: relative;
+		}
+	}
+	.title-box {
+		border-bottom: 1px solid #fff;
+		width: 100%;
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.thanks-eco-title, .musubi-title, .ukiuki-title {
+			float: left;
+			font-size: 16px;
+			font-weight: 400;
+			width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
+  			width : -webkit-calc(100% / 3) ;
+			width : calc(100% / 3) ;
+		    text-align: center;
+		    padding-top: 20px;
+		    position: relative;
+		    color: #999;
+		}
+		.active {
+			color: #fff;
+			padding-bottom: 5px;
+			border-bottom: 2px solid #fff;
+		}
+	}
+	.text-box {
+		overflow:hidden;
+	}
+	.vision-text {
+		color: #fff;
+		font-size: 14px;
+		line-height: 28px;
+		padding: 15px;
+		position: relative;
+	}
+	.active {
+		color: #fff;
+		padding-bottom: 5px;
+		border-bottom: 2px solid #fff;
+	}
+	.hide {
+	display:none;
+	}
+}
