@@ -16,3 +16,5 @@
 
 p= link_to '一覧へ', payforwards_path
 p= link_to '編集', edit_payforward_path
+- if current_user?(@payforward.user)
+    p= link_to "削除", @payforward, method: :delete, data:{confirm:"本当に削除しますか？"}

@@ -1,9 +1,8 @@
 .payforward
     .content
         .user
-            = link_to payforward.user.name, payforward.user
-        = payforward.content
+            = link_to payforward_path(payforward)
+                h2.pf-name = payforward.user.name
+                h2.pf-content= payforward.content
     span.timestamp
         = time_ago_in_words(payforward.created_at) + "前"
-    / - if current_user?(payforward.user)
-    /     = link_to "削除", payforward, method: :delete, data:{confirm:"本当に削除しますか？"}
