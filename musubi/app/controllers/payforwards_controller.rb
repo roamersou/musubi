@@ -1,2 +1,39 @@
 class PayforwardsController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+
+  def index
+    @payforwards = Payforward.all
+  end
+
+  def show
+    @payforward = Payforward.find(params[:id])
+  end
+
+  def new
+    @user_id = params[:user_id]
+    @user = User.find_by(id:params[:user_id])
+    @payforward = current_user.payforwards.build if logged_in?
+  end
+
+  def create
+    @payforward = current_user.payforwards.build(payforward_params)
+    if @payforward.save
+        flash[:success] = "恩贈りを作成しました！"
+        redirect_to("/users/#{params[:user_id]}")
+    else
+        render "new"
+    end
+  end
+
+  def destroy
+    @payforward.destroy
+    flash[:success] = "恩贈りを削除しました！"
+    redirect_to payforwards_path
+  end
+
+  private
+
+    def payforward_params
+        params.require(:payforward).permit(:title, :content, :date, :place)
+    end
 end

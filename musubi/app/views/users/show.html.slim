@@ -7,7 +7,7 @@
                 / = gravatar_for @user
         div.prof-icon-box
             - if @user.picture?
-                = image_tag @user.picture.url if @user.picture?
+                = image_tag @user.picture.url
             - else
                 = image_tag "/images/prfile-default.png", :class => "prof-icon"
         p.prof-name = @user.name
@@ -25,7 +25,6 @@
         ul.prof-text-list
             li.prof-text-item
                 .content
-                    - if @user.thanksletters.any?
                        ol.thanksletters
                            = render @thanksletters
                        = will_paginate @thanksletters

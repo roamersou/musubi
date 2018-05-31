@@ -1,0 +1,20 @@
+= form_with model: @payforward, multipart: true, local: true do |f|
+    = render 'shared/error_messages', object: f.object
+    / .top-image
+    /   = f.label :画像, :class => "field-title"
+    /   = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
+
+    .field.field-first
+        = hidden_field_tag(:user_id, @user_id)
+        = f.label :タイトル, :class => "field-title"
+        = f.text_field :title, placeholder: 'タイトル (20字以内)', :class => "title-text"
+    .field
+        = f.label :日時, :class => "field-title"
+        = f.text_field :date, placeholder: '例：1/20, 毎週土曜日, 要相談など', :class => "date-text"
+    .field
+        = f.label :場所, :class => "field-title"
+        = f.text_field :place, placeholder: '地域 (渋谷、新宿、横浜など）', :class => "place-text"
+    .field
+        = f.label :詳細, :class => "field-title"
+        = f.text_area :content, placeholder: '詳細 (200文字以内)', :class => "content-text"
+    .actions = f.submit '公開する'
