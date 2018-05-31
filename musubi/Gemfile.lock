@@ -231,6 +231,7 @@ GEM
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    high_voltage (3.0.0)
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
@@ -387,6 +388,7 @@ DEPENDENCIES
   carrierwave (= 1.2.2)
   coffee-rails (~> 4.2)
   fog (= 1.42)
+  high_voltage
   html2slim
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

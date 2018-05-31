@@ -6,18 +6,14 @@
 			|
 			button.signup アカウントを作成する
 	/ p.info-text ※招待コードを入力するとFacebookでログインができます。
-	/ .verify-btn-box
-	/ 	= link_to front_page_path('about')
-	/ 	  button.verify-btn →
-	/ = link_to pay_forwards_path
+	/ = link_to payforwards_path
 	/  	button.terms Facebookでログイン
-
 		
 	= link_to login_path
 		|
 		button.login ログイン
 
-	/ = link_to front_page_path('terms')
-	/   button.terms 利用規約
-	/ = link_to front_page_path('privacy')
-	/   button.privacy-policy プライバシーポリシー
+	= link_to page_path('terms')
+	  button.terms 利用規約
+	= link_to page_path('privacy')
+	  button.privacy-policy プライバシーポリシー

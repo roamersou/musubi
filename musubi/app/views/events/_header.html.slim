@@ -13,14 +13,20 @@
     .header-menu
       ul.header-menu-list
         / li.header-menu-item UKIUKI残高
-        li.header-menu-item プロフィール登録・編集
+        / li.header-menu-item プロフィール登録・編集
         / li.header-menu-item 信頼できる仲間をMusubiに招待する
-        li.header-menu-item パトロンになる
-        li.header-menu-item Musubiの理念
-        li.header-menu-item フィードバックを送る
-        li.header-menu-item 利用規約
-        li.header-menu-item プライバシーポリシー
-        li.header-menu-item よくある質問
+        / li.header-menu-item パトロンになる
+        = link_to page_path('vision')
+          |
+          li.header-menu-item Musubiの理念
+        / li.header-menu-item フィードバックを送る
+        = link_to page_path('terms')
+          |
+          li.header-menu-item 利用規約
+        = link_to page_path('privacy')
+          |
+          li.header-menu-item プライバシーポリシー
+        / li.header-menu-item よくある質問
         / li.header-menu-item Musubiを退会する
     ul.menu-list.header-bottom
       = link_to users_path
