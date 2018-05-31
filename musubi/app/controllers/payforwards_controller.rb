@@ -25,6 +25,21 @@ class PayforwardsController < ApplicationController
     end
   end
 
+  def edit
+    @payforward = Payforward.find(params[:id])
+  end
+
+  def update
+    @payforward = Payforward.find(params[:id])
+    @payforward.update_attributes(payforward_params)
+    if @payforward.save
+        flash[:success] = "恩贈りを編集しました！"
+        redirect_to @payforward
+    else
+        render :edit
+    end
+  end
+
   def destroy
     @payforward.destroy
     flash[:success] = "恩贈りを削除しました！"

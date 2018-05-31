@@ -1,0 +1,18 @@
+.payforward_icon
+	.pf-mv
+    / - if @payforward.picture?
+    /     = image_tag @payforward.picture.url
+    / - else
+        = image_tag '/images/default.png', :class => "pf-img"
+    h1.pf-title= @payforward.title
+    .pf-body
+    	h2.pf-date-title 日時
+	    p.pf-date-text= simple_format(@payforward.date)
+	    h2.pf-place-title 場所
+	    p.pf-place-text= simple_format(@payforward.place)
+	    h2.pf-about-title 恩贈りへの想い
+	    p.pf-about-text= simple_format(@payforward.content)
+	    / h2.pf-thanks-title 恩贈りへのサンクスレター
+
+p= link_to '一覧へ', payforwards_path
+p= link_to '編集', edit_payforward_path
