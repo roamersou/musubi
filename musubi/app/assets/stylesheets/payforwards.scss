@@ -185,7 +185,7 @@ $btn-color: #db5565;
 	.field-first {
 		padding-top: 20px;
 	}
-	.title-text, .date-text, .place-text, .body-text {
+	.title-text, .date-text, .place-text, .content-text {
 		font-size: 14px;
 		padding-left: 15px;
 		margin-top: 5px;
@@ -195,7 +195,7 @@ $btn-color: #db5565;
 		width: 100vw;
 		height: 50px;
 	}
-	.body-text {
+	.content-text {
 		padding-top: 15px;
 		height: 215px;
 	}
@@ -239,7 +239,7 @@ $btn-color: #db5565;
 		font-size: 12px;
 		color: #444;
 	}
-	.pf-body {
+	.pf-content {
 		color: #444;
 		padding: 15px;
 		.pf-date-title, .pf-place-title, .pf-about-title, .pf-thanks-title {
