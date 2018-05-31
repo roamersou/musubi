@@ -1,3 +1,291 @@
 // Place all the styles related to the Payforwards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$main-color: #f4ad49;
+$btn-color: #db5565;
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+// ***************みんなの恩贈り（index.html.slim)***************
+.header-top {
+	background: $main-color;
+	height: 65px;
+	position: relative;
+	.icon-left {
+		position: absolute;
+	    top: 28px;
+	    left: 15px;
+		.menu-icon {
+			width: 30px;
+			display: none;
+		}
+		.cancel-icon {
+			width: 25px;
+			display: none;
+		}
+		.active-icon {
+			display: block;
+		}
+	}
+	.musubi-logo {
+		width: 100px;
+		margin: 0 auto;
+		padding-top: 23px;
+		.musubi-icon {
+			width: 100px;
+		}
+	}
+	.icon-right {
+		position: absolute;
+	    top: 28px;
+	    right: 15px;
+		.message-icon {
+			width: 30px;
+		}
+	}
+}
+.header-menu {
+	background: $main-color;
+	height: 602px;
+	display: none;
+	.header-menu-list {
+		color: #fff;
+		padding:0 15px;
+	    font-size: 16px;
+	    font-weight: 250;
+	    .header-menu-item {
+	    	padding: 12px 15px 8px;
+    		border-bottom: 1px solid #fff;
+    		a {
+				color: #fff;
+    		}
+	    }
+	}
+}
+.menu-list {
+    width: 375px;
+    overflow: hidden;
+    .menu-item {
+		color: #ccc;
+		font-size: 11px;
+		letter-spacing: 0;
+		float: left;
+	    margin-top: 15px;
+		padding: 0 7px;
+	    height: 30px;
+	    box-sizing: border-box;
+	    border-bottom: 2px solid #ccc;
+	}
+	.menu-item:first-child {
+		padding-left: 11px;
+	}
+	.menu-item:last-child {
+		padding-right: 10px;
+	}
+	.active-menu-list {
+		color: $main-color;
+		font-weight: 600;
+		border-bottom: 5px solid $main-color;
+	}
+}
+.main-menu {
+	.content-list {
+		.content-item {
+			.item-list {
+				float: left;
+			    width: 44vw;
+			    margin-top: 15px;
+			    margin-left: 15px;
+			    padding-bottom: 6px;
+    			letter-spacing: 0.7px;
+    			border: 1px solid #ccc;
+    			box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+				img {
+					width: 100%;
+				}
+				.pf-place {
+					font-size: 10px;
+				    font-weight: 400;
+				    color: #999;
+				    text-align: center;
+				    &:before {
+				      content: '';/*何も入れない*/
+				      display: inline-block;/*忘れずに！*/
+				      width: 13px;/*画像の幅*/
+				      height: 13px;/*画像の高さ*/
+				      background-size: contain;
+				      position: relative;
+				      top: 2px;
+				      margin-right: 3px;
+				      background-image: url(../images/place-icon.png);
+				    }
+				}
+				.pf-title {
+					font-size: 13px;
+				    font-weight: 600;
+				    color: #444;
+				    text-align: center;
+				}
+			}
+		}
+	}
+}
+.create-item-btn {
+	background: rgba(219,85,101,0.9);
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	text-align: center;
+	position: fixed;
+    right: -13px;
+    bottom: -13px;
+	.create-item {
+		color: #fff;
+		display: block;
+		padding-top: 13px;
+	}
+	.give-icon {
+		width: 50px;
+	}
+}
+
+// ***************恩贈り作成のページ、恩贈り編集ページ(new.html.slim,_form.slim,edit.html.slim)***************
+.create-pf,.container {
+	background: #f2f2f2;
+	padding-bottom: 60px;
+	.create-pf-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	background: #fff;
+	text-align: center;
+	padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+	}
+	.top-image {
+		background: #fff;
+	    width: 165px;
+	    height: 102px;
+	    margin: 30px auto;
+	}
+	.field-title {
+		font-size: 14px;
+		color: #666;
+		padding-left: 15px;
+	}
+	.field{
+		input::placeholder, textarea::placeholder {
+		font-size: 14px;
+		color: #ccc;
+		}
+	}
+	.field-first {
+		padding-top: 20px;
+	}
+	.title-text, .date-text, .place-text, .body-text {
+		font-size: 14px;
+		padding-left: 15px;
+		margin-top: 5px;
+		margin-bottom: 20px;
+		background: #fff;
+		display: block;
+		width: 100vw;
+		height: 50px;
+	}
+	.body-text {
+		padding-top: 15px;
+		height: 215px;
+	}
+	.actions {
+		text-align: center;
+		background: $btn-color;
+		width: 345px;
+		height: 50px;
+		margin: 60px auto 0;
+    	border-radius: 50px;
+    	line-height: 50px;
+    	input[type="submit"] {
+    		font-size: 16px;
+    		color: #fff;
+    	}
+	}
+}
+
+// ***************恩贈り(show.html.slim)***************
+.pay_forward_icon {
+	.pf-mv {
+		position: relative;
+		height: 232px;
+		.pf-img {
+			width: 375px;
+		}
+		.pf-title {
+			font-size: 14px;
+			position: absolute;
+		    bottom: 0;
+		    color: #fff;
+		    font-weight: 400;
+		    width: 100%;
+		    text-align: center;
+		    line-height: 16px;
+		    background: rgba(0,0,0,0.5);
+		    padding: 13px 0;
+		}
+	}
+	.pf-text {
+		font-size: 12px;
+		color: #444;
+	}
+	.pf-body {
+		color: #444;
+		padding: 15px;
+		.pf-date-title, .pf-place-title, .pf-about-title, .pf-thanks-title {
+			font-size: 16px;
+			line-height: 16px;
+			font-weight: 600;
+		}
+		.pf-date-title:before, .pf-place-title:before, .pf-about-title:before, .pf-thanks-title:before {
+			content: '';/*何も入れない*/
+			display: inline-block;/*忘れずに！*/
+			width: 25px;/*画像の幅*/
+			height: 25px;/*画像の高さ*/
+			background-size: contain;
+			position: relative;
+		    top: 6px;
+		    margin-right: 10px;
+		}
+		.pf-date-title:before {
+			background-image: url(../images/pay-forward-item-icon01.png);
+		}
+		.pf-place-title:before {
+			background-image: url(../images/pay-forward-item-icon02.png);
+		}
+		.pf-about-title:before {
+			background-image: url(../images/pay-forward-item-icon03.png);
+		}
+		.pf-thanks-title:before {
+			background-image: url(../images/pay-forward-item-icon04.png);
+		}
+		p {
+			font-size: 12px;
+			// pタグにクラスがつけられないため一旦pタグで記述する
+			padding: 5px 0 5px 3px;
+		}
+	}
+}
+.edit-pf {
+	background: #f2f2f2;
+	.edit-pf-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	background: #fff;
+	text-align: center;
+	padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+	}
+}
