@@ -2,7 +2,11 @@
     .content
         .user
             = link_to payforward_path(payforward)
-                h2.pf-name = payforward.user.name
-                h2.pf-content= payforward.content
+                - if payforward.picture?
+                    = image_tag payforward.picture.url
+                - else
+                    = image_tag '/images/default.png', :class => "pf-img"
+                h2.pf-place = payforward.place
+                h2.pf-title = payforward.title
     span.timestamp
         = time_ago_in_words(payforward.created_at) + "前"

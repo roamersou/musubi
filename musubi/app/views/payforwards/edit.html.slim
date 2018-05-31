@@ -7,6 +7,9 @@
       = f.label :タイトル, :class => "field-title"
       = f.text_field :title, placeholder: @payforward.title, :class => "title-text"
     .field
+      = f.label :画像, :class => "field-title"
+      = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
+    .field
       = f.label :日時, :class => "field-title"
       = f.text_field :date, placeholder: @payforward.date, :class => "date-text"
     .field
@@ -14,5 +17,5 @@
       = f.text_field :place, placeholder: @payforward.place, :class => "place-text"
     .field
       = f.label :詳細, :class => "field-title"
-      = f.text_area :body, placeholder: @payforward.content, :class => "body-text"
+      = f.text_field :content, placeholder: @payforward.content, :class => "body-text"
     .actions = f.submit '編集を保存する'

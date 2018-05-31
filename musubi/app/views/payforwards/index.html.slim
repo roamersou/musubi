@@ -6,10 +6,10 @@
           - @payforwards.each do |pf|
             li.item-list
               = link_to payforward_path(pf)
-                / - if pf.picture.url
-                /     = image_tag pf.picture.url
-                / - else
-                /     = image_tag "/images/prfile-default.png", :class => "prof-icon"
+                - if pf.picture?
+                    = image_tag pf.picture.url
+                - else
+                    = image_tag "/images/prfile-default.png", :class => "prof-icon"
                 h2.pf-place= pf.place
                 h2.pf-title= pf.title
 .create-item-btn

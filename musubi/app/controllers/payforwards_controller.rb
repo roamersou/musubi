@@ -49,6 +49,12 @@ class PayforwardsController < ApplicationController
   private
 
     def payforward_params
-        params.require(:payforward).permit(:title, :content, :date, :place)
+        params.require(:payforward).permit(:title, :content, :date, :place, :picture)
     end
+
+
+    def correct_user
+      @payforward = current_user.payforwards.find_by(id: params[:id])
+      redirect_to payforward_path if @payforward.nil?
+  end
 end

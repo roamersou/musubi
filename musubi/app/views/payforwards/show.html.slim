@@ -1,9 +1,9 @@
 .payforward_icon
 	.pf-mv
-    / - if @payforward.picture?
-    /     = image_tag @payforward.picture.url
-    / - else
-        = image_tag '/images/default.png', :class => "pf-img"
+    	- if @payforward.picture?
+        	= image_tag @payforward.picture.url
+    	- else
+        	= image_tag '/images/default.png', :class => "pf-img"
     h1.pf-title= @payforward.title
     .pf-body
     	h2.pf-date-title 日時
@@ -15,6 +15,7 @@
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
 
 p= link_to '一覧へ', payforwards_path
-p= link_to '編集', edit_payforward_path
+- if current_user?(@payforward.user)
+	p= link_to '編集', edit_payforward_path
 - if current_user?(@payforward.user)
     p= link_to "削除", @payforward, method: :delete, data:{confirm:"本当に削除しますか？"}

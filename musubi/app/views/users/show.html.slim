@@ -24,28 +24,28 @@
             li.prof-item Coming soon
         ul.prof-text-list
             li.prof-text-item
-               = render @thanksletters
-               = will_paginate @thanksletters
-            li.prof-text-item.hide
-            li.prof-text-item.update.hide 機能を追加でアップデートしていく予定です。<br>もう少しお待ちください。
-            .tag
-                    - if current_user != @user
-                        = link_to new_thanksletter_path({user_id: @user.id})
-                                |
-                                button.thanks-letter ありがとうを伝える
-            li.prof-text-item.hide
                 .content
-                    - if @user.payforwards.any?
-                        ol.payforwards
-                            = render @payforwards
-                        = will_paginate @payforwards
+                    ol.thanksletters
+                        = render @thanksletters
+                    = will_paginate @thanksletters
                 .tag
                     - if current_user != @user
                         = link_to new_thanksletter_path({user_id: @user.id})
-                                |
-                                button.thanks-letter ありがとうを伝える
+                            |
+                            button.thanks-letter ありがとうを伝える
+                            
             li.prof-text-item.hide
-                オリゴ糖
+                .content
+                    ol.payforwards
+                        = render @payforwards
+                    = will_paginate @payforwards
+                .tag
+                    - if current_user != @user
+                        = link_to new_thanksletter_path({user_id: @user.id})
+                            |
+                            button.thanks-letter ありがとうを伝える
+
+            li.prof-text-item.update.hide 機能を追加でアップデートしていく予定です。<br>もう少しお待ちください。
 
 
 javascript:
