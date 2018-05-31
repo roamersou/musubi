@@ -20,18 +20,19 @@
         li.header-menu-item フィードバックを送る
         li.header-menu-item 利用規約
         li.header-menu-item プライバシーポリシー
-        / li.header-menu-item よくある質問
-        li.header-menu-item Musubiを退会する
+        li.header-menu-item よくある質問
+        / li.header-menu-item Musubiを退会する
     ul.menu-list.header-bottom
       = link_to users_path
         |
-        li.menu-item.active-menu-list メンバー
+        li.menu-item メンバー
       = link_to events_path
         |
-        li.menu-item イベント
+        li.menu-item.active-menu-list イベント
       = link_to payforwards_path
         |
         li.menu-item みんなの恩贈り
+
       / li.menu-item みんなのサンクスレター
-    / .search-box
-    /   input type = "text"
+    /   .search-box
+    /     input type = "text"

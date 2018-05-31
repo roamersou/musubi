@@ -1,49 +1,12 @@
 .main-menu
-  .header
-    .header-top
-      .icon-left
-        = image_tag "/images/menu-icon.png", :class => "menu-icon active-icon"
-        = image_tag "/images/cancel-icon.png", :class => "cancel-icon"
-      .menu-title
-        = link_to '/'
-         |
-        .musubi-logo
-          = image_tag '/images/musubi-logo-type-white.png', :class => "musubi-icon"
-      .icon-right
-        = image_tag '/images/message-icon.png', :class => "message-icon"
-    .header-menu
-      ul.header-menu-list
-        / li.header-menu-item UKIUKI残高
-        li.header-menu-item プロフィール登録・編集
-        / li.header-menu-item 信頼できる仲間をMusubiに招待する
-        li.header-menu-item パトロンになる
-        li.header-menu-item Musubiの理念
-        li.header-menu-item フィードバックを送る
-        li.header-menu-item 利用規約
-        li.header-menu-item プライバシーポリシー
-        li.header-menu-item よくある質問
-        / li.header-menu-item Musubiを退会する
-    ul.menu-list.header-bottom
-      = link_to users_path
-        |
-        li.menu-item メンバー
-      = link_to events_path
-        |
-        li.menu-item.active-menu-list イベント
-      / = link_to payforwards_path
-        |
-        li.menu-item みんなの恩贈り
-
-      li.menu-item みんなのサンクスレター
-    /   .search-box
-    /     input type = "text"
+  = render 'header'
   .body
       .content-itemz
+        h2 イベントURL
         ul
           - @events.each do |ev|
             li
-              = link_to event_path(ev)
-                h2= ev.url
+              a.url> href = ev.url イベント
 
 
   = link_to '新しくつくる', new_event_path
