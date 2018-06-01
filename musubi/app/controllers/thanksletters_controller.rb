@@ -21,7 +21,7 @@ class ThankslettersController < ApplicationController
     def destroy
         @thanksletter.destroy
         flash[:success] = "サンクスレターを削除しました"
-        redirect_to user_url
+        redirect_to("/users/#{@thanksletter.receiver_id}")
     end
 
     private
