@@ -25,7 +25,7 @@
         ul.prof-text-list.clearfix
             li.prof-text-item
                 .content
-                    ul.thanksletters
+                    ol.thanksletters
                         = render @thanksletters
                     = will_paginate @thanksletters
                 .tag
@@ -36,7 +36,7 @@
                             
             li.prof-text-item.hide
                 .content
-                    ul.payforwards
+                    ol.payforwards
                         = render @payforwards
                     = will_paginate @payforwards
                 .tag
