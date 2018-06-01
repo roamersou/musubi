@@ -69,9 +69,13 @@ $btn-color: #db5565;
     overflow: hidden;
     .menu-item {
 		color: #ccc;
-		font-size: 11px;
+		font-size: 12px;
 		letter-spacing: 0;
 		float: left;
+		width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
+		width : -webkit-calc(100% / 3) ;
+		width : calc(100% / 3) ;
+    	text-align: center;
 	    margin-top: 15px;
 		padding: 0 7px;
 	    height: 30px;
