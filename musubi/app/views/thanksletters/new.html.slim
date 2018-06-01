@@ -1,3 +1,14 @@
 .create-tl
     h1.create-tl-title サンクスレターを贈る
-    = render "form"
+    h3 #{@user.name}さんに感謝の気持ちを伝えましょう
+
+    = form_with model: @thanksletter, local: true do |f|
+        = render "shared/error_messages", object: f.object
+        .field
+            = hidden_field_tag(:user_id, @user_id)
+            = f.label :サンクスレター, :class => "field-title"
+            = f.text_field :content, placeholder: '感謝の気持ちを贈りましょう', :class => "content-text"
+    
+        .actions = f.submit '送信する'
+        / span.picture
+        /     = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
