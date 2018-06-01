@@ -1,9 +1,10 @@
-.thanks-letter
-    .content
+.thanks-letter.clear-fix
+    .content.clear-fix
         .user
             = link_to thanksletter.user.name, thanksletter.user
-        = thanksletter.content
-    span.timestamp
-        = time_ago_in_words(thanksletter.created_at) + "前"
-    - if current_user?(thanksletter.user)
-        = link_to "削除", thanksletter, method: :delete, data:{confirm:"本当に削除しますか？"}
+        - if current_user?(thanksletter.user)
+            span.delete-btn = link_to image_tag("/images/garbage.png"), thanksletter, method: :delete, data:{confirm:"本当に削除しますか？"}
+            span.timestamp
+        = time_ago_in_words(thanksletter.created_at)+"前"
+        p.thanks-letter-text= thanksletter.content
+    = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"

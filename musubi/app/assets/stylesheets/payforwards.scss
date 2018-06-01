@@ -69,9 +69,13 @@ $btn-color: #db5565;
     overflow: hidden;
     .menu-item {
 		color: #ccc;
-		font-size: 11px;
+		font-size: 12px;
 		letter-spacing: 0;
 		float: left;
+		width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
+		width : -webkit-calc(100% / 3) ;
+		width : calc(100% / 3) ;
+    	text-align: center;
 	    margin-top: 15px;
 		padding: 0 7px;
 	    height: 30px;
@@ -103,7 +107,8 @@ $btn-color: #db5565;
     			border: 1px solid #ccc;
     			box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 				img {
-					width: 100%;
+					width: 163px;
+					height: 100px;
 				}
 				.pf-place {
 					font-size: 10px;
@@ -289,3 +294,50 @@ $btn-color: #db5565;
     border-bottom: 1px solid #ccc;
 	}
 }
+// プロフィールの恩贈りリストページ（payforwards/_payforwards.slim)
+.payforward {
+		.content {
+			.user {
+				float: left;
+			    width: 44vw;
+			    margin-top: 15px;
+			    margin-left: 15px;
+			    padding-bottom: 6px;
+    			letter-spacing: 0.7px;
+    			border: 1px solid #ccc;
+    			box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+				img {
+					width: 163px;
+					height: 100px;
+					box-shadow: none;
+					margin: 0;
+					border-radius: 0;
+				}
+				.pf-place {
+					font-size: 10px;
+				    font-weight: 400;
+				    color: #999;
+				    text-align: center;
+				    padding-bottom: 5px;
+				    &:before {
+				      content: '';/*何も入れない*/
+				      display: inline-block;/*忘れずに！*/
+				      width: 13px;/*画像の幅*/
+				      height: 13px;/*画像の高さ*/
+				      background-size: contain;
+				      position: relative;
+				      top: 2px;
+				      margin-right: 3px;
+				      background-image: url(../images/place-icon.png);
+				    }
+				}
+				.pf-title {
+					font-size: 13px;
+				    font-weight: 600;
+				    color: #444;
+				    text-align: center;
+				    line-height: 1.5;
+				}
+			}
+		}
+	}

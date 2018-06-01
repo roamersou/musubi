@@ -62,7 +62,7 @@ body {
   }
   .service-title {
     width: 130px;
-    padding-top: 120px;
+    padding-top: 80px;
     position: relative;
   }
   .service-subtitle, .info-text, .signup, .login, .terms, .privacy-policy {
@@ -103,6 +103,9 @@ body {
   }
   .login, .terms, .privacy-policy {
     font-size: 14px;
+  }
+  button {
+    border: transparent;
   }
 }
 //*************** メンバー一覧ページ(users/index.html.slim)***************//
@@ -185,7 +188,7 @@ body {
 }
 //*************** アカウント表示ページ(users/show.html.slim)***************//
 .user-info {
-  background-color: #ccc;
+  background-color: #f2f2f2;
   .prof-edit-icon {
     img {
       width: 30px;
@@ -255,9 +258,8 @@ body {
   }
   .prof-detail-text {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 300;
     padding: 10px 15px 15px;
-    letter-spacing: 0.8px;
   }
 }
 .prof {
@@ -331,8 +333,6 @@ body {
         display: none;
       }
       .tag {
-        width: 345px;
-        margin: 60px auto 0;
         .thanks-letter {
           color: #fff;
           font-size: 16px;
@@ -341,6 +341,9 @@ body {
           width: 345px;
           height: 50px;
           border-radius: 50px;
+          border: transparent;
+          box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+          margin-top: 60px;
         }
       }
     }
