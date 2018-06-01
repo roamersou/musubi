@@ -13,17 +13,17 @@
     .header-menu
       ul.header-menu-list
           / li.header-menu-item UKIUKI残高
-          = link_to("/users/#{current_user.id}")
+          = link_to "/users/#{current_user.id}"
             |
             li.header-menu-item プロフィール登録・編集
           / li.header-menu-item 信頼できる仲間をMusubiに招待する
-          = link_to("https://camp-fire.jp/projects/view/55604")
+          = link_to "https://camp-fire.jp/projects/view/55604", :target =>["_blank"]
             |
             li.header-menu-item パトロンになる
           = link_to page_path('vision')
             |
             li.header-menu-item Musubiの理念
-          = link_to('https://www.facebook.com/groups/144239776233499/?ref=bookmarks')
+          = link_to 'https://www.facebook.com/groups/144239776233499/?ref=bookmarks', :target =>["_blank"]
             |
             li.header-menu-item フィードバックを送る
           = link_to page_path('terms')
