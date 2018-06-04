@@ -8,6 +8,7 @@
         = f.text_field :name, placeholder: "フルネーム", :class => "name-text"
     .field
         = f.label :画像, :class => "field-title"
+        <br>
         = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
     .field
         = f.label :自己紹介, :class => "field-title"

@@ -356,7 +356,9 @@ body {
     }
   }
 }
-
+.user a {
+  text-decoration: none;
+}
 
 //*************** アカウント編集ページ(users/edit.html.slim)***************//
 .edit-user {
@@ -385,6 +387,11 @@ body {
     font-size: 14px;
     color: #ccc;
     }
+    .picture {
+      padding-left: 5px;
+    
+    padding-bottom: 15px;
+    }
   }
   .field-first {
     padding-top: 20px;
@@ -398,6 +405,7 @@ body {
     display: block;
     width: 100vw;
     height: 50px;
+    border: transparent;
   }
   .actions {
     text-align: center;
@@ -429,5 +437,6 @@ body {
     text-align: center;
   }
 }
+
 
 
