@@ -4,7 +4,7 @@
         	= image_tag @payforward.picture.url
     	- else
         	= image_tag '/images/default.png', :class => "pf-img"
-    h1.pf-title= @payforward.title
+    	h1.pf-title= @payforward.title
     .pf-body
     	h2.pf-date-title 日時
 	    p.pf-date-text= simple_format(@payforward.date)
@@ -14,8 +14,8 @@
 	    p.pf-about-text= simple_format(@payforward.content)
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
 
-p= link_to '一覧へ', payforwards_path
+p.back-btn= link_to '一覧へ戻る', payforwards_path
 - if current_user?(@payforward.user)
-	p= link_to '編集', edit_payforward_path
+	p.pf-edit-btn= link_to '編集する', edit_payforward_path
 - if current_user?(@payforward.user)
-    p= link_to "削除", @payforward, method: :delete, data:{confirm:"本当に削除しますか？"}
+    p.pf-delete-btn= link_to "削除する", @payforward, method: :delete, data:{confirm:"本当に削除しますか？"}
