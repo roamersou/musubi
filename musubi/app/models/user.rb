@@ -11,7 +11,7 @@ class User < ApplicationRecord
                uniqueness: { case_sensitive: false }
     has_secure_password
     validates :password, presence: true, length:{minimum:6}, allow_nil: true
-    validates :self_intro, length:{maximum: 60}
+    validates :self_intro, length:{maximum: 100}
     validate :picture_size
 
     # fixture向けのdigestメソッド追加

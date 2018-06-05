@@ -6,8 +6,10 @@
         	= image_tag '/images/default.png', :class => "pf-img"
 	= link_to("/users/#{@payforward.user.id}")
 		|
+		h1.pf-title = @payforward.title
+		= image_tag @payforward.user.picture.url
 		h1.pf-name = @payforward.user.name
-    	h1.pf-title = @payforward.title
+		h1.ph-selfintro = @payforward.user.self_intro
     .pf-body
     	h2.pf-date-title 日時
 	    p.pf-date-text= simple_format(@payforward.date)
