@@ -19,7 +19,8 @@ html
         = link_to '/'
          |
         .musubi-logo
-          = image_tag '/images/musubi-logo-type-white.png', :class => "musubi-icon"
+          .musubi-icon
+            = link_to image_tag('/images/musubi-logo-type-white.png'), payforwards_path
       .icon-right
         = image_tag '/images/message-icon.png', :class => "message-icon"
     .header-menu
@@ -38,7 +39,7 @@ html
           = link_to 'https://www.facebook.com/groups/144239776233499/?ref=bookmarks', :target =>["_blank"]
             |
             li.header-menu-item フィードバックを送る
-                    = link_to page_path('terms')
+          = link_to page_path('terms')
             |
             li.header-menu-item 利用規約
           = link_to page_path('privacy')
