@@ -115,19 +115,20 @@ body {
   .user-list {
     border-bottom: 1px solid #ccc;
     padding: 10px 0 10px 15px;
-    a {
-      color: #444;
-      &:before {
-        content: '';
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background-color: #444;
-        position: relative;
-        top: -2px;
-        margin-right: 15px;
+    .user-photo {
+      img {
+        width: 50px;
+        height: 50px;
+        float: left;
       }
+    }
+    .name {
+      font-size: 16px;
+      font-weight: 500;
+      color: #444;
+      float: left;
+      padding-left: 15px;
+      line-height: 50px;
     }
   }
   .user-list:last-child {
@@ -355,7 +356,9 @@ body {
     }
   }
 }
-
+.user a {
+  text-decoration: none;
+}
 
 //*************** アカウント編集ページ(users/edit.html.slim)***************//
 .edit-user {
@@ -384,6 +387,11 @@ body {
     font-size: 14px;
     color: #ccc;
     }
+    .picture {
+      padding-left: 5px;
+    
+    padding-bottom: 15px;
+    }
   }
   .field-first {
     padding-top: 20px;
@@ -397,6 +405,7 @@ body {
     display: block;
     width: 100vw;
     height: 50px;
+    border: transparent;
   }
   .actions {
     text-align: center;
@@ -428,5 +437,6 @@ body {
     text-align: center;
   }
 }
+
 
 

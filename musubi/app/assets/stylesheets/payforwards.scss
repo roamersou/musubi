@@ -58,6 +58,7 @@ $btn-color: #db5565;
 	    .header-menu-item {
 	    	padding: 12px 15px 8px;
     		border-bottom: 1px solid #fff;
+    		color: #fff;
     		a {
 				color: #fff;
     		}
@@ -220,7 +221,7 @@ $btn-color: #db5565;
 }
 
 // ***************恩贈り(show.html.slim)***************
-.pay_forward_icon {
+.payforward_icon {
 	.pf-mv {
 		position: relative;
 		height: 232px;
@@ -240,11 +241,7 @@ $btn-color: #db5565;
 		    padding: 13px 0;
 		}
 	}
-	.pf-text {
-		font-size: 12px;
-		color: #444;
-	}
-	.pf-content {
+	.pf-body {
 		color: #444;
 		padding: 15px;
 		.pf-date-title, .pf-place-title, .pf-about-title, .pf-thanks-title {
@@ -294,6 +291,40 @@ $btn-color: #db5565;
     border-bottom: 1px solid #ccc;
 	}
 }
+.back-btn {
+	padding-left: 15px;
+    color: #444;
+    text-decoration: underline;
+    a {
+    	color: #444;
+    }
+}
+.pf-edit-btn {
+	text-align: center;
+	background: $btn-color;
+	width: 345px;
+	height: 50px;
+	margin: 40px auto 0;
+	border-radius: 50px;
+	line-height: 50px;
+	a {
+		font-size: 16px;
+		color: #fff;
+	}
+ }
+ .pf-delete-btn {
+ 	text-align: center;
+	border: solid 1px $btn-color;
+	width: 345px;
+	height: 50px;
+	margin: 20px auto 60px;
+	border-radius: 50px;
+	line-height: 50px;
+	a {
+		font-size: 16px;
+		color: $btn-color;
+	}
+ }
 // プロフィールの恩贈りリストページ（payforwards/_payforwards.slim)
 .payforward {
 		.content {
