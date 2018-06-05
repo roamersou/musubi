@@ -19,24 +19,3 @@
 
 
   = link_to '新しくつくる', new_event_path
-
-javascript:
- $(".icon-left").click(function(){
-    $(".menu-icon").toggleClass("active-icon");
-    $(".cancel-icon").toggleClass("active-icon");
-    $(".header-menu").slideToggle()
-  });
- //クリックしたときのファンクションをまとめて指定
- $('.menu-list li').click(function(){
-    //.index()を使いクリックされたタブが何番目かを調べ、
-      //indexという変数に代入します。
-    var index = $('.menu-list li').index($(this));
-    //コンテンツを一度すべて非表示にし、
-    // $('.menu-list li').css('display','none');
-    //クリックされたタブと同じ順番のコンテンツを表示します。
-    // $('.menu-list li').eq(index).css('display','block');
-    //一度タブについているクラスselectを消し、
-      $('.menu-list li').removeClass('active-menu-list');
-      //クリックされたタブのみにクラスselectをつけます。
-      $(this).addClass('active-menu-list')
-  });
