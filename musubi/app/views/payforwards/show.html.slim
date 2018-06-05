@@ -8,7 +8,7 @@
 	.pf-giver-box.clearfix= link_to("/users/#{@payforward.user.id}")
 		|
 		= image_tag '/images/giver-icon.png', :class => "giver-icon"
-		/ = image_tag @payforward.user.picture.url
+		= image_tag @payforward.user.picture.url
 		h1.pf-name = @payforward.user.name+"さん"
 		h1.pf-selfintro = @payforward.user.self_intro
     .pf-body
