@@ -241,6 +241,31 @@ $btn-color: #db5565;
 		    padding: 13px 0;
 		}
 	}
+	.pf-giver-box {
+		border: solid 1px #ccc;
+	    margin: 15px;
+	    .giver-icon {
+	    	width: 50px;
+	    	height: 50px;
+	    	float: left;
+	    }
+	    .pf-name {
+			font-size: 14px;
+			font-weight: 400;
+			color: #444;
+			float: left;
+			padding-top: 10px;
+		}
+		.pf-selfintro {
+			font-size: 10px;
+			line-height: 15px;
+		    font-weight: 400;
+		    color: #444;
+		    float: left;
+		    padding: 0px 10px 10px 50px;
+		    margin-top: -15px;
+		}
+	}
 	.pf-body {
 		color: #444;
 		padding: 15px;
