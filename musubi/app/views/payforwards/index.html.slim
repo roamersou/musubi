@@ -1,5 +1,17 @@
 .main-menu
-  = render 'header'
+  ul.menu-list.header-bottom
+      = link_to users_path
+        |
+        li.menu-item メンバー
+      = link_to payforwards_path
+        |
+        li.menu-item.active-menu-list みんなの恩贈り
+      = link_to events_path
+        |
+        li.menu-item イベント
+      / li.menu-item みんなのサンクスレター
+      / .search-box
+      /   input type = "text"
   .content-list
       .content-item
         ul.clearfix

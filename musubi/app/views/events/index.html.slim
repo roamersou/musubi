@@ -1,5 +1,14 @@
 .main-menu
-  = render 'header'
+  ul.menu-list.header-bottom
+      = link_to users_path
+        |
+        li.menu-item メンバー
+      = link_to payforwards_path
+        |
+        li.menu-item みんなの恩贈り
+      = link_to events_path
+        |
+        li.menu-item.active-menu-list イベント
   .body
       .content-itemz
         h2 イベントURL
