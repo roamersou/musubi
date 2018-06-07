@@ -43,7 +43,7 @@ class PayforwardsController < ApplicationController
   def destroy
     Payforward.find(params[:id]).destroy
     flash[:success] = "恩贈りを削除しました！"
-    redirect_to("/users")
+    redirect_to("/payforwards")
   end
 
   private
