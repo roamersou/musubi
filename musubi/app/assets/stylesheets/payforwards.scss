@@ -252,12 +252,14 @@ $btn-color: #db5565;
 	    	float: left;
 	    }
 	    .giver-prof-icon {
-	    	width: 40px;
-		    height: 40px;
-		    border-radius: 50%;
-		    float: left;
-		    margin-top: 10px;
-		    margin-left: 25px;
+	    	img {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				float: left;
+				margin-top: 10px;
+				margin-left: 25px;
+			}
 	    }
 	    .pf-name {
 			font-size: 14px;
