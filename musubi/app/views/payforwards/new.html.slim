@@ -18,5 +18,5 @@
         	= f.text_field :place, placeholder: '地域 (渋谷、新宿、横浜など）', :class => "place-text"
     	.field
         	= f.label :詳細, :class => "field-title"
-        	= f.text_field :content, placeholder: '詳細 (200文字以内)', :class => "content-text"
+        	= f.text_area :content, placeholder: '詳細 (200文字以内)', :class => "content-text"
     	.actions = f.submit '公開する'
