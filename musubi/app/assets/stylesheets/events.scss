@@ -1,3 +1,17 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.event-text {
+	padding: 50px 15px 40px 15px;
+    text-align: center;
+}
+.fb-btn {
+	text-align: center;
+    background: #405894;
+    margin: 0 15px;
+    border-radius: 30px;
+    padding: 10px 0;
+    a {
+		color: #fff;
+    }
+}

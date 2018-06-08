@@ -6,16 +6,19 @@
       = link_to payforwards_path
         |
         li.menu-item みんなの恩贈り
-      = link_to events_path
+      = link_to "events_path"
         |
         li.menu-item.active-menu-list イベント
   .body
-      .content-itemz
-        h2 イベントURL
-        ul
-          - @events.each do |ev|
-            li
-              a.url> href = ev.url イベント
+  /     .content-itemz
+  /       h2 イベントURL
+  /       ul
+  /         - @events.each do |ev|
+  /           li
+  /             a.url> href = ev.url イベント
 
 
-  = link_to '新しくつくる', new_event_path
+  / = link_to '新しくつくる', new_event_path
+  p.event-text イベントはFacebookグループにて共有しております。
+    お手数ですが、以下よりFacebooグループをご確認ください。
+  .fb-btn= link_to "Facebookグループへ", "https://www.facebook.com/groups/144239776233499/events/"
