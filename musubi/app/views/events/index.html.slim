@@ -10,15 +10,6 @@
         |
         li.menu-item.active-menu-list イベント
   .body
-  /     .content-itemz
-  /       h2 イベントURL
-  /       ul
-  /         - @events.each do |ev|
-  /           li
-  /             a.url> href = ev.url イベント
-
-
-  / = link_to '新しくつくる', new_event_path
   p.event-text イベントはFacebookグループにて共有しております。
     お手数ですが、以下よりFacebooグループをご確認ください。
-  .fb-btn= link_to "Facebookグループへ", "https://www.facebook.com/groups/144239776233499/events/"
+  .fb-btn= link_to "Facebookグループへ", "https://www.facebook.com/groups/144239776233499/events/", :target =>["_blank"]
