@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render :layout => 'no_header'
   end
 
   def create
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    render :layout => 'no_header'
   end 
 
   def update  

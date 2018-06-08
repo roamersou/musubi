@@ -13,6 +13,7 @@ class PayforwardsController < ApplicationController
     @user_id = params[:user_id]
     @user = User.find_by(id:params[:user_id])
     @payforward = current_user.payforwards.build if logged_in?
+    render :layout => 'no_header'
   end
 
   def create
@@ -27,6 +28,7 @@ class PayforwardsController < ApplicationController
 
   def edit
     @payforward = Payforward.find(params[:id])
+    render :layout => 'no_header'
   end
 
   def update
