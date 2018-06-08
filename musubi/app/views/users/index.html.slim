@@ -1,6 +1,17 @@
 .main-menu
-  = render 'header'
-
+  ul.menu-list.header-bottom
+      = link_to users_path
+        |
+        li.menu-item.active-menu-list メンバー
+      = link_to payforwards_path
+        |
+        li.menu-item みんなの恩贈り
+      = link_to events_path
+        |
+        li.menu-item イベント
+      / li.menu-item みんなのサンクスレター
+      / .search-box
+      /   input type = "text" 
   = will_paginate
   ul.users
     - @users.each do |user|
@@ -14,25 +25,3 @@
             - if current_user.admin? && !current_user?(user) 
               =link_to "削除", user, method: :delete, data: {confirm: "本当に削除しますか？"}
   = will_paginate
-
-
-javascript:
-   $(".icon-left").click(function(){
-      $(".menu-icon").toggleClass("active-icon");
-      $(".cancel-icon").toggleClass("active-icon");
-      $(".header-menu").slideToggle()
-    });
-   //クリックしたときのファンクションをまとめて指定
-   $('.menu-list li').click(function(){
-      //.index()を使いクリックされたタブが何番目かを調べ、
-        //indexという変数に代入します。
-      var index = $('.menu-list li').index($(this));
-      //コンテンツを一度すべて非表示にし、
-      // $('.menu-list li').css('display','none');
-      //クリックされたタブと同じ順番のコンテンツを表示します。
-      // $('.menu-list li').eq(index).css('display','block');
-      //一度タブについているクラスselectを消し、
-        $('.menu-list li').removeClass('active-menu-list');
-        //クリックされたタブのみにクラスselectをつけます。
-        $(this).addClass('active-menu-list')
-    });

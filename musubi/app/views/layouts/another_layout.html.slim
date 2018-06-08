@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    title Musubi
+    = csrf_meta_tags
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+
+  .header
+    .header-top
+      .icon-left
+        = image_tag "/images/menu-icon.png", :class => "menu-icon active-icon"
+        = image_tag "/images/cancel-icon.png", :class => "cancel-icon"
+      .musubi-logo
+        .musubi-icon
+            = link_to image_tag('/images/musubi-logo-type-white.png'), payforwards_path
+      .icon-right
+        = image_tag '/images/message-icon.png', :class => "message-icon"
+    .header-menu
+      ul.header-menu-list
+          / li.header-menu-item UKIUKI残高
+          = link_to "/users/#{current_user.id}"
+            |
+            li.header-menu-item プロフィール登録・編集
+          / li.header-menu-item 信頼できる仲間をMusubiに招待する
+          = link_to "https://camp-fire.jp/projects/view/55604", :target =>["_blank"]
+            |
+            li.header-menu-item パトロンになる
+          = link_to page_path('vision')
+            |
+            li.header-menu-item Musubiの理念
+          = link_to 'https://www.facebook.com/groups/144239776233499/?ref=bookmarks', :target =>["_blank"]
+            |
+            li.header-menu-item フィードバックを送る
+          = link_to page_path('terms')
+            |
+            li.header-menu-item 利用規約
+          = link_to page_path('privacy')
+            |
+            li.header-menu-item プライバシーポリシー
+          / li.header-menu-item よくある質問
+          / li.header-menu-item Musubiを退会する
+
+  javascript:
+    $(".icon-left").click(function(){
+        $(".menu-icon").toggleClass("active-icon");
+        $(".cancel-icon").toggleClass("active-icon");
+        $(".header-menu").slideToggle()
+      });
+    //クリックしたときのファンクションをまとめて指定
+    $('.menu-list li').click(function(){
+        //.index()を使いクリックされたタブが何番目かを調べ、
+          //indexという変数に代入します。
+        var index = $('.menu-list li').index($(this));
+        //コンテンツを一度すべて非表示にし、
+        // $('.menu-list li').css('display','none');
+        //クリックされたタブと同じ順番のコンテンツを表示します。
+        // $('.menu-list li').eq(index).css('display','block');
+        //一度タブについているクラスselectを消し、
+          $('.menu-list li').removeClass('active-menu-list');
+          //クリックされたタブのみにクラスselectをつけます。
+          $(this).addClass('active-menu-list')
+      });
+      
+  body
+    = yield
