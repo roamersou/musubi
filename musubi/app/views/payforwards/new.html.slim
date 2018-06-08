@@ -9,7 +9,7 @@
     	.field.field-first
         	= hidden_field_tag(:user_id, @user_id)
         	= f.label :タイトル, :class => "field-title"
-        	= f.text_field :title, placeholder: 'タイトル (20字以内)', :class => "title-text"
+        	= f.text_field :title, placeholder: 'タイトル (20字以内)', :class => "title-text", maxlength: '20'
     		.field
         	= f.label :日時, :class => "field-title"
         	= f.text_field :date, placeholder: '例：1/20, 毎週土曜日, 要相談など', :class => "date-text"
@@ -18,5 +18,5 @@
         	= f.text_field :place, placeholder: '地域 (渋谷、新宿、横浜など）', :class => "place-text"
     	.field
         	= f.label :詳細, :class => "field-title"
-        	= f.text_field :content, placeholder: '詳細 (200文字以内)', :class => "content-text"
+        	= f.text_area :content, placeholder: '詳細 (200文字以内)', :class => "content-text", maxlength: '200'
     	.actions = f.submit '公開する'

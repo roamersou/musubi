@@ -202,6 +202,7 @@ $btn-color: #db5565;
 		display: block;
 		width: 100vw;
 		height: 50px;
+		border: transparent;
 	}
 	.content-text {
 		padding-top: 15px;
@@ -226,6 +227,7 @@ $btn-color: #db5565;
 .payforward_icon {
 	.pf-mv {
 		position: relative;
+		height: 232px;
 		img {
 			width: 375px;
 			height: 232px;

@@ -15,8 +15,8 @@
             a.prof-sns-icon.prof-fb> href = @user.fb_account Facebook
             a.prof-sns-icon.prof-tw> href = @user.tw_account Twitter
             a.prof-sns-icon.prof-insta> href = @user.insta_account Instagram
-        p.prof-detail-text
-            = @user.self_intro
+        .prof-detail-text
+            = simple_format(@user.self_intro)
     .container
         ul.prof-list.clearfix
             li.prof-item.active-prof-list サンクスレター

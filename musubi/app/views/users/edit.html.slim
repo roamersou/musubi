@@ -2,7 +2,7 @@
     h1.form-heading プロフィール編集
 .container
   = form_with model: @user, url: user_path, local: true do |f|
-    = render 'shared/error_messages', object: f.object 
+    = render 'shared/error_messages', object: f.object
     .field.field-first
         = f.label :名前, :class => "field-title"
         = f.text_field :name, placeholder: "フルネーム", :class => "name-text"
@@ -12,7 +12,7 @@
         = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture"
     .field
         = f.label :自己紹介, :class => "field-title"
-        = f.text_field :self_intro, placeholder: "100字以内", :class => "self-intro-text"
+        = f.text_area :self_intro, placeholder: "100字以内", :class => "self-intro-text", maxlength: '100'
     .field
         = f.label :Facebookアカウント, :class => "field-title"
         = f.text_field :fb_account, placeholder: "URLを貼ってください", :class => "fb-account-text"
