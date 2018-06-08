@@ -24,12 +24,13 @@
 //******** 理念********//
 .vision {
 	background: url("../images/ideology.jpeg");
-	height: 667px;
+	height: 100vh;
+	background-size: cover;
 	&::before{
 	  /* 透過した黒を重ねる */
 	  background-color: rgba(0,0,0,0.3s);
 	  /* どの範囲に重ねるかを指定 */
-	  height: 667px;
+	  height: 100vh;
 	  position: absolute;
 	  top: 0;
 	  right: 0;

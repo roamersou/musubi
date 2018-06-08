@@ -45,8 +45,9 @@ body {
 }
 .home-bg {
   background: url("../images/introduction.jpeg");
-  height: 667px;
+  height: 100vh;
   background-position-x: 52%;
+  background-size: cover;
   text-align: center;
   position: relative;
   &::before{
@@ -62,7 +63,7 @@ body {
   }
   .service-title {
     width: 130px;
-    padding-top: 80px;
+    padding-top: 70px;
     position: relative;
   }
   .service-subtitle, .info-text, .signup, .login, .terms, .privacy-policy {
@@ -73,7 +74,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     padding-top: 20px;
-    padding-bottom: 250px;
+    padding-bottom: 245px;
   }
   //********* facebookログイン*********//
   // .verify-btn-box {
@@ -89,14 +90,18 @@ body {
   //   font-size: 20px;
   //   color: #fff;
   // }
-  .signup {
+  .signup-btn {
+    margin: 0 15px;
+    position: relative;
     background: rgba(248, 108, 48, .9);
-    width: 345px;
-    height: 50px;
-    border: transparent;
     border-radius: 30px;
-    font-size: 16px;
     margin-bottom: 20px;
+  }
+  .signup {
+    border: transparent;
+    font-size: 16px;
+    padding: 12px;
+    background: none;
   }
   .info-text {
     font-size: 11px;
@@ -106,344 +111,6 @@ body {
   }
   button {
     border: transparent;
-  }
-}
-//*************** メンバー一覧ページ(users/index.html.slim)***************//
-.users {
-  margin: 15px;
-  border: 1px solid #ccc;
-  .user-list {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0 10px 15px;
-    .user-photo {
-      img {
-        width: 50px;
-        height: 50px;
-        float: left;
-        border-radius: 50%;
-      }
-    }
-    .name {
-      font-size: 16px;
-      font-weight: 500;
-      color: #444;
-      float: left;
-      padding-left: 15px;
-      line-height: 50px;
-    }
-  }
-  .user-list:last-child {
-      border-bottom: transparent;
-  }
-}
-
-
-//*************** アカウント作成ページ(users/new.html.slim)***************//
-.home-bg {
-  .sign-up-title {
-    color: #fff;
-    position: relative;
-    font-size: 22px;
-    font-weight: 400;
-    padding-top: 40px;
-    &:before {
-      content: '';/*何も入れない*/
-      display: inline-block;/*忘れずに！*/
-      width: 120px;/*画像の幅*/
-      height: 40px;/*画像の高さ*/
-      background-size: contain;
-      position: relative;
-      top: 6px;
-      margin-right: 2px;
-      background-image: url(../images/musubi-logo-type-white.png);
-    }
-  }
-  .sign-up-form, .sign-in-form {
-    text-align: left;
-    position: relative;
-    background: rgba(255,255,255,0.9);
-    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.4);
-    padding: 30px 15px;
-    margin: 20px;
-    border-radius: 5px;
-    .form-control {
-      width: 310px;
-      height: 40px;
-      /* border: transparent; */
-      border: 1px solid #7d7d7d;
-      border-radius: 20px;
-      padding-left: 20px;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    .btn-primary {
-      margin-top: 20px;
-      background: rgba(248, 108, 48, .9);
-      color: #fff;
-      width: 310px;
-      height: 50px;
-      border: transparent;
-      border-radius: 30px;
-      font-size: 16px;
-    }
-  }
-}
-//*************** アカウント表示ページ(users/show.html.slim)***************//
-.user-info {
-  background-color: #f2f2f2;
-  .prof-edit-icon {
-    img {
-      width: 30px;
-      height: 30px;
-      float: right;
-      margin-top: 25px;
-      margin-right: 15px;
-    }
-  }
-  .prof-icon-box {
-    width: 80px;
-    margin: 0 auto;
-    padding-top: 40px;
-    .prof-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    }
-  }
-  .prof-name {
-    text-align: center;
-    font-size: 20px;
-  }
-  .prof-sns {
-        width: 272px;
-        margin: 5px auto;
-    .prof-sns-icon {
-      font-size: 10px;
-      display: inline-block;
-      color: #fff;
-      border-radius: 10px;
-      padding: 1px 7px 2px;
-      margin-right: 5px;
-      &:before {
-        content: '';/*何も入れない*/
-        display: inline-block;/*忘れずに！*/
-        width: 15px;/*画像の幅*/
-        height: 15px;/*画像の高さ*/
-        background-size: contain;
-        position: relative;
-        top: 3px;
-        margin-right: 6px;
-      }
-    }
-    .prof-fb {
-      background: rgba(76,90,143,1);
-      padding-left: 5px;
-      &:before {
-        background-image: url(../images/sns-icon-fb.png);
-        top: 4px;
-        margin-right: 5px;
-      }
-    }
-    .prof-tw {
-      background: rgba(86,161,236,1);
-      &:before {
-      background-image: url(../images/sns-icon-tw.png);
-     }
-    }
-    .prof-insta {
-      background: radial-gradient(circle at 35% 128%, #fdf497 0%, #fdf497 0%, #fd5949 20%, #d6249f 40%, #285AEB 100%);
-      &:before {
-        top: 4px;
-        background-image: url(../images/sns-icon-insta.png);
-      }
-    }
-  }
-  .prof-detail-text {
-    p {
-      font-size: 12px;
-      font-weight: 300;
-      padding: 10px 15px 15px;
-      letter-spacing: 1.5px;
-    }
-  }
-}
-.prof {
-  .container {
-    background: none;
-    .prof-list {
-      border-bottom: 1px solid #ccc;
-      .prof-item {
-        float: left;
-        font-size: 12px;
-        color: $main-color;
-        width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
-        width : -webkit-calc(100% / 3) ;
-        width : calc(100% / 3) ;
-        text-align: center;
-        border-right: 1px solid #ccc;
-        padding: 10px 0;
-      }
-      .prof-item:last-child {
-        border-right: transparent;
-      }
-      .active-prof-list {
-        color: #fff;
-        background: $main-color;
-      }
-    }
-    .prof-text-list {
-      .prof-text-item {
-        .thanksletters {
-          padding-left: 0;
-        }
-        .thanks-letter {
-          margin: 15px;
-          padding: 10px 12px;
-          border: 1px solid #ccc;
-          border-radius: 3px;
-          .user {
-            margin-bottom: -8px;
-            a {
-              font-size: 16px;
-              color: #444;
-              font-weight: 400;
-              text-decoration: none;
-            }
-          }
-          .delete-btn {
-            img {
-              width: 18px;
-              float: right;
-              margin-top: -17px;
-            }
-          }
-          .timestamp {
-            font-size: 10px;
-            color: #888;
-          }
-          .thanks-letter-text {
-            p {
-              font-size: 12px;
-              color: #444;
-            }
-          }
-          .thanks-bird {
-            width: 35px;
-            float: right;
-            margin-top: -10px;
-          }
-        }
-        .payforwards {
-          padding-left: 0;
-        }
-      }
-      .update {
-        text-align: center;
-        padding-top: 80px;
-        font-size: 14px;
-      }
-      .hide {
-        display: none;
-      }
-      .tag {
-        .thanks-letter {
-          color: #fff;
-          font-size: 16px;
-          text-align: center;
-          background: #db5565;
-          width: 345px;
-          height: 50px;
-          border-radius: 50px;
-          border: transparent;
-          box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-          margin-top: 60px;
-        }
-      }
-    }
-  }
-}
-.user a {
-  text-decoration: none;
-}
-
-//*************** アカウント編集ページ(users/edit.html.slim)***************//
-.edit-user {
-  background: #f2f2f2;
-  .form-heading {
-  font-size: 20px;
-  font-weight: 400;
-  color: #333;
-  background: #fff;
-  text-align: center;
-  padding-top: 25px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ccc;
-  }
-}
-.container {
-  background: #f2f2f2;
-  padding-bottom: 60px;
-  .field-title {
-    font-size: 14px;
-    color: #666;
-    padding-left: 15px;
-  }
-  .field{
-    input::placeholder, textarea::placeholder {
-    font-size: 14px;
-    color: #ccc;
-    }
-    .picture {
-      padding-left: 5px;
-    
-    padding-bottom: 15px;
-    }
-  }
-  .field-first {
-    padding-top: 20px;
-  }
-  .name-text, .self-intro-text, .fb-account-text, .tw-account-text, .insta-account-text {
-    font-size: 14px;
-    padding: 15px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    background: #fff;
-    display: block;
-    width: 100vw;
-    height: 50px;
-    border: transparent;
-  }
-  .self-intro-text {
-    height: 150px;
-  }
-  .actions {
-    text-align: center;
-    background: $btn-color;
-    width: 345px;
-    height: 50px;
-    margin: 60px auto 0;
-    border-radius: 50px;
-    line-height: 50px;
-      input[type="submit"] {
-        font-size: 16px;
-        color: #fff;
-      }
-  }
-}
-//*************** ログインページ(sessions/new.html.slim)***************//
-.home-bg {
-  .sign-in-title {
-    color: #fff;
-    position: relative;
-    font-size: 24px;
-    font-weight: 400;
-    padding-top: 65px;
-  }
-  .link-signup {
-    position: relative;
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
   }
 }
 

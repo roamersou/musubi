@@ -33,10 +33,9 @@
                         = link_to new_thanksletter_path({user_id: @user.id})
                             |
                             button.thanks-letter ありがとうを伝える
-                            
             li.prof-text-item.hide
                 .content
-                    ol.payforwards
+                    ol.payforwards.clearfix
                         = render @payforwards
                     = will_paginate @payforwards
                 .tag

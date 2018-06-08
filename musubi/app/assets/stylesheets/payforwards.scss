@@ -13,6 +13,7 @@ $btn-color: #db5565;
 	background: $main-color;
 	height: 65px;
 	position: relative;
+	box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.2);
 	.icon-left {
 		position: absolute;
 	    top: 28px;
@@ -54,7 +55,7 @@ $btn-color: #db5565;
 	display: none;
 	.header-menu-list {
 		color: #fff;
-		padding:0 15px;
+		padding:5px 15px 0;
 	    font-size: 16px;
 	    font-weight: 250;
 	    .header-menu-item {
@@ -68,7 +69,6 @@ $btn-color: #db5565;
 	}
 }
 .menu-list {
-    width: 375px;
     overflow: hidden;
     .menu-item {
 		color: #ccc;
@@ -100,18 +100,19 @@ $btn-color: #db5565;
 .main-menu {
 	.content-list {
 		.content-item {
+			padding-bottom: 30px;
 			.item-list {
 				float: left;
 			    width: 44vw;
 			    margin-top: 15px;
-			    margin-left: 15px;
+			    margin-left: 4vw;
 			    padding-bottom: 6px;
     			letter-spacing: 0.7px;
     			border: 1px solid #ccc;
-    			box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    			box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.2);
 				img {
-					width: 163px;
-					height: 100px;
+					width: 100%;
+					height: 100%;
 				}
 				.pf-place {
 					font-size: 10px;
@@ -135,6 +136,7 @@ $btn-color: #db5565;
 				    font-weight: 600;
 				    color: #444;
 				    text-align: center;
+				    padding: 0 5px;
 				}
 			}
 		}
@@ -149,6 +151,7 @@ $btn-color: #db5565;
 	position: fixed;
     right: -13px;
     bottom: -13px;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
 	.create-item {
 		color: #fff;
 		display: block;
@@ -211,11 +214,10 @@ $btn-color: #db5565;
 	.actions {
 		text-align: center;
 		background: $btn-color;
-		width: 345px;
-		height: 50px;
-		margin: 60px auto 0;
+		margin: 60px 15px;
     	border-radius: 50px;
     	line-height: 50px;
+    	box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
     	input[type="submit"] {
     		font-size: 16px;
     		color: #fff;
@@ -233,7 +235,7 @@ $btn-color: #db5565;
 			height: 232px;
 		}
 		.pf-img {
-			width: 375px;
+			width: 100vw;
 		}
 		.pf-title {
 			font-size: 14px;
@@ -251,6 +253,7 @@ $btn-color: #db5565;
 	.pf-giver-box {
 		border: solid 1px #ccc;
 	    margin: 15px;
+	    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
 	    .giver-icon {
 	    	width: 50px;
 	    	height: 50px;
@@ -343,11 +346,10 @@ $btn-color: #db5565;
 .pf-edit-btn {
 	text-align: center;
 	background: $btn-color;
-	width: 345px;
-	height: 50px;
-	margin: 40px auto 0;
+	margin: 40px 15px 20px;
 	border-radius: 50px;
 	line-height: 50px;
+	box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
 	a {
 		font-size: 16px;
 		color: #fff;
@@ -356,11 +358,10 @@ $btn-color: #db5565;
  .pf-delete-btn {
  	text-align: center;
 	border: solid 1px $btn-color;
-	width: 345px;
-	height: 50px;
-	margin: 20px auto 60px;
+	margin: 20px 15px 40px;
 	border-radius: 50px;
 	line-height: 50px;
+	box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.2);
 	a {
 		font-size: 16px;
 		color: $btn-color;
@@ -372,15 +373,15 @@ $btn-color: #db5565;
 			.user {
 				float: left;
 			    width: 44vw;
-			    margin-top: 15px;
-			    margin-left: 15px;
+			    margin-top: 4vw;
+			    margin-left: 4vw;
 			    padding-bottom: 6px;
     			letter-spacing: 0.7px;
     			border: 1px solid #ccc;
-    			box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    			box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.2);
 				img {
-					width: 163px;
-					height: 100px;
+					width: 100%;
+					height: 100%;
 					box-shadow: none;
 					margin: 0;
 					border-radius: 0;
@@ -409,6 +410,7 @@ $btn-color: #db5565;
 				    color: #444;
 				    text-align: center;
 				    line-height: 1.5;
+				    padding: 0 5px;
 				}
 			}
 		}
