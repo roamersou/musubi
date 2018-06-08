@@ -34,7 +34,9 @@ $btn-color: #db5565;
 		margin: 0 auto;
 		padding-top: 23px;
 		.musubi-icon {
-			width: 100px;
+			img {
+				width: 100px;
+			}
 		}
 	}
 	.icon-right {
@@ -249,21 +251,30 @@ $btn-color: #db5565;
 	    	height: 50px;
 	    	float: left;
 	    }
+	    .giver-prof-icon {
+	    	width: 40px;
+		    height: 40px;
+		    border-radius: 50%;
+		    float: left;
+		    margin-top: 10px;
+		    margin-left: 25px;
+	    }
 	    .pf-name {
 			font-size: 14px;
-			font-weight: 400;
-			color: #444;
-			float: left;
-			padding-top: 10px;
-		}
-		.pf-selfintro {
-			font-size: 10px;
-			line-height: 15px;
 		    font-weight: 400;
 		    color: #444;
 		    float: left;
-		    padding: 0px 10px 10px 50px;
-		    margin-top: -15px;
+		    padding-top: 20px;
+		    padding-left: 15px;
+		}
+		.pf-selfintro {
+		    font-size: 10px;
+		    line-height: 15px;
+		    font-weight: 400;
+		    color: #444;
+		    float: left;
+		    padding: 10px 10px 10px 15px;
+		    margin-top: 0;
 		}
 	}
 	.pf-body {

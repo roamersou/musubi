@@ -9,7 +9,7 @@
 		= link_to("/users/#{@payforward.user.id}")
 			|
 			= image_tag '/images/giver-icon.png', :class => "giver-icon"
-			= image_tag @payforward.user.picture.url unless @payforward.user.picture.url.blank? 
+			= image_tag @payforward.user.picture.url unless @payforward.user.picture.url.blank?, :class => "giver-prof-icon"
 			h1.pf-name = @payforward.user.name+"さん"
 			h1.pf-selfintro = @payforward.user.self_intro
     .pf-body
