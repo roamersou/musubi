@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180531064728) do
+ActiveRecord::Schema.define(version: 20180612085615) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -29,6 +29,27 @@ ActiveRecord::Schema.define(version: 20180531064728) do
     t.string "picture"
     t.index ["user_id", "created_at"], name: "index_payforwards_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_payforwards_on_user_id"
+  end
+
+  create_table "private_conversations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "recipient_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id", "sender_id"], name: "index_private_conversations_on_recipient_id_and_sender_id", unique: true
+    t.index ["recipient_id"], name: "index_private_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_private_conversations_on_sender_id"
+  end
+
+  create_table "private_messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
+    t.boolean "seen", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_private_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_private_messages_on_user_id"
   end
 
   create_table "thanksletters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -58,5 +79,6 @@ ActiveRecord::Schema.define(version: 20180531064728) do
   end
 
   add_foreign_key "payforwards", "users"
+  add_foreign_key "private_messages", "users"
   add_foreign_key "thanksletters", "users"
 end
