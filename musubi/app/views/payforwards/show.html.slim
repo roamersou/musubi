@@ -21,6 +21,8 @@
 	    h2.pf-about-title 恩贈りへの想い
 	    p.pf-about-text= simple_format(@payforward.content)
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
+	.contact-user
+		= render leave_message_partial_path
 
 p.back-btn= link_to '一覧へ戻る', payforwards_path
 - if current_user?(@payforward.user)

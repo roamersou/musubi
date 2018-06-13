@@ -7,6 +7,7 @@ class PayforwardsController < ApplicationController
 
   def show
     @payforward = Payforward.find(params[:id])
+    @message_has_been_sent = conversation_exist?
   end
 
   def new
@@ -58,5 +59,9 @@ class PayforwardsController < ApplicationController
     def correct_user
       @payforward = current_user.payforwards.find_by(id: params[:id])
       redirect_to payforward_path if @payforward.nil?
-  end
+    end
+
+    def conversation_exist?
+      Private::Conversation.between_users(current_user.id, @payforward.user.id).present?
+    end
 end

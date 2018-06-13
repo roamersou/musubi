@@ -1,0 +1,4 @@
+= form_tag({controller: "private/conversations", action: "create"}, method: "post", remote: true) do
+    = hidden_field_tag(:payforward_id, @payforward.id)
+    = text_area_tag(:message_content, nil, rows: 3, class: 'form-control', placeholder: 'ユーザにメッセージを送信する')
+    = submit_tag('メッセージを送信', class: 'btn send-message-to-user')

@@ -1,0 +1,1 @@
+$('.contact-user').replaceWith('<div>メッセージは送信されませんでした</div>');
