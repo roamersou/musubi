@@ -3,7 +3,7 @@
   <head>
     <title>Musubi</title>
     <%= csrf_meta_tags %>
-
+    <%= Gon::Base.render_data %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -13,6 +13,7 @@
 
   <body>
     <%= yield %>
+    <%= render 'layouts/application/private_conversations_windows' %>
     <%# <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
