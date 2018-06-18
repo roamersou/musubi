@@ -46,7 +46,7 @@ textarea {
   }
   
   .close-conversation, .add-people-to-chat, .add-user-to-contacts, .contact-request-sent {
-    color: white;
+    color: gray;
     float: right;
     height: 40px;
     width: 40px;
@@ -86,9 +86,9 @@ textarea {
     }
   }
   
-  .loading_svg {
-    display: none;
-  }
+  // .loading_svg {
+  //   display: none;
+  // }
   
   .loading_svg {
     text-align: center;
@@ -144,9 +144,9 @@ textarea {
   
   }
   
-  .load-more-messages {
-    display: none;
-  }
+  // .load-more-messages {
+  //   display: none;
+  // }
   
   .loading-more-messages {
     font-size: 20px;
