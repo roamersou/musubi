@@ -106,7 +106,7 @@ $btn-color: #db5565;
 			    width: 44vw;
 			    margin-top: 15px;
 			    margin-left: 4vw;
-			    padding-bottom: 6px;
+			    padding-bottom: 8px;
     			letter-spacing: 0.7px;
     			border: 1px solid #ccc;
     			box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.2);
@@ -119,6 +119,7 @@ $btn-color: #db5565;
 				    font-weight: 400;
 				    color: #999;
 				    text-align: center;
+				    padding: 5px 0;
 				    &:before {
 				      content: '';/*何も入れない*/
 				      display: inline-block;/*忘れずに！*/
@@ -324,6 +325,10 @@ $btn-color: #db5565;
 		}
 	}
 }
+.container {
+	padding: 0;
+	margin: 0;
+}
 .edit-pf {
 	background: #f2f2f2;
 	.edit-pf-title {
@@ -332,8 +337,8 @@ $btn-color: #db5565;
 	color: #333;
 	background: #fff;
 	text-align: center;
-	padding-top: 25px;
-    padding-bottom: 5px;
+	padding-top: 30px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
 	}
 }

@@ -121,6 +121,12 @@ $btn-color: #db5565;
   }
 }
 //*************** アカウント表示ページ(users/show.html.slim)***************//
+.row {
+  margin: 0;
+  .container {
+    padding: 0;
+  }
+}
 .user-info {
   background-color: #f2f2f2;
   .prof-edit-icon {
@@ -145,6 +151,7 @@ $btn-color: #db5565;
   .prof-name {
     text-align: center;
     font-size: 20px;
+    padding: 10px 0 5px;
   }
   .prof-sns {
         width: 272px;
@@ -154,7 +161,7 @@ $btn-color: #db5565;
       display: inline-block;
       color: #fff;
       border-radius: 10px;
-      padding: 1px 7px 2px;
+      padding: 1px 7px 5px;
       margin-right: 5px;
       &:before {
         content: '';/*何も入れない*/
@@ -224,6 +231,7 @@ $btn-color: #db5565;
       }
     }
     .prof-text-list {
+      margin-bottom: 60px;
       .prof-text-item {
         .thanksletters {
           padding-left: 0;
@@ -235,7 +243,7 @@ $btn-color: #db5565;
           border-radius: 3px;
           box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
           .user {
-            margin-bottom: -8px;
+            margin-bottom: -3px;
             a {
               font-size: 16px;
               color: #444;
@@ -258,6 +266,7 @@ $btn-color: #db5565;
             p {
               font-size: 12px;
               color: #444;
+              padding-top: 5px;
             }
           }
           .thanks-bird {
@@ -288,7 +297,7 @@ $btn-color: #db5565;
 
         .thanks-letter {
           color: #fff;
-          padding: 12px 0;
+          padding: 15px 0;
           margin: 0;
           border: transparent;
           font-size: 16px;
@@ -306,13 +315,13 @@ $btn-color: #db5565;
 .edit-user {
   background: #f2f2f2;
   .form-heading {
-  font-size: 20px;
-  font-weight: 400;
-  color: #333;
-  background: #fff;
-  text-align: center;
-  padding-top: 25px;
-    padding-bottom: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    background: #fff;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
   }
 }
@@ -323,6 +332,7 @@ $btn-color: #db5565;
     font-size: 14px;
     color: #666;
     padding-left: 15px;
+    font-weight: 400;
   }
   .field{
     input::placeholder, textarea::placeholder {
