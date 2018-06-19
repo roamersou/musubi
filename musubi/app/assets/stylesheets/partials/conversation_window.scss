@@ -4,7 +4,7 @@ textarea {
   
   .panel {
     margin: 0;
-    border: none !important;
+    // border: none !important;
   }
   
   .panel-heading {
@@ -23,17 +23,17 @@ textarea {
     position: fixed;
     bottom: 0;
     right: 0;
-    list-style-type: none;
+    // list-style-type: none;
   }
   
   .conversation-heading, .conversation-heading-full, .new_chat_window {
     // background-color: $navbarColor !important;
-    color: black !important;
+    color: gray !important;
     height: 40px;
-    border: none !important;
-    a {
-      color: white !important;
-    }
+    // border: none !important;
+    // a {
+    //   color: black !important;
+    // }
   
   }
   
@@ -46,13 +46,13 @@ textarea {
   }
   
   .close-conversation, .add-people-to-chat, .add-user-to-contacts, .contact-request-sent {
-    color: white;
+    color: gray;
     float: right;
     height: 40px;
     width: 40px;
     font-size: 20px;
     font-size: 2.0rem;
-    border: none;
+    // border: none;
     // background-color: $navbarColor;
   }
   
@@ -65,30 +65,30 @@ textarea {
   
   .close-conversation {
     &:hover {
-      border: none;
-      background-color: white;
+      // border: none;
+      background-color: black;
       // color: $navbarColor !important;
     }
     &:visited, &:focus {
-      color: white;
+      color: black;
     }
   }
   
-  .form-control[disabled] {
-    // background-color: $navbarColor;
-  }
+  // .form-control[disabled] {
+  //   // background-color: $navbarColor;
+  // }
   
   .send-private-message, .send-group-message {
     textarea {
       border-radius: 0;
-      border: none;
+      // border: none;
       border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
   }
   
-  .loading_svg {
-    display: none;
-  }
+  // .loading_svg {
+  //   display: none;
+  // }
   
   .loading_svg {
     text-align: center;
@@ -144,9 +144,9 @@ textarea {
   
   }
   
-  .load-more-messages {
-    display: none;
-  }
+  // .load-more-messages {
+  //   display: none;
+  // }
   
   .loading-more-messages {
     font-size: 20px;
@@ -155,6 +155,6 @@ textarea {
     text-align: center;
   }
   
-  .send-message {
-    display: none;
-  }
+  // .send-message {
+  //   display: none;
+  // }
