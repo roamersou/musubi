@@ -8,5 +8,6 @@ class CreatePrivateMessages < ActiveRecord::Migration[5.1]
       
       t.timestamps
     end
+    add_index :private_messages, [:conversation_id, :created_at]
   end
 end
