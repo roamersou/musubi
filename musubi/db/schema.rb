@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612085615) do
+ActiveRecord::Schema.define(version: 20180621025507) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -44,8 +44,7 @@ ActiveRecord::Schema.define(version: 20180612085615) do
   create_table "private_messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
     t.bigint "user_id"
-    t.bigint "conversation_id"
-    t.boolean "seen", default: false
+    t.string "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_private_messages_on_conversation_id"

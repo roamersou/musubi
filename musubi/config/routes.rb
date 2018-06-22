@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   resources :payforwards
   resources :events
   resources :thanksletters, only: [:new, :create, :destroy]
+
+  namespace :private do
+    resources :conversations
+  end
+
 end
