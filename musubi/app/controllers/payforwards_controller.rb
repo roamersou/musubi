@@ -7,6 +7,7 @@ class PayforwardsController < ApplicationController
 
   def show
     @payforward = Payforward.find(params[:id])
+    @fb_account = User.find_by(id: @payforward.user_id).fb_account
   end
 
   def new

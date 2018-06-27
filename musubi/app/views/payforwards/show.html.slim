@@ -21,6 +21,9 @@
 	    h2.pf-about-title 恩贈りへの想い
 	    p.pf-about-text= simple_format(@payforward.content)
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
+	.to-chat
+		- if current_user != @payforward.user
+			=link_to "恩を受け取りに行く", @fb_account unless @fb_account.blank?
 
 p.back-btn= link_to '一覧へ戻る', payforwards_path
 - if current_user?(@payforward.user)
