@@ -59,6 +59,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -271,6 +272,14 @@ GEM
     ovirt-engine-sdk (4.2.4)
       json (>= 1, < 3)
     pg (0.20.0)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.5.1)
+      byebug (~> 9.1)
+      pry (~> 0.10)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     public_suffix (3.0.1)
     puma (3.11.2)
     rack (2.0.3)
@@ -398,6 +407,8 @@ DEPENDENCIES
   mini_magick (= 4.7.0)
   mysql2 (>= 0.3.18, < 0.5)
   pg (= 0.20.0)
+  pry-byebug
+  pry-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails-i18n
@@ -413,4 +424,4 @@ DEPENDENCIES
   will_paginate (= 3.1.6)
 
 BUNDLED WITH
-   1.16.0
+   1.16.2

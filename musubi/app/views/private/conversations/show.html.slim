@@ -1,3 +1,8 @@
-h1 chat room   
-.content
-    = render @messages
+h1 Chat room
+ol.messages
+  = render @messages
+
+.form
+  = render "form"
+/   label メッセージを入力
+/   input type="text" data-behavior="conversation_speaker"

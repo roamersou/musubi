@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   namespace :private do
     resources :conversations
+    resources :messages, only: [:create, :destroy]
   end
+
+  # Serve websocket cable requests in-process
+  # mount ActionCable.server => '/cable'
 
 end

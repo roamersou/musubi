@@ -1,0 +1,9 @@
+= form_for(@message) do |f|
+    .field
+    / = hidden_field_tag(:conversation_id, @conversation_id)
+    = f.text_field :conversation_id, value: "#{@conversation_id}", type: "hidden", name: "conversation_id"
+    = f.label :メッセージ
+    <br>
+    = f.text_area :content, class: 'form-control', placeholder: "200字以内"
+    .field
+    = f.submit " 送信する", class: "btn btn-primary"

@@ -1,2 +1,4 @@
 .message
     p = message.content
+span.timestamp
+    = time_ago_in_words(message.created_at) + "前"

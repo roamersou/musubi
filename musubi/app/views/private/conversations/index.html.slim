@@ -1,0 +1,4 @@
+ul.conversations
+    - @conversations.each do |conv|
+        = link_to private_conversation_path(conv)
+            h2.name = User.find_by(id: conv.recipient_id).name

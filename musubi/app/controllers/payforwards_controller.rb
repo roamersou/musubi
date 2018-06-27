@@ -58,5 +58,5 @@ class PayforwardsController < ApplicationController
     def correct_user
       @payforward = current_user.payforwards.find_by(id: params[:id])
       redirect_to payforward_path if @payforward.nil?
-  end
+    end
 end
