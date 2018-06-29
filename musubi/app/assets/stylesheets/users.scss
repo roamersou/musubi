@@ -302,6 +302,18 @@ $btn-color: #db5565;
   text-decoration: none;
 }
 
+.payforward {
+  display: inline-flex;
+  .content {
+    .user {
+      margin-bottom: 0;
+      img {
+        height: 27vw;
+      }
+    }
+  }
+}
+
 //*************** アカウント編集ページ(users/edit.html.slim)***************//
 .edit-user {
   background: #f2f2f2;
