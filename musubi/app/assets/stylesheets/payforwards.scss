@@ -324,22 +324,25 @@ $btn-color: #db5565;
 		}
 	}
 	.to-chat {
-        text-align: center;
-        background: $btn-color;
-        margin: 15px;
-        border-radius: 50px;
-        line-height: 50px;
-        box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
         a {
+            display: block;
+            background: $btn-color;
+            font-size: 16px;
+            color: #fff;
+            margin: 15px;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 50px;
+            box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
             font-size: 16px;
             color: #fff;
         }
         .attention {
-            font-size: 12px;
+            font-size: 11px;
             padding-left: 15px;
             padding-bottom: 30px;
         }
-    }
+	}
 }
 .edit-pf {
 	background: #f2f2f2;
@@ -366,6 +369,7 @@ $btn-color: #db5565;
 	text-align: center;
 	background: $btn-color;
 	margin: 40px 15px 20px;
+	margin-bottom: 30px;
 	border-radius: 50px;
 	line-height: 50px;
 	box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
