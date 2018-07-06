@@ -358,6 +358,7 @@ $btn-color: #db5565;
 	}
 }
 .back-btn {
+	padding-bottom: 30px;
 	padding-left: 15px;
     color: #444;
     text-decoration: underline;
@@ -368,7 +369,7 @@ $btn-color: #db5565;
 .pf-edit-btn {
 	text-align: center;
 	background: $btn-color;
-	margin: 40px 15px 20px;
+	margin: 20px 15px;
 	margin-bottom: 30px;
 	border-radius: 50px;
 	line-height: 50px;
