@@ -19,13 +19,15 @@ html
         .musubi-icon
             = link_to image_tag('/images/musubi-logo-type-white.png'), payforwards_path
       .icon-right
-        = image_tag '/images/message-icon.png', :class => "message-icon"
+        = link_to "/users/#{current_user.id}"
+            |
+            = image_tag '/images/profile-icon.png', :class => "message-icon"
     .header-menu
       ul.header-menu-list
           / li.header-menu-item UKIUKI残高
           = link_to "/users/#{current_user.id}"
             |
-            li.header-menu-item プロフィール登録・編集
+            li.header-menu-item Myプロフィール
           / li.header-menu-item 信頼できる仲間をMusubiに招待する
           = link_to "https://camp-fire.jp/projects/view/55604", :target =>["_blank"]
             |
