@@ -23,7 +23,7 @@
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
 	.to-chat
 		- if current_user != @payforward.user
-			=link_to "恩を受け取りに行く", @fb_account unless @fb_account.blank?
+			=link_to "恩を受け取りに行く", @fb_account, :target =>["_blank"] unless @fb_account.blank?
 			p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
 
 p.back-btn= link_to '一覧へ戻る', payforwards_path

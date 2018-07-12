@@ -18,13 +18,13 @@
                   = f.label :メールアドレス
                   <br>
                   = f.email_field :email, class: 'form-control'
-                  .field
-                  = f.label :パスワード
-                  <br>
-                  = f.password_field :password, class: 'form-control'
-                  .field
-                  = f.label :password_confirmation, "パスワード確認"
-                  <br>
-                  = f.password_field :password_confirmation, class: 'form-control'
-                  .field
+                  / .field
+                  / = f.label :パスワード
+                  / <br>
+                  / = f.password_field :password, class: 'form-control'
+                  / .field
+                  / = f.label :password_confirmation, "パスワード確認"
+                  / <br>
+                  / = f.password_field :password_confirmation, class: 'form-control'
+                  / .field
                   = f.submit "作成する", class: "btn btn-primary"

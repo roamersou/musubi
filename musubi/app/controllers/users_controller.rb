@@ -20,10 +20,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @random_password =  SecureRandom.urlsafe_base64
+    password = { password: @random_password, password_confirmation: @random_password}
+    @user = User.new(user_params.merge(password))
     if @user.save
       log_in @user
       flash[:success] = "ユーザー登録が完了しました！"
+      NoticeMailer.send_mail(@user).deliver
       redirect_to("/users/#{@user.id}")
     else
       render "new"

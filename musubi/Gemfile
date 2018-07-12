@@ -49,6 +49,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'mysql2', '>= 0.3.18', '< 0.5'
+  # gem "letter_opener"
 end
 
 group :development do
