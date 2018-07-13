@@ -32,9 +32,12 @@ $btn-color: #db5565;
     		height: 200px;
     		margin-top: 5px;
     		padding: 10px;
-    		border: solid 1px #ccc;
+    		border: transparent;
     		font-size: 14px;
     		border-radius: 3px;
+    		box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+          	background: url(../images/thanks-letter-img.png);
+          	background-size: contain;
 		}
 	}
 	.actions {
