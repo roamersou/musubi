@@ -8,4 +8,5 @@
             = time_ago_in_words(thanksletter.created_at)+"前"
         .thanks-letter-text
         	= simple_format(thanksletter.content)
-    = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"
+    .clear-fix
+        = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"

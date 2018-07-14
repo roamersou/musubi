@@ -42,7 +42,7 @@ $btn-color: #db5565;
 	}
 	.icon-right {
 		position: absolute;
-	    top: 28px;
+	    top: 26px;
 	    right: 15px;
 		.message-icon {
 			width: 30px;
@@ -358,6 +358,7 @@ $btn-color: #db5565;
 	}
 }
 .back-btn {
+	padding-bottom: 30px;
 	padding-left: 15px;
     color: #444;
     text-decoration: underline;
@@ -368,7 +369,7 @@ $btn-color: #db5565;
 .pf-edit-btn {
 	text-align: center;
 	background: $btn-color;
-	margin: 40px 15px 20px;
+	margin: 20px 15px;
 	margin-bottom: 30px;
 	border-radius: 50px;
 	line-height: 50px;
@@ -394,7 +395,6 @@ $btn-color: #db5565;
 .payforward {
 		.content {
 			.user {
-				float: left;
 			    width: 44vw;
 			    margin-top: 4vw;
 			    margin-left: 4vw;
