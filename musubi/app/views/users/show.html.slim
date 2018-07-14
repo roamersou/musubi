@@ -13,6 +13,8 @@
         p.prof-name = @user.name
         .prof-sns
             a.prof-sns-icon.prof-fb> href = @user.fb_account Facebook
+            / |
+            /   = link_to "Facebook", @user.fb_account, :target =>["_blank"]
             a.prof-sns-icon.prof-tw> href = @user.tw_account Twitter
             a.prof-sns-icon.prof-insta> href = @user.insta_account Instagram
         .prof-detail-text
