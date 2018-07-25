@@ -2,15 +2,15 @@
 	= image_tag '/images/musubi-logo-type-white.png', :class => "service-title"
 	h1.service-subtitle 感謝で繋がる恩贈りコミュニティ
 	.content.signup-btn
-		= link_to new_user_path
+		= link_to login_path
 			|
-			button.signup アカウントを作成する
+			button.signup ログイン
 	/ = link_to payforwards_path
 	/  	button.terms Facebookでログイン
 		
-	= link_to login_path
+	= link_to new_user_path
 		|
-		button.login ログイン
+		button.login サインアップ
 
 	= link_to page_path('terms')
 	  button.terms 利用規約
