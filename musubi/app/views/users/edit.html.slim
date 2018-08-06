@@ -22,4 +22,7 @@
     .field
         = f.label :Instagramアカウント, :class => "field-title"
         = f.text_field :insta_account, placeholder: "URLを貼ってください", :class => "insta-account-text"
+    .field
+        = f.label :パスワード, :class => "field-title"
+        = f.password_field :password, placeholder: "8字以上", :class => "password"
     .actions = f.submit '編集を保存する'
