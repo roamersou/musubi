@@ -26,6 +26,9 @@ html
     .header-menu
       ul.header-menu-list
           / li.header-menu-item UKIUKI残高
+          = link_to payforwards_path
+            |
+            li.header-menu-item TOPページ
           = link_to "/users/#{current_user.id}"
             |
             li.header-menu-item Myプロフィール
