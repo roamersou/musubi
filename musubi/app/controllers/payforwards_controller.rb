@@ -21,7 +21,7 @@ class PayforwardsController < ApplicationController
     @payforward = current_user.payforwards.build(payforward_params)
     if @payforward.save
         flash[:success] = "恩贈りを作成しました！"
-        redirect_to("/users/#{params[:user_id]}")
+        redirect_to("/payforwards")
     else
         render "new"
     end

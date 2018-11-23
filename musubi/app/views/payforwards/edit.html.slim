@@ -16,6 +16,6 @@
         = f.label :場所, :class => "field-title"
         = f.text_field :place, placeholder: @payforward.place, :class => "place-text"
       .field
-        = f.label :詳細, :class => "field-title"
+        = f.label :恩贈りへの想い, :class => "field-title"
         = f.text_area :content, placeholder: @payforward.content, :class => "content-text", maxlength: '200'
       .actions = f.submit '編集を保存する'
