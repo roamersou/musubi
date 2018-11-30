@@ -1,0 +1,27 @@
+.main-menu
+  ul.menu-list.header-bottom
+      = link_to users_path
+        |
+        li.menu-item メンバー
+      = link_to payforwards_path
+        |
+        li.menu-item.active-menu-list みんなの恩贈り
+      = link_to events_path
+        |
+        li.menu-item イベント
+
+  .content-list
+      .content-item
+        ul.clearfix
+          - @give_mes.each do |gm|
+            li.item-list
+              = link_to give_me_path(gm)
+                - if gm.picture?
+                    = image_tag gm.picture.url
+                - else
+                    = image_tag "/images/default.png", :class => "prof-icon"
+                h2.pf-place= gm.title
+                h2.pf-title= gm.content
+.create-item-btn
+  = link_to '恩を贈る', new_give_me_path({user_id: current_user.id}), :class => "create-item"
+  = image_tag '/images/UKIUKI-give.png', :class => "give-icon"

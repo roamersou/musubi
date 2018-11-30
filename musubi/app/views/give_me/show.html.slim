@@ -1,0 +1,29 @@
+.payforward_icon
+	.pf-mv
+    	- if @give_me.picture?
+        	= image_tag @give_me.picture.url
+    	- else
+        	= image_tag '/images/default.png', :class => "pf-img"
+		h1.pf-title = @give_me.title
+	.pf-giver-box.clearfix
+		= link_to("/users/#{@give_me.user.id}")
+			|
+			= image_tag'/images/giver-icon.png', :class => "giver-icon"
+			.giver-prof-icon
+				= image_tag @give_me.user.picture.url unless @give_me.user.picture.url.blank?
+			h1.pf-name = @give_me.user.name+"さん"
+			h1.pf-selfintro = @give_me.user.self_intro
+    .pf-body
+	    h2.pf-about-title 恩贈りへの想い
+	    p.pf-about-text= simple_format(@give_me.content)
+	    / h2.pf-thanks-title 恩贈りへのサンクスレター
+	.to-chat
+		- if current_user != @give_me.user
+			=link_to "恩を受け取りに行く", @fb_account, :target =>["_blank"] unless @fb_account.blank?
+			p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
+
+p.back-btn= link_to '一覧へ戻る', give_me_index_path
+- if current_user?(@give_me.user)
+	p.pf-edit-btn= link_to '編集する', edit_give_me_path
+- if current_user?(@give_me.user)
+    p.pf-delete-btn= link_to "削除する", @give_me, method: :delete, data:{confirm:"本当に削除しますか？"}
