@@ -22,6 +22,7 @@ $btn-color: #db5565;
 	border: 2px solid;
 	margin-right: 10px;
 }
+// show.html.slim
 .content-give-me {
 	width:345px;
 	margin: 30px auto;
@@ -103,27 +104,28 @@ $btn-color: #db5565;
 		    padding-top: 10px;
 		}
 	}
-	.to-chat {
-        a {
-            display: block;
-            background: $btn-color;
-            font-size: 16px;
-            color: #fff;
-            margin: 15px;
-            text-align: center;
-            padding: 15px 0;
-            border-radius: 50px;
-            box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
-            font-size: 16px;
-            color: #fff;
-        }
-        .attention {
-            font-size: 11px;
-            padding-left: 15px;
-            padding-bottom: 30px;
-        }
-	}
 }
+.to-chat {
+    a {
+        display: block;
+        background: $btn-color;
+        font-size: 16px;
+        color: #fff;
+        margin: 15px;
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 50px;
+        box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
+        font-size: 16px;
+        color: #fff;
+    }
+    .attention {
+        font-size: 11px;
+        padding-left: 15px;
+        padding-bottom: 30px;
+    }
+}
+// index.html.slim
 .gm-create-item-btn {
 	background: rgba(219,85,101,0.9);
 	width: 100px;
@@ -148,7 +150,7 @@ $btn-color: #db5565;
 	}
 }
 
-// edit.html.erb
+// edit.html.slim
 .create-gm, .edit-gm {
 	background: #f2f2f2;
 	height: 100vh;
