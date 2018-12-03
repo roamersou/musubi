@@ -5,23 +5,33 @@
         li.menu-item メンバー
       = link_to payforwards_path
         |
-        li.menu-item.active-menu-list みんなの恩贈り
-      = link_to events_path
+        li.menu-item ギブユーリスト
+      = link_to give_me_index_path
         |
-        li.menu-item イベント
+        li.menu-item.active-menu-list ギブミーリスト
+      / = link_to events_path
+      /   |
+      /   li.menu-item イベント
 
   .content-list
-      .content-item
+      .content-give-me
         ul.clearfix
           - @give_mes.each do |gm|
-            li.item-list
+            li.give-me-list
               = link_to give_me_path(gm)
-                - if gm.picture?
-                    = image_tag gm.picture.url
-                - else
-                    = image_tag "/images/default.png", :class => "prof-icon"
-                h2.pf-place= gm.title
-                h2.pf-title= gm.content
-.create-item-btn
-  = link_to '恩を贈る', new_give_me_path({user_id: current_user.id}), :class => "create-item"
-  = image_tag '/images/UKIUKI-give.png', :class => "give-icon"
+                .giver-prof-icon.clearfix
+                  / = image_tag gm.user.picture.url unless gm.user.picture.url.blank?
+                  = image_tag "/images/default.png"
+                  .gm-name-box
+                    h1.gm-name = gm.user.name
+                    span.timestamp
+                      = time_ago_in_words(gm.created_at)+"前"
+                  / - if current_user?(gm.user)
+                  /   p.gm-delete-btn= link_to "削除する", gm, xmethod: :delete, data:{confirm:"本当に削除しますか？"}
+                  / - if current_user?(gm.user)
+                  /   p.gm-edit-btn= link_to '編集する', "/give_me/#{gm.id}/edit"
+                p.gm-content= gm.content
+
+.gm-create-item-btn
+  = link_to 'ギブミー投稿', new_give_me_path({user_id: current_user.id}), :class => "create-item"
+  = image_tag '/images/UKIUKI-get.png', :class => "give-icon"

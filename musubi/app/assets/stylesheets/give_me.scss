@@ -1,3 +1,157 @@
 // Place all the styles related to the give-me controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$main-color: #f4ad49;
+$btn-color: #db5565;
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+@mixin common-give-me-list {
+	border: 1px solid #ccc;
+	border-left: 5px solid;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+@mixin common-giver-prof-icon {
+	width: 40px;
+	height:40px;
+	border-radius: 50%;
+	float: left;
+	border: 2px solid;
+	margin-right: 10px;
+}
+.content-give-me {
+	width:345px;
+	margin: 30px auto;
+	.give-me-list:nth-child(1) {
+		@include common-give-me-list;
+		border-left: 5px solid #EFCF60;
+    	.giver-prof-icon img {
+			@include common-giver-prof-icon;
+			border: 2px solid #EFCF60;
+		}
+	}
+	.give-me-list:nth-child(2n) {
+		@include common-give-me-list;
+		border-left: 5px solid #60B0EF;
+    	.giver-prof-icon img {
+			@include common-giver-prof-icon;
+			border: 2px solid #60B0EF;
+		}
+	}
+	.give-me-list:nth-child(3n) {
+		@include common-give-me-list;
+		border-left: 5px solid #F4AD49;
+    	.giver-prof-icon img {
+			@include common-giver-prof-icon;
+			border: 2px solid #F4AD49;
+		}
+	}
+	.give-me-list:nth-child(4n) {
+		@include common-give-me-list;
+		border-left: 5px solid #DB5565;
+    	.giver-prof-icon img {
+			@include common-giver-prof-icon;
+			border: 2px solid #DB5565;
+		}
+	}
+	.give-me-list:nth-child(5n) {
+		@include common-give-me-list;
+		border-left: 5px solid #7ED321;
+    	.giver-prof-icon img {
+			@include common-giver-prof-icon;
+			border: 2px solid #7ED321;
+		}
+	}
+	.give-me-list:nth-child(6n) {
+		@include common-give-me-list;
+		border-left: 5px solid #EFCF60;
+    	.giver-prof-icon img {
+			@include common-giver-prof-icon;
+			border: 2px solid #EFCF60;
+		}
+	}
+	.give-me-list {
+		.gm-name-box {
+			float: left;
+			.gm-name{
+			font-size: 13px;
+		    color: #4A4A4A;
+		    font-weight: 600;
+		    padding-top: 3px;
+			}
+			.timestamp {
+				font-size: 10px;
+	    		display: block;
+			}
+		}
+		.gm-edit-btn, .gm-delete-btn {
+		    a {
+		    	padding-top: 2px;
+		    	padding-left: 10px;
+				color: #4A4A4A;
+    			font-size: 12px;
+    			float: right;
+			}
+		}
+		.gm-content {
+			font-size: 13px;
+		    font-weight: 600;
+		    color: #333;
+		    padding-top: 10px;
+		}
+	}
+	.to-chat {
+        a {
+            display: block;
+            background: $btn-color;
+            font-size: 16px;
+            color: #fff;
+            margin: 15px;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 50px;
+            box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
+            font-size: 16px;
+            color: #fff;
+        }
+        .attention {
+            font-size: 11px;
+            padding-left: 15px;
+            padding-bottom: 30px;
+        }
+	}
+}
+.gm-create-item-btn {
+	background: rgba(219,85,101,0.9);
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	text-align: center;
+	position: fixed;
+    right: -13px;
+    bottom: -13px;
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
+	.create-item {
+		width: 84px;
+		font-size: 14px;
+   		line-height: 17px;
+   		padding-top: 15px;
+   		padding-left: 10px;
+   		color: #fff;
+		display: block;
+	}
+	.give-icon {
+		width: 40px;
+	}
+}
+
+// edit.html.erb
+.gm-container {
+	height: 100vh;
+}
+.gm-edit-field {
+	padding-top: 15px;
+}

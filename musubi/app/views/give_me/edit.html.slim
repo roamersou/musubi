@@ -1,11 +1,11 @@
 .edit-pf
-	h1.edit-pf-title 恩贈りの情報を編集
+	h1.edit-pf-title ギブミーの情報を編集
 .container
   = form_with model: @give_me, url: give_me_path, multipart: true, local: true do |f|
-      .field.field-first
-        = f.label :タイトル, :class => "field-title"
-        = f.text_field :title, placeholder: @give_me.title, :class => "title-text", maxlength: '20'
-      .field
-        = f.label :恩贈りへの想い, :class => "field-title"
-        = f.text_area :content, placeholder: @give_me.content, :class => "content-text", maxlength: '200'
+      / .field.field-first
+      /   = f.label :タイトル, :class => "field-title"
+      /   = f.text_field :title, placeholder: @give_me.title, :class => "title-text", maxlength: '20'
+      .field.gm-edit-field
+        = f.label :ギブミーについて, :class => "field-title"
+        = f.text_area :content, placeholder: @give_me.content, :class => "content-text"
       .actions = f.submit '編集を保存する'

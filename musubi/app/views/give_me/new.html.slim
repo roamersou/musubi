@@ -1,12 +1,8 @@
 .create-pf
-	h1.create-pf-title 恩贈りの情報を入力
+	h1.create-pf-title ギブミーの情報を入力
 	= form_with model: @give_me, url: give_me_index_path, local: true do |f|
     	= render 'shared/error_messages', object: f.object
-    	.field.field-first
-        	= hidden_field_tag(:user_id, @user_id)
-        	= f.label :タイトル, :class => "field-title"
-        	= f.text_field :title, placeholder: 'タイトル (20字以内)', :class => "title-text", maxlength: '20'
     	.field
-        	= f.label :恩贈りへの想い, :class => "field-title"
-        	= f.text_area :content, placeholder: 'あなたの恩贈りへの想いを綴ってください。 (200文字以内)', :class => "content-text", maxlength: '200'
+        	= f.label :ギブミーについて, :class => "field-title"
+        	= f.text_area :content, placeholder: 'ギブミーについて書いてください。', :class => "content-text"
     	.actions = f.submit '公開する'

@@ -5,13 +5,16 @@
         li.menu-item.active-menu-list メンバー
       = link_to payforwards_path
         |
-        li.menu-item みんなの恩贈り
-      = link_to events_path
+        li.menu-item ギブユーリスト
+      = link_to give_me_index_path
         |
-        li.menu-item イベント
+        li.menu-item ギブミーリスト
+      / = link_to events_path
+      /   |
+      /   li.menu-item イベント
       / li.menu-item みんなのサンクスレター
       / .search-box
-      /   input type = "text" 
+      /   input type = "text"
   = will_paginate
   ul.users
     - @users.each do |user|
