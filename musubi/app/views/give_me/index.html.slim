@@ -20,8 +20,7 @@
             li.give-me-list
               = link_to give_me_path(gm)
                 .giver-prof-icon.clearfix
-                  / = image_tag gm.user.picture.url unless gm.user.picture.url.blank?
-                  = image_tag "/images/default.png"
+                  = image_tag gm.user.picture.url unless gm.user.picture.url.blank?
                   .gm-name-box
                     h1.gm-name = gm.user.name
                     span.timestamp
