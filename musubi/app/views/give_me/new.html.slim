@@ -1,8 +1,8 @@
 .create-gm
-	h1.create-gm-title ギブミーの情報を入力
+	h1.create-gm-title Givenの情報を入力
 	= form_with model: @give_me, url: give_me_index_path, local: true do |f|
     	= render 'shared/error_messages', object: f.object
     	.gm-create-field
-        	= f.label :ギブミーについて, :class => "field-title"
-        	= f.text_area :content, placeholder: 'ギブミーについて書いてください。', :class => "content-text"
+        	= f.label :みんなにGiveしてもらいたいことについて, :class => "field-title"
+        	= f.text_area :content, placeholder: 'メンバーのみんなにGiveしてもらいたいことについて書いてください。', :class => "content-text"
     	.actions = f.submit '公開する'

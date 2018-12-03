@@ -18,12 +18,12 @@
 	    p.pf-date-text= simple_format(@payforward.date)
 	    h2.pf-place-title 場所
 	    p.pf-place-text= simple_format(@payforward.place)
-	    h2.pf-about-title 恩贈りへの想い
+	    h2.pf-about-title Giveへの想い
 	    p.pf-about-text= simple_format(@payforward.content)
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
 	.to-chat
 		- if current_user != @payforward.user
-			=link_to "恩を受け取りに行く", @fb_account, :target =>["_blank"] unless @fb_account.blank?
+			=link_to "Giveを受け取る", @fb_account, :target =>["_blank"] unless @fb_account.blank?
 			p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
 
 p.back-btn= link_to '一覧へ戻る', payforwards_path

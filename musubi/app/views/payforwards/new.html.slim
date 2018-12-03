@@ -1,5 +1,5 @@
 .create-pf
-	h1.create-pf-title 恩贈りの情報を入力
+	h1.create-pf-title  Giveの情報を入力
 	= form_with model: @payforward, url: payforwards_path, local: true do |f|
     	= render 'shared/error_messages', object: f.object
     	.top-image
@@ -17,6 +17,6 @@
         	= f.label :場所, :class => "field-title"
         	= f.text_field :place, placeholder: '地域 (渋谷、新宿、横浜など）', :class => "place-text"
     	.field
-        	= f.label :恩贈りへの想い, :class => "field-title"
-        	= f.text_area :content, placeholder: 'あなたの恩贈りへの想いを綴ってください。', :class => "content-text"
+        	= f.label :Giveへの想い, :class => "field-title"
+        	= f.text_area :content, placeholder: 'あなたのGiveについての想いを綴ってください。', :class => "content-text"
     	.actions = f.submit '公開する'

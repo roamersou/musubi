@@ -1,7 +1,7 @@
 .edit-gm
-	h1.edit-gm-title ギブミーの情報を編集
+	h1.edit-gm-title Givenの情報を編集
 	= form_with model: @give_me, url: give_me_path, multipart: true, local: true do |f|
 		.gm-edit-field
-			= f.label :ギブミーについて, :class => "field-title"
+			= f.label :みんなにGiveしてもらいたいことについて, :class => "field-title"
 			= f.text_area :content, placeholder: @give_me.content, :class => "content-text"
 		.actions = f.submit '編集を保存する'

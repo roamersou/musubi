@@ -11,7 +11,7 @@
             p.gm-content= @give_me.content
 .to-chat
 	- if current_user != @give_me.user
-		=link_to "恩を受け取りに行く", @fb_account, :target =>["_blank"] unless @fb_account.blank?
+		=link_to "Giveをする", @fb_account, :target =>["_blank"] unless @fb_account.blank?
 		p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
 
 p.back-btn= link_to '一覧へ戻る', give_me_index_path

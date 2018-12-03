@@ -5,10 +5,10 @@
         li.menu-item メンバー
       = link_to payforwards_path
         |
-        li.menu-item ギブユーリスト
+        li.menu-item みんなのGive
       = link_to give_me_index_path
         |
-        li.menu-item.active-menu-list ギブミーリスト
+        li.menu-item.active-menu-list みんなのGiven
       / = link_to events_path
       /   |
       /   li.menu-item イベント
@@ -32,5 +32,5 @@
                 p.gm-content= gm.content
 
 .gm-create-item-btn
-  = link_to 'ギブミー投稿', new_give_me_path({user_id: current_user.id}), :class => "create-item"
-  = image_tag '/images/UKIUKI-get.png', :class => "give-icon"
+  = link_to 'Given投稿', new_give_me_path({user_id: current_user.id}), :class => "create-item"
+  = image_tag '/images/UKIUKI-get.png', :class => "gm-post-icon"

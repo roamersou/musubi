@@ -68,6 +68,7 @@ $btn-color: #db5565;
 	    }
 	}
 }
+
 .menu-list {
     overflow: hidden;
     .menu-item {
@@ -140,13 +141,28 @@ $btn-color: #db5565;
 				    padding: 0 5px;
 				}
 			}
+			// .item-list:nth-child(5n-4) {
+			// 	border: 2px solid #EFCF60;
+			// }
+			// .item-list:nth-child(5n-3) {
+			// 	border: 2px solid #60B0EF;
+			// }
+			// .item-list:nth-child(5n-2) {
+			// 	border: 2px solid #F4AD49;;
+			// }
+			// .item-list:nth-child(5n-1) {
+			// 	border: 2px solid #DB5565;
+			// }
+			// .item-list:nth-child(5n) {
+			// 	border: 2px solid #7ED321;
+			// }
 		}
 	}
 }
-.create-item-btn {
+.pf-create-item-btn {
 	background: rgba(219,85,101,0.9);
-	width: 100px;
-	height: 100px;
+	width: 105px;
+	height: 102px;
 	border-radius: 50%;
 	text-align: center;
 	position: fixed;
@@ -154,11 +170,13 @@ $btn-color: #db5565;
     bottom: -13px;
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
 	.create-item {
-		color: #fff;
+		font-size: 15px;
+	    line-height: 17px;
+	    padding: 26px 0 3px;
+   		color: #fff;
 		display: block;
-		padding-top: 20px;
 	}
-	.give-icon {
+	.pf-post-icon {
 		width: 40px;
 	}
 }
