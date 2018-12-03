@@ -149,9 +149,56 @@ $btn-color: #db5565;
 }
 
 // edit.html.erb
-.gm-container {
+.create-gm, .edit-gm {
+	background: #f2f2f2;
 	height: 100vh;
-}
-.gm-edit-field {
-	padding-top: 15px;
+	.create-gm-title, .edit-gm-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	background: #fff;
+	text-align: center;
+	padding-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+	}
+	.content-text {
+		font-size: 14px;
+		padding-left: 15px;
+		margin-top: 5px;
+		margin-bottom: 20px;
+		background: #fff;
+		display: block;
+		width: 100vw;
+		height: 50px;
+		border: transparent;
+		padding-top: 15px;
+		height: 215px;
+	}
+	.field-title {
+		font-size: 14px;
+		color: #666;
+		padding-left: 15px;
+	}
+	.gm-edit-field, .gm-create-field {
+		padding-top: 15px;
+		font-size: 14px;
+   		color: #666;
+    	input::placeholder, textarea::placeholder {
+		font-size: 14px;
+		color: #ccc;
+		}
+	}
+	.actions {
+		text-align: center;
+		background: $btn-color;
+		margin: 60px 15px;
+    	border-radius: 50px;
+    	line-height: 50px;
+    	box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+    	input[type="submit"] {
+    		font-size: 16px;
+    		color: #fff;
+    	}
+	}
 }
