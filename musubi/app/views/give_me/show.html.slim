@@ -1,0 +1,22 @@
+.content-list
+      .content-give-me
+        ul.clearfix
+            li.give-me-list
+                .giver-prof-icon.clearfix
+                  / = image_tag gm.user.picture.url unless gm.user.picture.url.blank?
+                  = image_tag "/images/default.png"
+                  .gm-name-box
+                    h1.gm-name = @give_me.user.name
+                    span.timestamp
+                      = time_ago_in_words(@give_me.created_at)+"前"
+                p.gm-content= @give_me.content
+.to-chat
+	- if current_user != @give_me.user
+		=link_to "恩を受け取りに行く", @fb_account, :target =>["_blank"] unless @fb_account.blank?
+		p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
+
+p.back-btn= link_to '一覧へ戻る', give_me_index_path
+- if current_user?(@give_me.user)
+	p.pf-edit-btn= link_to '編集する', edit_give_me_path
+- if current_user?(@give_me.user)
+    p.pf-delete-btn= link_to "削除する", @give_me, method: :delete, data:{confirm:"本当に削除しますか？"}
