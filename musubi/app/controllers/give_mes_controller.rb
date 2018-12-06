@@ -1,4 +1,4 @@
-class GiveMeController < ApplicationController
+class GiveMesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   layout "another_layout"
   def index
@@ -21,7 +21,7 @@ class GiveMeController < ApplicationController
     @give_me = current_user.give_mes.build(give_me_params)
     if @give_me.save
         flash[:success] = "恩贈りを作成しました！"
-        redirect_to("/give_me")
+        redirect_to("/give_mes")
     else
         render "new"
     end
@@ -46,7 +46,7 @@ class GiveMeController < ApplicationController
   def destroy
     GiveMe.find(params[:id]).destroy
     flash[:success] = "恩贈りを削除しました！"
-    redirect_to("/give_me")
+    redirect_to("/give_mes")
   end
 
   private

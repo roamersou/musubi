@@ -185,3 +185,43 @@ $btn-color: #db5565;
     	}
 	}
 }
+// _give_me.slim
+.give_mes {
+	padding: 15px;
+	.give_me:nth-child(5n-4) {
+		border-left: 5px solid #EFCF60;
+	}
+	.give_me:nth-child(5n-3) {
+		border-left: 5px solid #60B0EF;
+	}
+	.give_me:nth-child(5n-2) {
+		border-left: 5px solid #F4AD49;
+	}
+	.give_me:nth-child(5n-1) {
+		border-left: 5px solid #DB5565;
+	}
+	.give_me:nth-child(5n) {
+		border-left: 5px solid #7ED321;
+	}
+	.give_me {
+		border: 1px solid #ccc;
+		border-left: 5px solid;
+		padding: 15px;
+		margin-bottom: 15px;
+		.gm-name-box {
+			.timestamp {
+				font-size: 11px;
+			    color: #999;
+			    font-weight: 500;
+	    		display: block;
+	    		padding: 0;
+			}
+		}
+		.gm-content {
+			font-size: 14px;
+		    font-weight: 600;
+		    color: #333;
+		    padding-top: 5px;
+		}
+	}
+}

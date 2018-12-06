@@ -1,6 +1,6 @@
 .create-gm
 	h1.create-gm-title Givenの情報を入力
-	= form_with model: @give_me, url: give_me_index_path, local: true do |f|
+	= form_with model: @give_me, url: give_mes_path, local: true do |f|
     	= render 'shared/error_messages', object: f.object
     	.gm-create-field
         	= f.label :みんなにGiveしてもらいたいことについて, :class => "field-title"

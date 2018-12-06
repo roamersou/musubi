@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @receiver_id = Thanksletter.where(receiver_id: @user.id)
     @thanksletters = @receiver_id.paginate(page: params[:page])
     @payforwards = @user.payforwards.paginate(page: params[:page])
+    @give_mes = @user.give_mes.paginate(page: params[:page])
   end
 
   def new

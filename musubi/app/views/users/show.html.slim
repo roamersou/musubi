@@ -22,8 +22,8 @@
     .container
         ul.prof-list.clearfix
             li.prof-item.active-prof-list サンクスレター
-            li.prof-item 恩贈りリスト
-            li.prof-item Coming soon
+            li.prof-item GiveYouリスト
+            li.prof-item GiveMeリスト
         ul.prof-text-list.clearfix
             li.prof-text-item
                 .content
@@ -46,7 +46,17 @@
                             |
                             button.thanks-letter ありがとうを伝える
 
-            li.prof-text-item.update.hide 機能を追加でアップデートしていく予定です。<br>もう少しお待ちください。
+            li.prof-text-item.hide
+                .content
+                    ol.give_mes.clearfix
+                        = render @give_mes
+                    = will_paginate @give_mes
+                .tag
+                    - if current_user != @user
+                        = link_to new_thanksletter_path({user_id: @user.id})
+                            |
+                            button.thanks-letter ありがとうを伝える
+            / 機能を追加でアップデートしていく予定です。<br>もう少しお待ちください。
 
 
 javascript:

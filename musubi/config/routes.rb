@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root 'application#hello'
   resources :users
   resources :payforwards
-  resources :give_me
+  resources :give_mes
   resources :events
   resources :thanksletters, only: [:new, :create, :destroy]
 

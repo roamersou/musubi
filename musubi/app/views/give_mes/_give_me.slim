@@ -1,0 +1,10 @@
+.give_me
+    .content
+        .user
+            = link_to give_me_path(give_me)
+                .gm-name-box
+                    span.timestamp
+                      = time_ago_in_words(give_me.created_at)+"前"
+                p.gm-content= give_me.content
+    / span.timestamp
+    /     = time_ago_in_words(payforward.created_at) + "前"

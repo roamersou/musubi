@@ -6,7 +6,7 @@
       = link_to payforwards_path
         |
         li.menu-item みんなのGive
-      = link_to give_me_index_path
+      = link_to give_mes_path
         |
         li.menu-item みんなのGiven
       / = link_to events_path
@@ -25,6 +25,6 @@
             - else
               .user-photo= image_tag("/images/prfile-default.png")
             h2.name= user.name
-            - if current_user.admin? && !current_user?(user) 
+            - if current_user.admin? && !current_user?(user)
               =link_to "削除", user, method: :delete, data: {confirm: "本当に削除しますか？"}
   = will_paginate
