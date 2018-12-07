@@ -1,0 +1,82 @@
+$main-color: #f4ad49;
+$btn-color: #db5565;
+.edit-comment {
+	background: #f2f2f2;
+	.edit-comment-title {
+		font-size: 20px;
+		font-weight: 400;
+		color: #333;
+		background: #fff;
+		text-align: center;
+		padding-top: 25px;
+	    padding-bottom: 5px;
+	    border-bottom: 1px solid #ccc;
+	}
+}
+.comment-ed-content {
+	margin-top: 15px;
+	.comment-list {
+		margin-bottom: 15px;
+		.comment-box {
+			img {
+				width: 30px;
+			    height: 30px;
+			    border-radius: 50%;
+			    float: left;
+			    margin-left: 15px;
+			}
+			.comment-text-box {
+				width: 300px;
+				border: 1px solid #ccc;
+				margin: 0 15px;
+			    border-radius: 5px;
+			    float: left;
+			    .comment-name {
+			    	font-size: 10px;
+		    		font-weight: 600;
+		    		color: #4A4A4A;
+			    }
+			    .comment-content {
+			    	font-size: 12px;
+		    	    padding: 15px;
+					width: 290px;
+			    }
+			}
+		}
+		.timestamp {
+			padding-left: 60px;
+		    font-size: 10px;
+		    color: #9B9B9B;
+		}
+		.comment-delete-btn, .comment-edit-btn {
+			padding-left: 10px;
+			font-size: 10px;
+			a {
+				color: #9B9B9B;
+			}
+		}
+		.cancel {
+			padding-left: 60px;
+			padding-left: 10px;
+			font-size: 10px;
+			float: right;
+			padding: 6px 10px 5px 10px;
+		    margin: 10px 10px 0 0;
+    		border: 1px solid $btn-color;
+    		border-radius: 5px;
+			a {
+				color: $btn-color;
+			}
+		}
+		.actions {
+			margin: 10px 15px 0 0;
+		    float: right;
+		    padding: 1px 5px 2px;
+    		background: $btn-color;
+    		border-radius: 5px;
+    		input {
+    			color: #fff;
+    		}
+		}
+	}
+}

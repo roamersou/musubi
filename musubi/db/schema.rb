@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181129145800) do
+ActiveRecord::Schema.define(version: 20181207010200) do
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "content"
+    t.bigint "user_id"
+    t.bigint "give_me_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["give_me_id"], name: "index_comments_on_give_me_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -86,6 +96,8 @@ ActiveRecord::Schema.define(version: 20181129145800) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "give_mes"
+  add_foreign_key "comments", "users"
   add_foreign_key "payforwards", "users"
   add_foreign_key "private_messages", "users"
   add_foreign_key "thanksletters", "users"

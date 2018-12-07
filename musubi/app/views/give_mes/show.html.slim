@@ -11,6 +11,28 @@
                 span.timestamp
                   = time_ago_in_words(@give_me.created_at)+"前"
             p.gm-content= @give_me.content
+h2.comment-content-title コメント一覧
+.comment-content
+  - @comments.each do |c|
+    .comment-list
+      .comment-box.clearfix
+        / = image_tag "/images/default.png", :class => "prof-icon"
+        = image_tag c.user.picture.url unless c.user.picture.url.blank?
+        .comment-text-box
+          = link_to("/users/#{@give_me.user.id}")
+            |
+            p.comment-name= c.user.name
+          p.comment-content= c.content
+      span.timestamp
+        = time_ago_in_words(c.created_at)+"前"
+      span.comment-edit-btn= link_to '編集する', "give_me_id/comments/#{c.id}/edit"
+      span.comment-delete-btn= link_to "削除する", "give_me_id/comments/#{c.id}", method: :delete, data:{confirm:"本当に削除しますか？"}
+.clearfix= form_for [@give_me, @comment] do |f|
+  = f.text_field :content, placeholder: 'コメントを入力', :class => "comment-form"
+  = f.hidden_field :user_id, :value => current_user.id
+  = f.hidden_field :give_me_id, :value => @give_me.id
+  br
+  = f.submit '送信', :class => "comment-submit"
 .to-chat
 	- if current_user != @give_me.user
 		=link_to "Giveをする", @fb_account, :target =>["_blank"] unless @fb_account.blank?
