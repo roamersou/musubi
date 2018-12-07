@@ -8,6 +8,8 @@ class GiveMesController < ApplicationController
   def show
     @give_me = GiveMe.find(params[:id])
     @fb_account = User.find_by(id: @give_me.user_id).fb_account
+    @comments = @give_me.comments
+    @comment = Comment.new
   end
 
   def new
@@ -44,7 +46,8 @@ class GiveMesController < ApplicationController
   end
 
   def destroy
-    GiveMe.find(params[:id]).destroy
+    @give_me = GiveMe.find(params[:id])
+    @give_me.destroy
     flash[:success] = "恩贈りを削除しました！"
     redirect_to("/give_mes")
   end

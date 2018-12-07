@@ -8,13 +8,13 @@ $btn-color: #db5565;
 	display: block;
 	clear: both;
 }
-// show.html.slim
+// index.html.slim
 .content-give-me {
 	width:345px;
-	margin: 30px auto;
+	margin: 30px auto 25px;
 	.give-me-list {
 		border: 1px solid #ccc;
-		border-left: 5px solid;
+		border-left: 5px solid #f4ad49;
 		padding: 15px;
 		margin-bottom: 15px;
 		.giver-prof-icon img {
@@ -22,41 +22,41 @@ $btn-color: #db5565;
 			height:40px;
 			border-radius: 50%;
 			float: left;
-			border: 2px solid;
+			border: 2px solid #EFCF60;
 			margin-right: 10px;
 			box-sizing: content-box;
 		}
 	}
-	.give-me-list:nth-child(5n-4) {
-		border-left: 5px solid #EFCF60;
-    	.giver-prof-icon img {
-			border: 2px solid #EFCF60;
-		}
-	}
-	.give-me-list:nth-child(5n-3) {
-		border-left: 5px solid #60B0EF;
-    	.giver-prof-icon img {
-			border: 2px solid #60B0EF;
-		}
-	}
-	.give-me-list:nth-child(5n-2) {
-		border-left: 5px solid #F4AD49;
-    	.giver-prof-icon img {
-			border: 2px solid #F4AD49;
-		}
-	}
-	.give-me-list:nth-child(5n-1) {
-		border-left: 5px solid #DB5565;
-    	.giver-prof-icon img {
-			border: 2px solid #DB5565;
-		}
-	}
-	.give-me-list:nth-child(5n) {
-		border-left: 5px solid #7ED321;
-    	.giver-prof-icon img {
-			border: 2px solid #7ED321;
-		}
-	}
+	// .give-me-list:nth-child(5n-4) {
+	// 	border-left: 5px solid #EFCF60;
+ //    	.giver-prof-icon img {
+	// 		border: 2px solid #EFCF60;
+	// 	}
+	// }
+	// .give-me-list:nth-child(5n-3) {
+	// 	border-left: 5px solid #60B0EF;
+ //    	.giver-prof-icon img {
+	// 		border: 2px solid #60B0EF;
+	// 	}
+	// }
+	// .give-me-list:nth-child(5n-2) {
+	// 	border-left: 5px solid #F4AD49;
+ //    	.giver-prof-icon img {
+	// 		border: 2px solid #F4AD49;
+	// 	}
+	// }
+	// .give-me-list:nth-child(5n-1) {
+	// 	border-left: 5px solid #DB5565;
+ //    	.giver-prof-icon img {
+	// 		border: 2px solid #DB5565;
+	// 	}
+	// }
+	// .give-me-list:nth-child(5n) {
+	// 	border-left: 5px solid #7ED321;
+ //    	.giver-prof-icon img {
+	// 		border: 2px solid #7ED321;
+	// 	}
+	// }
 	.give-me-list {
 		.gm-name-box {
 			float: left;
@@ -88,27 +88,13 @@ $btn-color: #db5565;
 		}
 	}
 }
-.to-chat {
-    a {
-        display: block;
-        background: $btn-color;
-        font-size: 16px;
-        color: #fff;
-        margin: 15px;
-        text-align: center;
-        padding: 15px 0;
-        border-radius: 50px;
-        box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
-        font-size: 16px;
-        color: #fff;
-    }
-    .attention {
-        font-size: 11px;
-        padding-left: 15px;
-        padding-bottom: 30px;
-    }
+.comment-do {
+	text-align: center;
+    font-size: 13px;
+    color: #4a4a4a;
+    border-top: 1px solid #ccc;
+    padding: 5px 0;
 }
-// index.html.slim
 .gm-create-item-btn {
 	background: rgba(219,85,101,0.9);
 	width: 105px;
@@ -129,6 +115,100 @@ $btn-color: #db5565;
 	.gm-post-icon {
 		width: 40px;
 	}
+}
+.give-me-index {
+	.giver-prof-icon {
+		padding: 15px 15px 0 15px;
+	}
+	.gm-content {
+		padding: 15px;
+	}
+	.give-me-list {
+		padding: 0;
+	}
+}
+// show.html.slim
+.comment-content-title {
+	font-size: 16px;
+	font-weight: 400;
+	margin: 0 15px 15px 15px;
+    padding-bottom: 5px;
+}
+.comment-content {
+	.comment-list {
+		margin-bottom: 15px;
+		.comment-box {
+			img {
+				width: 30px;
+			    height: 30px;
+			    border-radius: 50%;
+			    float: left;
+			    margin-left: 15px;
+			}
+			.comment-text-box {
+				max-width: 300px;
+				border: 1px solid #ccc;
+				margin: 0 15px;
+			    padding: 10px;
+			    border-radius: 5px;
+			    float: left;
+			    .comment-name {
+			    	font-size: 10px;
+		    		font-weight: 600;
+		    		color: #4A4A4A;
+			    }
+			    .comment-content {
+			    	font-size: 12px;
+			    }
+			}
+		}
+		.timestamp {
+			padding-left: 60px;
+		    font-size: 10px;
+		    color: #9B9B9B;
+		}
+		.comment-delete-btn, .comment-edit-btn {
+			padding-left: 10px;
+			font-size: 10px;
+			a {
+				color: #9B9B9B;
+			}
+		}
+	}
+}
+.comment-form {
+	margin: 27px 15px;
+	padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 77%;
+    float: left;
+}
+.comment-submit {
+	padding: 8px;
+    background: #f4ad49;
+    border-radius: 5px;
+    color: #fff;
+}
+.to-chat {
+    a {
+        display: block;
+        background: $btn-color;
+        font-size: 16px;
+        color: #fff;
+        margin: 15px;
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 50px;
+        box-shadow: 0px 1px 6px 0px rgba(0,0,0,0.3);
+        font-size: 16px;
+        color: #fff;
+    }
+    .attention {
+        font-size: 11px;
+        padding-left: 15px;
+        padding-bottom: 30px;
+    }
 }
 
 // edit.html.slim
@@ -188,40 +268,50 @@ $btn-color: #db5565;
 // _give_me.slim
 .give_mes {
 	padding: 15px;
-	.give_me:nth-child(5n-4) {
-		border-left: 5px solid #EFCF60;
-	}
-	.give_me:nth-child(5n-3) {
-		border-left: 5px solid #60B0EF;
-	}
-	.give_me:nth-child(5n-2) {
-		border-left: 5px solid #F4AD49;
-	}
-	.give_me:nth-child(5n-1) {
-		border-left: 5px solid #DB5565;
-	}
-	.give_me:nth-child(5n) {
-		border-left: 5px solid #7ED321;
-	}
+	// .give_me:nth-child(5n-4) {
+	// 	border-left: 5px solid #EFCF60;
+	// }
+	// .give_me:nth-child(5n-3) {
+	// 	border-left: 5px solid #60B0EF;
+	// }
+	// .give_me:nth-child(5n-2) {
+	// 	border-left: 5px solid #F4AD49;
+	// }
+	// .give_me:nth-child(5n-1) {
+	// 	border-left: 5px solid #DB5565;
+	// }
+	// .give_me:nth-child(5n) {
+	// 	border-left: 5px solid #7ED321;
+	// }
 	.give_me {
 		border: 1px solid #ccc;
-		border-left: 5px solid;
-		padding: 15px;
+		border-left: 5px solid #F4AD49;
 		margin-bottom: 15px;
-		.gm-name-box {
-			.timestamp {
-				font-size: 11px;
-			    color: #999;
-			    font-weight: 500;
-	    		display: block;
-	    		padding: 0;
+		.user {
+			margin-bottom: 0;
+			.gm-list {
+				padding: 15px;
+				.gm-name-box {
+					.timestamp {
+						font-size: 11px;
+					    color: #999;
+					    font-weight: 500;
+			    		display: block;
+			    		padding: 0;
+					}
+				}
+				.gm-content {
+					font-size: 14px;
+				    font-weight: 600;
+				    color: #333;
+				    padding-top: 5px;
+				    margin-bottom: 0;
+				}
+
 			}
-		}
-		.gm-content {
-			font-size: 14px;
-		    font-weight: 600;
-		    color: #333;
-		    padding-top: 5px;
+			.comment-do {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

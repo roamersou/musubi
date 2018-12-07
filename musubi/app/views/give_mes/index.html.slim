@@ -14,7 +14,7 @@
       /   li.menu-item イベント
 
   .content-list
-      .content-give-me
+      .content-give-me.give-me-index
         ul.clearfix
           - @give_mes.each do |gm|
             li.give-me-list
@@ -30,6 +30,7 @@
                   / - if current_user?(gm.user)
                   /   p.gm-edit-btn= link_to '編集する', "/give_me/#{gm.id}/edit"
                 p.gm-content= gm.content
+                p.comment-do コメントする
 
 .gm-create-item-btn
   = link_to 'Given投稿', new_give_me_path({user_id: current_user.id}), :class => "create-item"
