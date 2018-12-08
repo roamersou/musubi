@@ -1,7 +1,7 @@
 /* iOSでのデフォルトスタイルをリセット */
 input[type="submit"],
 input[type="button"] {
-  border-radius: 0;
+  // border-radius: 0;
   -webkit-box-sizing: content-box;
   -webkit-appearance: button;
   appearance: button;
@@ -200,7 +200,7 @@ $btn-color: #db5565;
     border-radius: 10px;
     border: 1px solid #ccc;
     width: 77%;
-    height: 33px;
+    height: 38px;
     float: left;
 }
 .comment-submit {
