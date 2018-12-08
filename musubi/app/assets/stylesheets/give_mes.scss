@@ -164,7 +164,7 @@ $btn-color: #db5565;
 			    margin-left: 30px;
 			}
 			.comment-text-box {
-				max-width: 285px;
+				max-width: 270px;
 				background: #f2f3f5;
 				margin: 0 15px;
 			    padding: 10px;
@@ -195,11 +195,11 @@ $btn-color: #db5565;
 	}
 }
 .comment-form {
-	margin: 28px 15px;
+	margin: 28px 15px 30px 30px;
 	padding: 8px 10px 10px 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
-    width: 77%;
+    width: 69%;
     height: 36px;
     float: left;
 }
