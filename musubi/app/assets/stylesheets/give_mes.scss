@@ -307,7 +307,7 @@ $btn-color: #db5565;
 			    		padding: 0;
 					}
 				}
-				.gm-content {
+				p {
 					font-size: 14px;
 				    font-weight: 600;
 				    color: #333;
@@ -318,6 +318,11 @@ $btn-color: #db5565;
 			}
 			.comment-do {
 				margin-bottom: 0;
+				text-align: center;
+			    font-size: 13px;
+			    color: #4a4a4a;
+			    border-top: 1px solid #ccc;
+			    padding: 5px 0;
 			}
 		}
 	}
