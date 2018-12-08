@@ -56,7 +56,7 @@ $btn-color: #db5565;
 		p {
 			font-size: 13px;
 		    color: #333;
-		    padding: 5px 0 5px 15px;
+		    padding: 5px 15px;
 		}
 		.comment-do {
 			text-align: center;
@@ -151,7 +151,7 @@ $btn-color: #db5565;
 			    margin-left: 30px;
 			}
 			.comment-text-box {
-				max-width: 300px;
+				max-width: 285px;
 				background: #f2f3f5;
 				margin: 0 15px;
 			    padding: 10px;
@@ -307,8 +307,8 @@ $btn-color: #db5565;
 					}
 				}
 				p {
-					font-size: 14px;
-				    font-weight: 600;
+					font-size: 13px;
+				    font-weight: 400;
 				    color: #333;
 				    padding-top: 5px;
 				    margin-bottom: 0;
