@@ -17,6 +17,10 @@ $btn-color: #db5565;
 		border-left: 5px solid #f4ad49;
 		padding: 15px;
 		margin-bottom: 15px;
+		.pd-15 {
+			padding: 15px;
+			padding-bottom: 0;
+		}
 		.giver-prof-icon img {
 			width: 40px;
 			height:40px;
@@ -26,6 +30,45 @@ $btn-color: #db5565;
 			margin-right: 10px;
 			box-sizing: content-box;
 		}
+		.gm-name-box {
+			float: left;
+			.gm-name{
+				font-size: 13px;
+			    color: #4A4A4A;
+			    font-weight: 600;
+			    padding-top: 3px;
+			}
+			.timestamp {
+				font-size: 10px;
+		    	display: block;
+		    	color: #9b9b9b;
+			}
+		}
+		.gm-edit-btn, .gm-delete-btn {
+		    a {
+		    	padding-top: 2px;
+		    	padding-left: 10px;
+				color: #4A4A4A;
+    			font-size: 12px;
+    			float: right;
+			}
+		}
+		p {
+			font-size: 13px;
+		    font-weight: 600;
+		    color: #333;
+		    padding: 5px 0 5px 15px;
+		}
+		.comment-do {
+			text-align: center;
+		    font-size: 13px;
+		    color: #4a4a4a;
+		    border-top: 1px solid #ccc;
+		    padding: 5px 0;
+		}
+	}
+	.pd-0 {
+		padding: 0;
 	}
 	// .give-me-list:nth-child(5n-4) {
 	// 	border-left: 5px solid #EFCF60;
@@ -57,43 +100,6 @@ $btn-color: #db5565;
 	// 		border: 2px solid #7ED321;
 	// 	}
 	// }
-	.give-me-list {
-		.gm-name-box {
-			float: left;
-			.gm-name{
-			font-size: 13px;
-		    color: #4A4A4A;
-		    font-weight: 600;
-		    padding-top: 3px;
-			}
-			.timestamp {
-				font-size: 10px;
-	    		display: block;
-			}
-		}
-		.gm-edit-btn, .gm-delete-btn {
-		    a {
-		    	padding-top: 2px;
-		    	padding-left: 10px;
-				color: #4A4A4A;
-    			font-size: 12px;
-    			float: right;
-			}
-		}
-		.gm-content {
-			font-size: 13px;
-		    font-weight: 600;
-		    color: #333;
-		    padding-top: 10px;
-		}
-	}
-}
-.comment-do {
-	text-align: center;
-    font-size: 13px;
-    color: #4a4a4a;
-    border-top: 1px solid #ccc;
-    padding: 5px 0;
 }
 .gm-create-item-btn {
 	background: rgba(219,85,101,0.9);
@@ -157,7 +163,7 @@ $btn-color: #db5565;
 		    		font-weight: 600;
 		    		color: #4A4A4A;
 			    }
-			    .comment-content {
+			    p {
 			    	font-size: 12px;
 			    }
 			}
@@ -178,10 +184,11 @@ $btn-color: #db5565;
 }
 .comment-form {
 	margin: 27px 15px;
-	padding: 10px;
+	padding: 8px 10px 10px 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
     width: 77%;
+    height: 33px;
     float: left;
 }
 .comment-submit {

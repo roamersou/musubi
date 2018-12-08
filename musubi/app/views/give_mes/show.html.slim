@@ -1,8 +1,8 @@
 .content-list
   .content-give-me
     ul.clearfix
-        li.give-me-list
-            .giver-prof-icon.clearfix
+        li.give-me-list.pd-0
+            .giver-prof-icon.clearfix.pd-15
               = image_tag @give_me.user.picture.url unless @give_me.user.picture.url.blank?
               .gm-name-box
                 = link_to("/users/#{@give_me.user.id}")
@@ -10,7 +10,7 @@
                   h1.gm-name = @give_me.user.name
                 span.timestamp
                   = time_ago_in_words(@give_me.created_at)+"前"
-            p.gm-content= @give_me.content
+            p.gm-content= simple_format(@give_me.content)
 h2.comment-content-title コメント一覧
 .comment-content
   - @comments.each do |c|
@@ -19,16 +19,18 @@ h2.comment-content-title コメント一覧
         / = image_tag "/images/default.png", :class => "prof-icon"
         = image_tag c.user.picture.url unless c.user.picture.url.blank?
         .comment-text-box
-          = link_to("/users/#{@give_me.user.id}")
+          = link_to("/users/#{c.user.id}")
             |
             p.comment-name= c.user.name
-          p.comment-content= c.content
+          p.comment-content= simple_format(c.content)
       span.timestamp
         = time_ago_in_words(c.created_at)+"前"
-      span.comment-edit-btn= link_to '編集する', "give_me_id/comments/#{c.id}/edit"
-      span.comment-delete-btn= link_to "削除する", "give_me_id/comments/#{c.id}", method: :delete, data:{confirm:"本当に削除しますか？"}
+      - if current_user?(c.user)
+        span.comment-edit-btn= link_to '編集する', "give_me_id/comments/#{c.id}/edit"
+      - if current_user?(c.user)
+        span.comment-delete-btn= link_to "削除する", "give_me_id/comments/#{c.id}", method: :delete, data:{confirm:"本当に削除しますか？"}
 .clearfix= form_for [@give_me, @comment] do |f|
-  = f.text_field :content, placeholder: 'コメントを入力', :class => "comment-form"
+  = f.text_area :content, placeholder: 'コメントを入力', :class => "comment-form"
   = f.hidden_field :user_id, :value => current_user.id
   = f.hidden_field :give_me_id, :value => @give_me.id
   br

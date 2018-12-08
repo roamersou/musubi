@@ -29,7 +29,7 @@
                   /   p.gm-delete-btn= link_to "削除する", gm, xmethod: :delete, data:{confirm:"本当に削除しますか？"}
                   / - if current_user?(gm.user)
                   /   p.gm-edit-btn= link_to '編集する', "/give_me/#{gm.id}/edit"
-                p.gm-content= gm.content
+                p= simple_format(gm.content)
                 p.comment-do コメントする
 
 .gm-create-item-btn
