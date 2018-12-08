@@ -55,7 +55,6 @@ $btn-color: #db5565;
 		}
 		p {
 			font-size: 13px;
-		    font-weight: 600;
 		    color: #333;
 		    padding: 5px 0 5px 15px;
 		}
@@ -135,9 +134,9 @@ $btn-color: #db5565;
 }
 // show.html.slim
 .comment-content-title {
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: 400;
-	margin: 0 15px 15px 15px;
+	margin: 0 15px 15px 30px;
     padding-bottom: 5px;
 }
 .comment-content {
@@ -149,11 +148,11 @@ $btn-color: #db5565;
 			    height: 30px;
 			    border-radius: 50%;
 			    float: left;
-			    margin-left: 15px;
+			    margin-left: 30px;
 			}
 			.comment-text-box {
 				max-width: 300px;
-				border: 1px solid #ccc;
+				background: #f2f3f5;
 				margin: 0 15px;
 			    padding: 10px;
 			    border-radius: 5px;
@@ -169,7 +168,7 @@ $btn-color: #db5565;
 			}
 		}
 		.timestamp {
-			padding-left: 60px;
+			padding-left: 75px;
 		    font-size: 10px;
 		    color: #9B9B9B;
 		}
