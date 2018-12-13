@@ -19,6 +19,7 @@
   .content-list
       .content-item
         ul.clearfix
+        - debugger
           - @payforwards.each do |pf|
             li.item-list
               = link_to payforward_path(pf)

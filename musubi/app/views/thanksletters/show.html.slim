@@ -1,0 +1,44 @@
+.create-tl
+    h1.create-tl-title サンクスレター
+.thanks-letter.clear-fix
+    .content.clear-fix
+        .user
+            = link_to @thanksletter.user.name, @thanksletter.user
+        / - if current_user?(@thanksletter.user)
+        /     span.delete-btn = link_to image_tag("/images/garbage.png"), @thanksletter, method: :delete, data:{confirm:"本当に削除しますか？"}
+        /     span.edit-btn = link_to image_tag("/images/garbage.png"), "/@thanksletters/#{@thanksletter.id}/edit"
+        span.timestamp
+            = time_ago_in_words(@thanksletter.created_at)+"前"
+        .thanks-letter-text
+        	= simple_format(@thanksletter.content)
+    .clear-fix
+        = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"
+h2.comment-content-title コメント一覧
+.comment-content
+  - @tl_comments.each do |tlc|
+    .comment-list
+      .comment-box.clearfix
+        / = image_tag "/images/default.png", :class => "prof-icon"
+        = image_tag tlc.user.picture.url unless tlc.user.picture.url.blank?
+        .comment-text-box
+          = link_to("/users/#{tlc.user.id}")
+            |
+            p.comment-name= tlc.user.name
+          p.comment-content= simple_format(tlc.content)
+      span.timestamp
+        = time_ago_in_words(tlc.created_at)+"前"
+      - if current_user?(tlc.user)
+        span.comment-edit-btn= link_to '編集する', "thanksletter_id/tl_comments/#{tlc.id}/edit"
+      - if current_user?(tlc.user)
+        span.comment-delete-btn= link_to "削除する", "thanksletter_id/tl_comments/#{tlc.id}", method: :delete, data:{confirm:"本当に削除しますか？"}
+.clearfix= form_for [@thanksletter, @tl_comment] do |f|
+  = f.text_area :content, placeholder: 'コメントを入力', :class => "comment-form"
+  = f.hidden_field :user_id, :value => current_user.id
+  = f.hidden_field :thanksletter_id, :value => @thanksletter.id
+  br
+  = f.submit '送信', :class => "comment-submit"
+p.back-btn= link_to '一覧へ戻る', "/users/#{@thanksletter.receiver_id}"
+- if current_user?(@thanksletter.user)
+  p.pf-edit-btn= link_to '編集する', edit_thanksletter_path
+- if current_user?(@thanksletter.user)
+    p.pf-delete-btn= link_to "削除する", @thanksletter, method: :delete, data:{confirm:"本当に削除しますか？"}

@@ -38,12 +38,12 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     render :layout => 'no_header'
-  end 
+  end
 
-  def update  
+  def update
     @user = User.find(params[:id])
     @user.update_attributes(user_params)
-    if @user.save      
+    if @user.save
       redirect_to @user, notice: "ユーザー情報を編集しました！"
     else
       render :edit

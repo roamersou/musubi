@@ -1,0 +1,12 @@
+.edit-comment
+  h1.edit-comment-title コメント編集
+.comment-ed-content
+  .comment-list
+    = form_with model: @tl_comment, url: thanksletter_tl_comment_path, multipart: true, local: true do |f|
+      .comment-box.clearfix
+          / = image_tag "/images/default.png", :class => "prof-icon"
+          = image_tag @tl_comment.user.picture.url unless @tl_comment.user.picture.url.blank?
+          .comment-text-box
+            = f.text_area :content, placeholder: @tl_comment.content, :class => "comment-content"
+      span.actions = f.submit '編集を保存'
+      span.cancel= link_to("キャンセル", "/thanksletters/#{@tl_comment.thanksletter_id}")

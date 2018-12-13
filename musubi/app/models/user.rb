@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :payforwards, dependent: :destroy
     has_many :give_mes, dependent: :destroy
     has_many :comments, dependent: :destroy
+    has_many :tl_comments, dependent: :destroy
     has_many :private_messages, class_name: 'Private::Message', dependent: :destroy
     has_many  :private_conversations, foreign_key: :sender_id, class_name: 'Private::Conversation', dependent: :destroy
     attr_accessor :remember_token

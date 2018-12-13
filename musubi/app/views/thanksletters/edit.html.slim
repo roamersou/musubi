@@ -1,0 +1,7 @@
+.create-tl
+    h1.create-tl-title サンクスレターを編集する
+    = form_with model: @thanksletter, local: true do |f|
+        = render "shared/error_messages", object: f.object
+        .field
+            = f.text_area :content, placeholder: '感謝の気持ちを贈りましょう', :class => "content-text"
+        .actions = f.submit '送信する'

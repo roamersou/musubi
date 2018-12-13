@@ -11,8 +11,9 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :events
-  resources :thanksletters, only: [:new, :create, :destroy]
-
+  resources :thanksletters do
+    resources :tl_comments
+  end
   namespace :private do
     resources :conversations
     resources :messages, only: [:create, :destroy]
