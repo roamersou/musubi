@@ -292,25 +292,26 @@ $btn-color: #db5565;
       .hide {
         display: none;
       }
-      .tag {
-        background: #db5565;
-        border-radius: 50px;
-        border: transparent;
-        box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
-        margin: 60px 15px 0;
-        text-align: center;
-
-        .thanks-letter {
-          color: #fff;
-          padding: 12px 0;
-          margin: 0;
-          border: transparent;
-          font-size: 16px;
-          background: none;
-          box-shadow: none;
-        }
-      }
     }
+  }
+}
+.tag {
+  background: rgba(219, 85, 101, 0.9);
+  border: transparent;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  .thanks-letter-btn {
+    color: #fff;
+    padding: 15px 0;
+    margin: 0;
+    border: transparent;
+    font-size: 16px;
+    background: none;
+    box-shadow: none;
   }
 }
 .user a {

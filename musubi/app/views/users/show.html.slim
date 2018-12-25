@@ -22,43 +22,40 @@
     .container
         ul.prof-list.clearfix
             li.prof-item.active-prof-list サンクスレター
-            li.prof-item GiveYouリスト
-            li.prof-item GiveMeリスト
+            li.prof-item わたしのギブミー
+            li.prof-item わたしのギブユー
         ul.prof-text-list.clearfix
             li.prof-text-item
                 .content
                     ol.thanksletters
                         = render @thanksletters
                     = will_paginate @thanksletters
-                .tag
-                    - if current_user != @user
-                        = link_to new_thanksletter_path({user_id: @user.id})
-                            |
-                            button.thanks-letter ありがとうを伝える
             li.prof-text-item.hide
                 .content
                     ol.payforwards.clearfix
                         = render @payforwards
                     = will_paginate @payforwards
-                .tag
-                    - if current_user != @user
-                        = link_to new_thanksletter_path({user_id: @user.id})
-                            |
-                            button.thanks-letter ありがとうを伝える
-
+                / .tag
+                /     - if current_user != @user
+                /         = link_to new_thanksletter_path({user_id: @user.id})
+                /             |
+                /             button.thanks-letter ありがとうを伝える
             li.prof-text-item.hide
                 .content
                     ol.give_mes.clearfix
                         = render @give_mes
                     = will_paginate @give_mes
-                .tag
-                    - if current_user != @user
-                        = link_to new_thanksletter_path({user_id: @user.id})
-                            |
-                            button.thanks-letter ありがとうを伝える
+                / .tag
+                /     - if current_user != @user
+                /         = link_to new_thanksletter_path({user_id: @user.id})
+                /             |
+                /             button.thanks-letter ありがとうを伝える
             / 機能を追加でアップデートしていく予定です。<br>もう少しお待ちください。
-
-
+.tag
+    - if current_user != @user
+        = link_to new_thanksletter_path({user_id: @user.id})
+            |
+            button.thanks-letter-btn ありがとうを伝える
 javascript:
  //クリックしたときのファンクション
     $('.prof-list li').click(function(){
