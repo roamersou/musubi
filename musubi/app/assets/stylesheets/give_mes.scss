@@ -37,6 +37,7 @@ $btn-color: #db5565;
 		.giver-prof-icon img {
 			width: 40px;
 			height:40px;
+			object-fit: cover;
 			border-radius: 50%;
 			float: left;
 			border: 2px solid #EFCF60;
@@ -159,6 +160,7 @@ $btn-color: #db5565;
 			img {
 				width: 30px;
 			    height: 30px;
+			    object-fit: cover;
 			    border-radius: 50%;
 			    float: left;
 			    margin-left: 30px;

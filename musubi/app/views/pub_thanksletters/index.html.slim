@@ -1,0 +1,46 @@
+/ p = flash[:success]
+.main-menu
+  ul.menu-list.header-bottom
+      = link_to users_path
+        |
+        li.menu-item メンバー
+      = link_to payforwards_path
+        |
+        li.menu-item みんなのギブユー
+      = link_to give_mes_path
+        |
+        li.menu-item みんなのギブミー
+      = link_to pub_thanksletters_path
+        |
+        li.menu-item.active-menu-list みんなのサンクスレター
+      / = link_to events_path
+      /   |
+      /   li.menu-item イベント
+      / li.menu-item みんなのサンクスレター
+      / .search-box
+      /   input type = "text"
+.tl-total
+p.tl-total-text やりとりされた全てのサンクスレターの総数
+p=@counts
+
+- @thanksletters.each do |tl|
+  .pub-tl
+    / = image_tag tl.user.picture.url unless tl.user.picture.url.blank?
+    .tl-name-box.clearfix
+      = image_tag "/images/default.png", :class => "pub-tl-prof-icon"
+      = link_to("/users/#{tl.user.id}")
+        |
+        h2.tl-name= tl.user.name
+      / = image_tag User.find_by(id:tl.receiver_id).picture.url unless User.find_by(id:tl.receiver_id).picture.url.blank?
+      span.to-icon >>
+      = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"
+      span.to-icon >>
+      = image_tag "/images/default.png", :class => "pub-tl-prof-icon"
+      = link_to("/users/#{tl.receiver_id}")
+        |
+        h2.tl-name= User.find_by(id:tl.receiver_id).name
+    span.timestamp
+        = time_ago_in_words(tl.created_at)+"前"
+    .pub-tl-text
+      = simple_format(tl.content)
+    p.comment-do コメントする
