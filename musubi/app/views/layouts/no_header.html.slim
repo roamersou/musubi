@@ -1,6 +1,14 @@
 doctype html
 html
   head
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131394514-1">
+    </script>
+    javascript:
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-131394514-1');
     title Musubi
     = csrf_meta_tags
 
