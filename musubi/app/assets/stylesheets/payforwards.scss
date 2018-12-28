@@ -87,29 +87,27 @@ $btn-color: #db5565;
     .menu-item {
 		color: #ccc;
 		font-size: 12px;
+		line-height: 15px;
 		letter-spacing: 0;
 		float: left;
-		width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
-		width : -webkit-calc(100% / 3) ;
-		width : calc(100% / 3) ;
+		width : 25% ; /* 未対応ブラウザ用フォールバック */
+		width : -webkit-calc(100% / 4) ;
+		width : calc(100% / 4) ;
     	text-align: center;
 	    margin-top: 15px;
-		padding: 0 7px;
-	    height: 30px;
+	    height: 40px;
 	    box-sizing: border-box;
+	    border-right: 1px dashed #ccc;
 	    border-bottom: 2px solid #ccc;
-	}
-	.menu-item:first-child {
-		padding-left: 11px;
-	}
-	.menu-item:last-child {
-		padding-right: 10px;
 	}
 	.active-menu-list {
 		color: $main-color;
-		font-size: 13px;
+		font-size: 12px;
     	font-weight: 600;
 		border-bottom: 5px solid $main-color;
+	}
+	.menu-right {
+		border-right: transparent;
 	}
 }
 .main-menu {
