@@ -79,6 +79,17 @@ $btn-color: #db5565;
 		    border-top: 1px solid #ccc;
 		    padding: 5px 0;
 		}
+		.comment-do:before {
+			background-image: url(../images/comment-icon.png);
+	        content: '';/*何も入れない*/
+	        display: inline-block;/*忘れずに！*/
+	        width: 18px;/*画像の幅*/
+	        height: 18px;/*画像の高さ*/
+	        background-size: contain;
+	        position: relative;
+	        top: 4px;
+	        margin-right: 7px;
+		}
 	}
 	.pd-0 {
 		padding: 0;
