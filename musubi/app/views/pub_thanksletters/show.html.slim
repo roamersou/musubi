@@ -1,7 +1,7 @@
 .pub-tl
     / = image_tag tl.user.picture.url unless tl.user.picture.url.blank?
     .tl-name-box.clearfix
-      = image_tag "/images/default.png", :class => "pub-tl-prof-icon"
+      = image_tag @thanksletter.user.picture.url unless @thanksletter.user.picture.url.blank?
       = link_to("/users/#{@thanksletter.user.id}")
         |
         h2.tl-name= @thanksletter.user.name
@@ -9,7 +9,7 @@
       span.to-icon >>
       = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"
       span.to-icon >>
-      = image_tag "/images/default.png", :class => "pub-tl-prof-icon"
+      = image_tag @thanksletter.user.picture.url unless @thanksletter.user.picture.url.blank?
       = link_to("/users/#{@thanksletter.receiver_id}")
         |
         h2.tl-name= User.find_by(id:@thanksletter.receiver_id).name
