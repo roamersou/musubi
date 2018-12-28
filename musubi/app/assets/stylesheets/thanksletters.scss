@@ -115,10 +115,10 @@ $btn-color: #db5565;
       .comment-text {
         float: left;
         font-size: 12px;
-        color: #808080;
+        color: #4a4a4a;
       }
       .comment-text:before {
-        background-image: url(../images/comment-icon-tl.png);
+        background-image: url(../images/comment-icon.png);
         content: '';/*何も入れない*/
         display: inline-block;/*忘れずに！*/
         width: 18px;/*画像の幅*/

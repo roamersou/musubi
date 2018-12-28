@@ -74,7 +74,7 @@ $btn-color: #db5565;
 		}
 		.comment-do {
 			text-align: center;
-		    font-size: 13px;
+		    font-size: 12px;
 		    color: #4a4a4a;
 		    border-top: 1px solid #ccc;
 		    padding: 5px 0;
@@ -333,7 +333,7 @@ $btn-color: #db5565;
 					}
 				}
 				p {
-					font-size: 13px;
+					font-size: 12px;
 				    font-weight: 400;
 				    color: #333;
 				    padding-top: 5px;
@@ -344,10 +344,22 @@ $btn-color: #db5565;
 			.comment-do {
 				margin-bottom: 0;
 				text-align: center;
-			    font-size: 13px;
+			    font-size: 12px;
+			    font-weight: 400;
 			    color: #4a4a4a;
 			    border-top: 1px solid #ccc;
 			    padding: 5px 0;
+			}
+			.comment-do:before {
+				background-image: url(../images/comment-icon.png);
+		        content: '';/*何も入れない*/
+		        display: inline-block;/*忘れずに！*/
+		        width: 18px;/*画像の幅*/
+		        height: 18px;/*画像の高さ*/
+		        background-size: contain;
+		        position: relative;
+		        top: 4px;
+		        margin-right: 7px;
 			}
 		}
 	}
