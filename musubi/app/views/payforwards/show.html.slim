@@ -21,10 +21,34 @@
 	    h2.pf-about-title Giveへの想い
 	    p.pf-about-text= simple_format(@payforward.content)
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
-	.to-chat
-		- if current_user != @payforward.user
-			=link_to "Giveを受け取る", @fb_account, :target =>["_blank"] unless @fb_account.blank?
-			p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
+h2.comment-content-title コメント一覧
+.comment-content
+  - @gy_comments.each do |gyc|
+    .comment-list
+      .comment-box.clearfix
+        / = image_tag "/images/default.png", :class => "prof-icon"
+        = image_tag gyc.user.picture.url unless gyc.user.picture.url.blank?
+        .comment-text-box
+          = link_to("/users/#{gyc.user.id}")
+            |
+            p.comment-name= gyc.user.name
+          p.comment-content= simple_format(gyc.content)
+      span.timestamp
+        = time_ago_in_words(gyc.created_at)+"前"
+      - if current_user?(gyc.user)
+        span.comment-edit-btn= link_to '編集する', "payforward_id/gy_comments/#{gyc.id}/edit"
+      - if current_user?(gyc.user)
+        span.comment-delete-btn= link_to "削除する", "payforward_id/gy_comments/#{gyc.id}", method: :delete, data:{confirm:"本当に削除しますか？"}
+.clearfix= form_for [@payforward, @gy_comment] do |f|
+  = f.text_area :content, placeholder: 'コメントを入力', :class => "comment-form"
+  = f.hidden_field :user_id, :value => current_user.id
+  = f.hidden_field :payforward_id, :value => @payforward.id
+  br
+  = f.submit '送信', :class => "comment-submit"
+.to-chat
+	- if current_user != @payforward.user
+		=link_to "メッセージを送る", @fb_account, :target =>["_blank"] unless @fb_account.blank?
+		p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
 
 p.back-btn= link_to '一覧へ戻る', payforwards_path
 - if current_user?(@payforward.user)

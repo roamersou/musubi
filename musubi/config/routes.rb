@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'pub_thanksletters' => "pub_thanksletters#index"
-
   root "home#index"
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
   # root 'application#hello'
   resources :users
-  resources :payforwards
+  resources :payforwards do
+    resources :gy_comments
+  end
   resources :give_mes do
     resources :comments
   end
+  resources :pub_thanksletters
   resources :events
   resources :thanksletters do
     resources :tl_comments

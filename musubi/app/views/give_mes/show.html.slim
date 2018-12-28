@@ -37,7 +37,7 @@ h2.comment-content-title コメント一覧
   = f.submit '送信', :class => "comment-submit"
 .to-chat
 	- if current_user != @give_me.user
-		=link_to "Giveをする", @fb_account, :target =>["_blank"] unless @fb_account.blank?
+		=link_to "メッセージを送る", @fb_account, :target =>["_blank"] unless @fb_account.blank?
 		p.attention ※Facebookのメッセンジャーでメッセージを送ってください。
 
 p.back-btn= link_to '一覧へ戻る', give_mes_path

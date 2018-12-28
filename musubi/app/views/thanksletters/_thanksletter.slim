@@ -1,7 +1,8 @@
     .thanks-letter.clear-fix
             .content.clear-fix
                 .user
-                    / = image_tag thanksletter.user.picture.url unless thanksletter.user.picture.url.blank?
+                    = image_tag thanksletter.user.picture.url, :class => "tl-prof-icon" unless thanksletter.user.picture.url.blank?
+                    / = image_tag "/images/default.png", :class => "tl-prof-icon"
                     = link_to thanksletter.user.name, thanksletter.user
                 / - if current_user?(thanksletter.user)
                 /     span.delete-btn = link_to image_tag("/images/garbage.png"), thanksletter, method: :delete, data:{confirm:"本当に削除しますか？"}

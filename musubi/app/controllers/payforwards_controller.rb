@@ -1,5 +1,6 @@
 class PayforwardsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   layout "another_layout"
   def index
     @payforwards = Payforward.all
@@ -8,6 +9,8 @@ class PayforwardsController < ApplicationController
   def show
     @payforward = Payforward.find(params[:id])
     @fb_account = User.find_by(id: @payforward.user_id).fb_account
+    @gy_comments = @payforward.gy_comments
+    @gy_comment = GyComment.new
   end
 
   def new

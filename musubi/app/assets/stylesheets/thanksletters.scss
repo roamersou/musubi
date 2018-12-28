@@ -78,6 +78,14 @@ $btn-color: #db5565;
       background-size: contain;
       .user {
         margin-bottom: -8px;
+        .tl-prof-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          float: left;
+          margin-right: 10px;
+        }
         a {
           font-size: 14px;
           color: #444;
@@ -95,12 +103,13 @@ $btn-color: #db5565;
       .timestamp {
         font-size: 10px;
         color: #888;
+        display: inherit;
+        padding: 5px 0 10px;
       }
       .thanks-letter-text {
         p {
           font-size: 12px;
           color: #444;
-          padding-bottom: 20px;
         }
       }
       .comment-text {

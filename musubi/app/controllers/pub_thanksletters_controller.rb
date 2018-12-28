@@ -5,4 +5,9 @@ class PubThankslettersController < ApplicationController
   	@thanksletters = Thanksletter.all
   	@counts = Thanksletter.all.count
   end
+  def show
+  	@thanksletter = Thanksletter.find(params[:id])
+  	@tl_comments = @thanksletter.tl_comments
+    @tl_comment = TlComment.new
+  end
 end
