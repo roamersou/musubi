@@ -245,11 +245,12 @@ $btn-color: #db5565;
         }
         .thanks-letter {
           margin: 15px;
-          padding: 15px;
+          // padding: 15px;
           border-radius: 3px;
           box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.3);
-          background: url(../images/thanks-letter-img.png);
-          background-size: contain;
+          // background: url(../images/thanks-letter-img.png);
+          // background-size: contain;
+          background: #fdf9dd;
           .user {
             margin-bottom: -8px;
             a {
@@ -275,6 +276,7 @@ $btn-color: #db5565;
               font-size: 12px;
               color: #444;
               padding-bottom: 15px;
+              padding-left: 15px;
             }
           }
           .thanks-bird {

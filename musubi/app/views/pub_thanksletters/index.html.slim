@@ -24,6 +24,7 @@
   p.tl-total-number=@counts
 - @thanksletters.each do |tl|
     .pub-tl.clearfix
+      = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl"
       .tl-name-box.clearfix
         = image_tag tl.user.picture.url unless tl.user.picture.url.blank?
         = link_to("/users/#{tl.user.id}")
@@ -43,4 +44,5 @@
         .pub-tl-text
           = simple_format(tl.content)
         p.comment-do コメントする
+      = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl-under"
         / = image_tag "/images/thank-you-icon2.png", :class => "thank-you-icon"
