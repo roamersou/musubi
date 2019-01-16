@@ -27,7 +27,7 @@ html
         = image_tag "/images/cancel-icon.png", :class => "cancel-icon"
       .musubi-logo
         .musubi-icon
-            = link_to image_tag('/images/musubi-logo-type-white.png'), payforwards_path
+            = link_to image_tag('/images/musubi-logo-type-white.png'), pub_thanksletters_path
       .icon-right
         = link_to "/users/#{current_user.id}"
             |
@@ -35,7 +35,7 @@ html
     .header-menu
       ul.header-menu-list
           / li.header-menu-item UKIUKI残高
-          = link_to payforwards_path
+          = link_to pub_thanksletters_path
             |
             li.header-menu-item TOPページ
           = link_to "/users/#{current_user.id}"

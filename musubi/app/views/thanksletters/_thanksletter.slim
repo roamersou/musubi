@@ -1,7 +1,7 @@
     .thanks-letter.clear-fix
             .content.clear-fix
                 .user
-                    = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl"
+                    = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl"
                     = image_tag thanksletter.user.picture.url, :class => "tl-prof-icon" unless thanksletter.user.picture.url.blank?
                     / = image_tag "/images/default.png", :class => "tl-prof-icon"
                     = link_to thanksletter.user.name, thanksletter.user
@@ -17,4 +17,4 @@
                 = link_to "/thanksletters/#{thanksletter.id}"
                     p.comment-text コメントする
                     = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"
-            = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl-under"
+            = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl-under"

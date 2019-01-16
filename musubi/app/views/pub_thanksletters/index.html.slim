@@ -4,15 +4,15 @@
       = link_to users_path
         |
         li.menu-item Musubi<br>メンバー
+      = link_to pub_thanksletters_path
+        |
+        li.menu-item.active-menu-list みんなの<br>サンクスレター
       = link_to payforwards_path
         |
         li.menu-item みんなの<br>ギブユー
       = link_to give_mes_path
         |
-        li.menu-item みんなの<br>ギブミー
-      = link_to pub_thanksletters_path
-        |
-        li.menu-item.active-menu-list.menu-right みんなの<br>サンクスレター
+        li.menu-item.menu-right みんなの<br>ギブミー
       / = link_to events_path
       /   |
       /   li.menu-item イベント
@@ -24,7 +24,7 @@
   p.tl-total-number=@counts
 - @thanksletters.each do |tl|
     .pub-tl.clearfix
-      = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl"
+      = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl"
       .tl-name-box.clearfix
         = image_tag tl.user.picture.url unless tl.user.picture.url.blank?
         = link_to("/users/#{tl.user.id}")
@@ -44,5 +44,5 @@
         .pub-tl-text
           = simple_format(tl.content)
         p.comment-do コメントする
-      = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl-under"
+      = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl-under"
         / = image_tag "/images/thank-you-icon2.png", :class => "thank-you-icon"

@@ -35,6 +35,9 @@
                     ol.payforwards.clearfix
                         = render @payforwards
                     = will_paginate @payforwards
+                .pf-create-item-btn
+                  = link_to 'ギブユー投稿', new_payforward_path({user_id: current_user.id}), :class => "create-item"
+                  = image_tag '/images/UKIUKI-give.png', :class => "pf-post-icon"
                 / .tag
                 /     - if current_user != @user
                 /         = link_to new_thanksletter_path({user_id: @user.id})
@@ -45,6 +48,9 @@
                     ol.give_mes.clearfix
                         = render @give_mes
                     = will_paginate @give_mes
+                .gm-create-item-btn
+                  = link_to 'ギブミー投稿', new_give_me_path({user_id: current_user.id}), :class => "create-item"
+                  = image_tag '/images/UKIUKI-get.png', :class => "gm-post-icon"
                 / .tag
                 /     - if current_user != @user
                 /         = link_to new_thanksletter_path({user_id: @user.id})

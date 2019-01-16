@@ -1,6 +1,6 @@
 .pub-tl
     / = image_tag tl.user.picture.url unless tl.user.picture.url.blank?
-    = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl"
+    = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl"
     .tl-name-box.clearfix
       = image_tag @thanksletter.user.picture.url unless @thanksletter.user.picture.url.blank?
       = link_to("/users/#{@thanksletter.user.id}")
@@ -17,7 +17,7 @@
         = time_ago_in_words(@thanksletter.created_at)+"前"
     .pub-tl-text
       = simple_format(@thanksletter.content)
-    = image_tag "/images/oshogatsu-tl.png", :class => "oshogatsu-tl-under"
+    = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl-under"
 h2.comment-content-title コメント一覧
 .comment-content
   - @tl_comments.each do |tlc|
