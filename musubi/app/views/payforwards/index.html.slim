@@ -31,7 +31,7 @@
                     = image_tag "/images/default.png", :class => "prof-icon"
                 h2.pf-place= pf.place
                 h2.pf-title= pf.title
-                p.pf-total-number=@counts
+                / p.pf-total-number=@counts
 .pf-create-item-btn
   = link_to 'ギブユー投稿', new_payforward_path({user_id: current_user.id}), :class => "create-item"
   = image_tag '/images/UKIUKI-give.png', :class => "pf-post-icon"
