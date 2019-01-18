@@ -4,7 +4,7 @@ class PayforwardsController < ApplicationController
   layout "another_layout"
   def index
     @payforwards = Payforward.all
-    @counts = GyComment.all.count
+    # @counts = GyComment.all.count
   end
 
   def show

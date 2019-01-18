@@ -112,6 +112,8 @@ $btn-color: #db5565;
 }
 .main-menu {
 	.content-list {
+		z-index: -2;
+    	position: relative;
 		.content-item {
 			padding-bottom: 30px;
 			.item-list {
@@ -180,6 +182,7 @@ $btn-color: #db5565;
     right: -13px;
     bottom: -13px;
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
+    z-index: -1;
 	.create-item {
 		font-size: 13px;
 	    line-height: 17px;

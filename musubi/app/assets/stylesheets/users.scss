@@ -288,6 +288,8 @@ $btn-color: #db5565;
         }
         .payforwards {
           padding-left: 0;
+          z-index: -2;
+          position: relative;
         }
       }
       .update {
