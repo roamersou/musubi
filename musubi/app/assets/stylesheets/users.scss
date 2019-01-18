@@ -365,6 +365,11 @@ $btn-color: #db5565;
     font-size: 14px;
     color: #ccc;
     }
+    .text-count {
+      padding-left: 15px;
+      font-size: 12px;
+      padding-bottom: 20px;
+    }
     .picture {
     	padding-left: 5px;
     	padding-bottom: 15px;
@@ -386,6 +391,7 @@ $btn-color: #db5565;
   }
   .self-intro-text {
     height: 150px;
+    margin-bottom: 5px;
   }
   .actions {
     text-align: center;

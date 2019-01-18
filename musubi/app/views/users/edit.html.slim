@@ -13,6 +13,10 @@
     .field
         = f.label :自己紹介, :class => "field-title"
         = f.text_area :self_intro, placeholder: "150字以内", :class => "self-intro-text", maxlength: '150'
+        .text-count
+            span 残り
+            span.count 150
+            span 文字
     .field
         = f.label :Facebookアカウント, :class => "field-title"
         = f.text_field :fb_account, placeholder: "URLを貼ってください", :class => "fb-account-text"
@@ -26,3 +30,23 @@
         = f.label :パスワード変更, :class => "field-title"
         = f.password_field :password, placeholder: "8字以上", :class => "password"
     .actions = f.submit '編集を保存する'
+
+script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"
+javascript:
+    $(function(){
+        var countMax = 150;
+        $('textarea').bind('keydown keyup keypress change',function(){
+            var thisValueLength = $(this).val().length;
+            var countDown = (countMax)-(thisValueLength);
+            $('.count').html(countDown);
+     
+            if(countDown < 0){
+                $('.count').css({color:'#ff0000',fontWeight:'bold'});
+            } else {
+                $('.count').css({color:'#000000',fontWeight:'normal'});
+            }
+        });
+        $(window).load(function(){
+            $('.count').html(countMax);
+        });
+    });
