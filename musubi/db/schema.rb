@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20181227142437) do
     t.string "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["conversation_id", "created_at"], name: "index_private_messages_on_conversation_id_and_created_at"
     t.index ["conversation_id"], name: "index_private_messages_on_conversation_id"
     t.index ["user_id"], name: "index_private_messages_on_user_id"
   end
