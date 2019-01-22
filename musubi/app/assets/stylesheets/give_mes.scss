@@ -135,7 +135,6 @@ $btn-color: #db5565;
     right: -13px;
     bottom: -13px;
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.4);
-    z-index: -1;
 	.create-item {
 		font-size: 13px;
 	    line-height: 17px;
@@ -303,8 +302,6 @@ $btn-color: #db5565;
 // _give_me.slim
 .give_mes {
 	padding: 15px;
-	z-index: -2;
-    position: relative;
 	// .give_me:nth-child(5n-4) {
 	// 	border-left: 5px solid #EFCF60;
 	// }
