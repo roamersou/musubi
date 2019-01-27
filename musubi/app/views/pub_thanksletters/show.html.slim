@@ -43,3 +43,7 @@ h2.comment-content-title コメント一覧
   br
   = f.submit '送信', :class => "comment-submit"
 p.back-btn= link_to '一覧へ戻る', "/users/#{@thanksletter.receiver_id}"
+- if current_user?(@thanksletter.user)
+  p.pf-edit-btn= link_to '編集する', edit_thanksletter_path
+- if current_user?(@thanksletter.user)
+    p.pf-delete-btn= link_to "削除する", @thanksletter, method: :delete, data:{confirm:"本当に削除しますか？"}

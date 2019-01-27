@@ -28,7 +28,10 @@
                 - if pf.picture?
                     = image_tag pf.picture.url
                 - else
-                    = image_tag "/images/default.png", :class => "prof-icon"
+                    = image_tag "/images/default.png", :class => "pf-icon"
+                .prof-img
+                  = image_tag pf.user.picture.url unless pf.user.picture.url.blank?
+                / = image_tag "/images/default.png", :class => "prof-img"
                 h2.pf-place= pf.place
                 h2.pf-title= pf.title
                 / p.pf-total-number=@counts
