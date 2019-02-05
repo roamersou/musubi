@@ -12,7 +12,7 @@
         span.timestamp
             = time_ago_in_words(@thanksletter.created_at)+"前"
         .thanks-letter-text
-        	= simple_format(@thanksletter.content)
+        	= simple_format(text_url_to_link(h(@thanksletter.content)))
     .clear-fix
         = image_tag "/images/thanks-letter-bird-left.png",:class => "thanks-bird"
     = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl-under"
@@ -27,7 +27,7 @@ h2.comment-content-title コメント一覧
           = link_to("/users/#{tlc.user.id}")
             |
             p.comment-name= tlc.user.name
-          p.comment-content= simple_format(tlc.content)
+          p.comment-content= simple_format(text_url_to_link(h(tlc.content)))
       span.timestamp
         = time_ago_in_words(tlc.created_at)+"前"
       - if current_user?(tlc.user)

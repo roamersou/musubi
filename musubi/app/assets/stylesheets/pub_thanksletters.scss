@@ -84,6 +84,13 @@ $btn-color: #db5565;
     	line-height: 20px;
     	color: #333;
     	padding: 5px 10px 15px 10px;
+    	p {
+			word-wrap:break-word;
+		    a {
+				color: #576b95;
+	    		font-weight: normal;
+			}
+		}
     }
     .comment-do {
     	font-size: 12px;

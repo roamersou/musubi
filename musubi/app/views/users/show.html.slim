@@ -18,7 +18,7 @@
             a.prof-sns-icon.prof-tw> href = @user.tw_account Twitter
             a.prof-sns-icon.prof-insta> href = @user.insta_account Instagram
         .prof-detail-text
-            = simple_format(@user.self_intro)
+            = simple_format(text_url_to_link(h(@user.self_intro)))
     .container
         ul.prof-list.clearfix
             li.prof-item.active-prof-list サンクスレター

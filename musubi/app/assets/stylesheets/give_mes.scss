@@ -30,6 +30,11 @@ $btn-color: #db5565;
 		border-left: 5px solid #f4ad49;
 		padding: 15px;
 		margin-bottom: 15px;
+		word-wrap:break-word;
+		a {
+			color: #576b95;
+    		font-weight: normal;
+		}
 		.pd-15 {
 			padding: 15px;
 			padding-bottom: 0;
@@ -185,6 +190,11 @@ $btn-color: #db5565;
 			    padding: 10px;
 			    border-radius: 5px;
 			    float: left;
+			    word-wrap:break-word;
+			    a {
+					color: #576b95;
+		    		font-weight: normal;
+				}
 			    .comment-name {
 			    	font-size: 10px;
 		    		font-weight: 600;
@@ -340,6 +350,11 @@ $btn-color: #db5565;
 				    color: #333;
 				    padding-top: 5px;
 				    margin-bottom: 0;
+				    word-wrap:break-word;
+				    a {
+						color: #576b95;
+			    		font-weight: normal;
+					}
 				}
 
 			}

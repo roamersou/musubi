@@ -333,6 +333,7 @@ $btn-color: #db5565;
 		    float: left;
 		    padding: 10px 10px 10px 15px;
 		    margin-top: 0;
+		    word-wrap:break-word;
 		}
 	}
 	.pf-body {
@@ -352,6 +353,13 @@ $btn-color: #db5565;
 			position: relative;
 		    top: 6px;
 		    margin-right: 10px;
+		}
+		p {
+			word-wrap:break-word;
+		    a {
+				color: #576b95;
+	    		font-weight: normal;
+			}
 		}
 		.pf-date-title:before {
 			background-image: url(../images/pay-forward-item-icon01.png);

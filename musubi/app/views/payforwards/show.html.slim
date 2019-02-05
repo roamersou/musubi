@@ -17,9 +17,9 @@
     	h2.pf-date-title 日時
 	    p.pf-date-text= simple_format(@payforward.date)
 	    h2.pf-place-title 場所
-	    p.pf-place-text= simple_format(@payforward.place)
+	    p.pf-place-text= simple_format(text_url_to_link(h(@payforward.place)))
 	    h2.pf-about-title Giveへの想い
-	    p.pf-about-text= simple_format(@payforward.content)
+	    p.pf-about-text= simple_format(text_url_to_link(h(@payforward.content)))
 	    / h2.pf-thanks-title 恩贈りへのサンクスレター
 h2.comment-content-title コメント一覧
 .comment-content
@@ -32,7 +32,7 @@ h2.comment-content-title コメント一覧
           = link_to("/users/#{gyc.user.id}")
             |
             p.comment-name= gyc.user.name
-          p.comment-content= simple_format(gyc.content)
+          p.comment-content= simple_format(text_url_to_link(h(gyc.content)))
       span.timestamp
         = time_ago_in_words(gyc.created_at)+"前"
       - if current_user?(gyc.user)

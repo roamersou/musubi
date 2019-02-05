@@ -40,9 +40,9 @@
           h2.tl-name= User.find_by(id:tl.receiver_id).name
       span.timestamp
           = time_ago_in_words(tl.created_at)+"前"
+      .pub-tl-text
+        = simple_format(text_url_to_link(h(tl.content)))
       = link_to pub_thanksletter_path(tl)
-        .pub-tl-text
-          = simple_format(tl.content)
         p.comment-do コメントする
       = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl-under"
         / = image_tag "/images/thank-you-icon2.png", :class => "thank-you-icon"

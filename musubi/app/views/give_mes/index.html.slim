@@ -15,7 +15,7 @@
       / = link_to events_path
       /   |
       /   li.menu-item イベント
-
+ 
   .content-list
       .content-give-me.give-me-index
         ul.clearfix
@@ -32,8 +32,9 @@
                   /   p.gm-delete-btn= link_to "削除する", gm, xmethod: :delete, data:{confirm:"本当に削除しますか？"}
                   / - if current_user?(gm.user)
                   /   p.gm-edit-btn= link_to '編集する', "/give_me/#{gm.id}/edit"
-                p= simple_format(gm.content)
-                p.comment-do コメントする
+                p= simple_format(text_url_to_link(h(gm.content)))
+                = link_to give_me_path(gm)
+                  p.comment-do コメントする
 
 .gm-create-item-btn
   = link_to 'ギブミー投稿', new_give_me_path({user_id: current_user.id}), :class => "create-item"

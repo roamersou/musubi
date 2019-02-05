@@ -10,7 +10,7 @@
                   h1.gm-name = @give_me.user.name
                 span.timestamp
                   = time_ago_in_words(@give_me.created_at)+"前"
-            p.gm-content= simple_format(@give_me.content)
+            p.gm-content= simple_format(text_url_to_link(h(@give_me.content)))
 h2.comment-content-title コメント一覧
 .comment-content
   - @comments.each do |c|
@@ -22,7 +22,7 @@ h2.comment-content-title コメント一覧
           = link_to("/users/#{c.user.id}")
             |
             p.comment-name= c.user.name
-          p.comment-content= simple_format(c.content)
+          p.comment-content= simple_format(text_url_to_link(h(c.content)))
       span.timestamp
         = time_ago_in_words(c.created_at)+"前"
       - if current_user?(c.user)

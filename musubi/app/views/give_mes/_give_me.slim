@@ -6,7 +6,7 @@
                 .gm-name-box
                     span.timestamp
                       = time_ago_in_words(give_me.created_at)+"前"
-                = simple_format(give_me.content)
+                = simple_format(text_url_to_link(h(give_me.content)))
               p.comment-do コメントする
     / span.timestamp
     /     = time_ago_in_words(payforward.created_at) + "前"
