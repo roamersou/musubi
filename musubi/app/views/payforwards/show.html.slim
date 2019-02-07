@@ -55,3 +55,8 @@ p.back-btn= link_to '一覧へ戻る', payforwards_path
 	p.pf-edit-btn= link_to '編集する', edit_payforward_path
 - if current_user?(@payforward.user)
     p.pf-delete-btn= link_to "削除する", @payforward, method: :delete, data:{confirm:"本当に削除しますか？"}
+
+// javascript:
+//     $('.comment-submit').on('click', function(){
+//       Push.create('コメントしました。');
+//     });
