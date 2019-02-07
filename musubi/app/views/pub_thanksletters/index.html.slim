@@ -46,19 +46,3 @@
         p.comment-do コメントする
       = image_tag "/images/tl-backimg.png", :class => "oshogatsu-tl-under"
         / = image_tag "/images/thank-you-icon2.png", :class => "thank-you-icon"
-javascript:
-  Notification.requestPermission().then((permission) => {
-      switch (permission) {
-        case 'granted':
-          // 許可された場合
-          break;
-        case 'denied':
-          // ブロックされた場合
-          break;
-        case 'default':
-          // 無視された場合
-          break;
-        default:
-          break;
-      }
-  });

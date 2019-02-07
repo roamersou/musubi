@@ -20,15 +20,3 @@
         	= f.label :Giveへの想い, :class => "field-title"
         	= f.text_area :content, placeholder: 'あなたのGiveについての想いを綴ってください。', :class => "content-text"
     	.actions = f.submit '公開する'
-
-javascript:
-    $('.actions').on('click', function(){
-      Push.create("Musubi", {
-        body: "#{@user.name}さんがギブユーを投稿しました。",
-        icon: '/images/iphone-home-icon.png', // 右側に表示される画像のパス
-        onClick: function () {
-            location.href = 'https://vast-sierra-22205-stg.herokuapp.com/payforwards';
-            this.close();
-        }
-    });
-    });
