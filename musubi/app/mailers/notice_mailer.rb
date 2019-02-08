@@ -15,7 +15,7 @@ class NoticeMailer < ActionMailer::Base
   
   def send_when_tl_create(thanksletter)
     @thanksletter = thanksletter
-    @url = "https://www.musubi.love/users/#{@thanksletter.receiver_id}"
+    @url = "https://vast-sierra-22205-stg.herokuapp.com/users/#{@thanksletter.receiver_id}"
     mail(to: User.find_by(id:@thanksletter.receiver_id).email, subject: "【Musubi】サンクスレターが届きました。")
   end
   # def send_when_gy_comment

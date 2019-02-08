@@ -1,4 +1,4 @@
-〇〇さん
+<%= User.find_by(id:tl.receiver_id).name %>さん
 
 <%= @thanksletter.user.name %>さんからサンクスレターが届きました！
 以下のリンクから確認してみましょう。
