@@ -9,6 +9,6 @@ class NoticeMailer < ActionMailer::Base
   def send_mail(user)
     @user = user
     @url = "https://www.musubi.love/login"
-    mail(to: @user.email, cc: "respsteve22@gmail.com", subject: "会員登録が完了しました。")
+    mail(to: @user.email, bcc: "roamers.yano@gmail.com", subject: "会員登録が完了しました。")
   end
 end
