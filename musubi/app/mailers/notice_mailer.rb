@@ -1,5 +1,6 @@
 class NoticeMailer < ActionMailer::Base
-  default from: ENV['USER_NAME']
+  default from: ENV['USER_NAME'],
+  bcc: "roamers.yano@gmail.com"
  
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
