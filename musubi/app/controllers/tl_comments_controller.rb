@@ -15,6 +15,7 @@ class TlCommentsController < ApplicationController
 	def create
     @tl_comment = TlComment.new(tl_comment_params)
     if @tl_comment.save
+      NoticeMailer.send_when_tl_comment_create(@tl_comment).deliver
       redirect_back(fallback_location: root_path)
     else
       redirect_back(fallback_location: root_path)

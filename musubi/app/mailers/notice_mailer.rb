@@ -18,8 +18,15 @@ class NoticeMailer < ActionMailer::Base
     @url = "https://vast-sierra-22205-stg.herokuapp.com/users/#{@thanksletter.receiver_id}"
     mail(to: User.find_by(id:@thanksletter.receiver_id).email, subject: "【Musubi】サンクスレターが届きました。")
   end
-  # def send_when_gy_comment
-  # end
+  def send_when_tl_comment_create(tl_comment)
+    @tl_comment = tl_comment
+    @url = "https://vast-sierra-22205-stg.herokuapp.com/thanksletters/#{@tl_comment_id}"
+    unless @tl_comment.user_id == User.find_by(id:@tl_comment.thanksletter_id).user.id then
+      mail(to: User.find_by(id:@tl_comment.thanksletter_id).user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
+    else
+      mail(to: @tl_comment.user.email, subject: "【Musubi】あなたのコメントしたサンクスレターに新たなコメントがつきました。")
+    end
+  end
   # def send_when_gm_comment
   # end
   # def send_when_tl_comment
