@@ -22,7 +22,7 @@ class NoticeMailer < ActionMailer::Base
     @tl_comment = tl_comment
     @comment_tl_id = Thanksletter.find_by(id:@tl_comment.thanksletter_id)
     @url = "https://vast-sierra-22205-stg.herokuapp.com/thanksletters/#{@tl_comment_id}"
-    unless @tl_comment.user_id == @comment_tl_id.receiver_id then
+    if @tl_comment.user_id == @comment_tl_id.receiver_id
       mail(to: @comment_tl_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
     else
       mail(to: @tl_comment.user.email, subject: "【Musubi】あなたのコメントしたサンクスレターに新たなコメントがつきました。")
