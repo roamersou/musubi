@@ -18,6 +18,7 @@ class ThankslettersController < ApplicationController
         @thanksletter = current_user.thanksletters.build(thanksletter_params.merge(receiver_id: params[:user_id]))
         if @thanksletter.save
             flash[:success] = "サンクスレターを作成しました！"
+            NoticeMailer.send_when_tl_create(@thanksletter).deliver
             redirect_to("/users/#{params[:user_id]}")
         else
             render "new"
@@ -31,7 +32,7 @@ class ThankslettersController < ApplicationController
         @thanksletter = Thanksletter.find(params[:id])
         @thanksletter.update_attributes(thanksletter_params)
         if @thanksletter.save
-            flash[:success] = "恩贈りを編集しました！"
+            flash[:success] = "サンクスレターを編集しました！"
             redirect_to @thanksletter
         else
             render :edit
