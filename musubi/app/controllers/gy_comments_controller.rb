@@ -15,6 +15,7 @@ class GyCommentsController < ApplicationController
 	def create
     @gy_comment = GyComment.new(gy_comment_params)
     if @gy_comment.save
+      NoticeMailer.send_when_gy_comment_create(@gy_comment).deliver
       redirect_back(fallback_location: root_path)
     else
       redirect_back(fallback_location: root_path)
