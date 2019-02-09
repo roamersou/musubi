@@ -22,7 +22,6 @@ class NoticeMailer < ActionMailer::Base
   def send_when_tl_comment_create(tl_comment)
     @tl_comment = tl_comment
     @comment_tl_id = Thanksletter.find_by(id:@tl_comment.thanksletter_id)
-    # @thanksletter = Thanksletter.find(params[:id])
     @url = "https://vast-sierra-22205-stg.herokuapp.com/thanksletters/#{@tl_comment.thanksletter_id}"
     if @tl_comment.user_id == @comment_tl_id.receiver_id
       mail(to: @comment_tl_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
@@ -35,13 +34,21 @@ class NoticeMailer < ActionMailer::Base
     @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes"
     mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】ギブミーが追加されました。")
   end
+  def send_when_gm_comment_create(comment)
+    @comment = comment
+    @comment_gm_id = GiveMe.find_by(id:@comment.give_me_id)
+    @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes/#{@comment.give_me_id}"
+    if @comment.user_id == @comment_gm_id.user_id
+      mail(to: @comment_gm_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
+    # else
+    #   mail(to: @tl_comment.user.email, subject: "【Musubi】あなたのコメントしたサンクスレターに新たなコメントがつきました。")
+    end
+  end
   def send_when_gy_create(payforward)
     @payforward = payforward
     @url = "https://vast-sierra-22205-stg.herokuapp.com/payforwards"
     mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】ギブユーが追加されました。")
   end
-  # def send_when_gm_comment
-  # end
   # def send_when_gy_comment
   # end
 end

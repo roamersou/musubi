@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
 	def create
     @comment = Comment.new(comment_params)
     if @comment.save
+      NoticeMailer.send_when_gm_comment_create(@comment).deliver
       redirect_back(fallback_location: root_path)
     else
       redirect_back(fallback_location: root_path)
