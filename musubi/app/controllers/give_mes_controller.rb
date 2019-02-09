@@ -23,6 +23,7 @@ class GiveMesController < ApplicationController
     @give_me = current_user.give_mes.build(give_me_params)
     if @give_me.save
         flash[:success] = "恩贈りを作成しました！"
+        NoticeMailer.send_when_gm_create(@give_me).deliver
         redirect_to("/give_mes")
     else
         render "new"
