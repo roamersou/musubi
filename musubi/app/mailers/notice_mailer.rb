@@ -34,8 +34,7 @@ class NoticeMailer < ActionMailer::Base
     @give_me = give_me
     @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes"
     # User.all.each do |user|
-    @emails = User.all.select(:email)
-    mail(bcc: @emails, subject: "【Musubi】ギブミーが追加されました。")
+    mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】ギブミーが追加されました。")
   end
   # def send_when_gm_comment
   # end
