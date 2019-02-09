@@ -33,8 +33,12 @@ class NoticeMailer < ActionMailer::Base
   def send_when_gm_create(give_me)
     @give_me = give_me
     @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes"
-    # User.all.each do |user|
     mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】ギブミーが追加されました。")
+  end
+  def send_when_gy_create(payforward)
+    @payforward = payforward
+    @url = "https://vast-sierra-22205-stg.herokuapp.com/payforwards"
+    mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】ギブユーが追加されました。")
   end
   # def send_when_gm_comment
   # end

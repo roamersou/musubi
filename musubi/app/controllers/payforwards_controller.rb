@@ -25,6 +25,7 @@ class PayforwardsController < ApplicationController
     @payforward = current_user.payforwards.build(payforward_params)
     if @payforward.save
         flash[:success] = "恩贈りを作成しました！"
+        NoticeMailer.send_when_gy_create(@payforward).deliver
         redirect_to("/payforwards")
     else
         render "new"
