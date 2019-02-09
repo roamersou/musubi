@@ -22,8 +22,8 @@ class NoticeMailer < ActionMailer::Base
   def send_when_tl_comment_create(tl_comment)
     @tl_comment = tl_comment
     @comment_tl_id = Thanksletter.find_by(id:@tl_comment.thanksletter_id)
-    @thanksletter = Thanksletter.find(params[:id])
-    @url = "https://vast-sierra-22205-stg.herokuapp.com/thanksletters/#{@thanksletter.id}"
+    # @thanksletter = Thanksletter.find(params[:id])
+    @url = "https://vast-sierra-22205-stg.herokuapp.com/thanksletters/#{@tl_comment.thanksletter_id}"
     if @tl_comment.user_id == @comment_tl_id.receiver_id
       mail(to: @comment_tl_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
     # else
@@ -34,9 +34,9 @@ class NoticeMailer < ActionMailer::Base
     @give_me = give_me
     @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes"
     # User.all.each do |user|
-    @users = User.all
-    @users.each do |user|
-      mail(bcc: user.email, subject: "【Musubi】ギブミーが追加されました。")
+    @emails = User.all.select(:email)
+    @emails.each do |email|
+      mail(bcc: email, subject: "【Musubi】ギブミーが追加されました。")
     end
   end
   # def send_when_gm_comment

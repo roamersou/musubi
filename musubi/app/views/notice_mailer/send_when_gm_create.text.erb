@@ -1,7 +1,5 @@
-<% @users.each do |user| %>
-	<%= user.name %>さん
+<%= User.all.select(:name) %>さん
 
-	<%= @give_me.user.name %>さんがギブミーを追加しました。
-	以下のリンクから確認してみましょう。
-	<%= @url %>
-<% end %>
+<%= @give_me.user.name %>さんがギブミーを追加しました。
+以下のリンクから確認してみましょう。
+<%= @url %>
