@@ -11,9 +11,12 @@ class NoticeMailer < ActionMailer::Base
     @user = user
     @url = "https://www.musubi.love/login"
     mail(to: @user.email, subject: "【Musubi】会員登録が完了しました。")
-    # mail(to: , subject: "【Musubi】新たなメンバーが追加されました。")
   end
-  
+  def send_mail_everyone(user)
+    @user = user
+    @url = "https://www.musubi.love/users"
+    mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】新たなメンバーが追加されました。")
+  end
   def send_when_tl_create(thanksletter)
     @thanksletter = thanksletter
     @url = "https://vast-sierra-22205-stg.herokuapp.com/users/#{@thanksletter.receiver_id}"

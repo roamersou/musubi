@@ -29,6 +29,7 @@ class UsersController < ApplicationController
       log_in @user
       flash[:success] = "ユーザー登録が完了しました！"
       NoticeMailer.send_mail(@user).deliver
+      NoticeMailer.send_mail_everyone(@user).deliver
       redirect_to("/users/#{@user.id}")
     else
       render "new"
