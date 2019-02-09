@@ -23,8 +23,8 @@ class NoticeMailer < ActionMailer::Base
     @tl_comment = tl_comment
     @comment_tl_id = Thanksletter.find_by(id:@tl_comment.thanksletter_id)
     @url = "https://vast-sierra-22205-stg.herokuapp.com/thanksletters/#{@tl_comment.thanksletter_id}"
-    if @tl_comment.user_id == @comment_tl_id.receiver_id
-      mail(to: @comment_tl_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
+    # if @tl_comment.user_id == @comment_tl_id.receiver_id
+    mail(to: @comment_tl_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
     # else
     #   mail(to: @tl_comment.user.email, subject: "【Musubi】あなたのコメントしたサンクスレターに新たなコメントがつきました。")
     end
@@ -38,8 +38,8 @@ class NoticeMailer < ActionMailer::Base
     @comment = comment
     @comment_gm_id = GiveMe.find_by(id:@comment.give_me_id)
     @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes/#{@comment.give_me_id}"
-    if @comment.user_id == @comment_gm_id.user_id
-      mail(to: @comment_gm_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
+    # if @comment.user_id == @comment_gm_id.user_id
+    mail(to: @comment_gm_id.user.email, subject: "【Musubi】あなたの投稿したギブミーにコメントがつきました。")
     # else
     #   mail(to: @tl_comment.user.email, subject: "【Musubi】あなたのコメントしたサンクスレターに新たなコメントがつきました。")
     end
