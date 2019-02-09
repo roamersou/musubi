@@ -27,7 +27,6 @@ class NoticeMailer < ActionMailer::Base
     mail(to: @comment_tl_id.user.email, subject: "【Musubi】サンクスレターにコメントがつきました。")
     # else
     #   mail(to: @tl_comment.user.email, subject: "【Musubi】あなたのコメントしたサンクスレターに新たなコメントがつきました。")
-    end
   end
   def send_when_gm_create(give_me)
     @give_me = give_me
@@ -42,7 +41,6 @@ class NoticeMailer < ActionMailer::Base
     mail(to: @comment_gm_id.user.email, subject: "【Musubi】あなたの投稿したギブミーにコメントがつきました。")
     # else
     #   mail(to: @tl_comment.user.email, subject: "【Musubi】あなたのコメントしたサンクスレターに新たなコメントがつきました。")
-    end
   end
   def send_when_gy_create(payforward)
     @payforward = payforward
