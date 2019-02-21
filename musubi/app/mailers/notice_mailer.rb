@@ -1,5 +1,5 @@
 class NoticeMailer < ActionMailer::Base
-  default from: "Musubi" ENV['USER_NAME'],
+  default from: ENV['USER_NAME'],
   bcc: "roamers.yano@gmail.com"
  
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -19,35 +19,35 @@ class NoticeMailer < ActionMailer::Base
   end
   def send_when_tl_create(thanksletter)
     @thanksletter = thanksletter
-    @url = "https://vast-sierra-22205-stg.herokuapp.com/users/#{@thanksletter.receiver_id}"
+    @url = "https://www.musubi.love/users/#{@thanksletter.receiver_id}"
     mail(to: User.find_by(id:@thanksletter.receiver_id).email, subject: "【Musubi】サンクスレターが届きました。")
   end
   def send_when_tl_comment_create(tl_comment)
     @tl_comment = tl_comment
     @comment_tl_id = Thanksletter.find_by(id:@tl_comment.thanksletter_id)
-    @url = "https://vast-sierra-22205-stg.herokuapp.com/thanksletters/#{@tl_comment.thanksletter_id}"
+    @url = "https://www.musubi.love/thanksletters/#{@tl_comment.thanksletter_id}"
     mail(to: @comment_tl_id.user.email, subject: "【Musubi】あなたの贈ったサンクスレターにコメントがつきました。")
   end
   def send_when_gm_create(give_me)
     @give_me = give_me
-    @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes"
+    @url = "https://www.musubi.love/give_mes"
     mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】ギブミーが追加されました。")
   end
   def send_when_gm_comment_create(comment)
     @comment = comment
     @comment_gm_id = GiveMe.find_by(id:@comment.give_me_id)
-    @url = "https://vast-sierra-22205-stg.herokuapp.com/give_mes/#{@comment.give_me_id}"
+    @url = "https://www.musubi.love/give_mes/#{@comment.give_me_id}"
     mail(to: @comment_gm_id.user.email, subject: "【Musubi】あなたの投稿したギブミーにコメントがつきました。")
   end
   def send_when_gy_create(payforward)
     @payforward = payforward
-    @url = "https://vast-sierra-22205-stg.herokuapp.com/payforwards"
+    @url = "https://www.musubi.love/payforwards"
     mail(bcc: User.all.map{ |user| user.email }, subject: "【Musubi】ギブユーが追加されました。")
   end
   def send_when_gy_comment_create(gy_comment)
     @gy_comment = gy_comment
     @comment_gy_id = Payforward.find_by(id:@gy_comment.payforward_id)
-    @url = "https://vast-sierra-22205-stg.herokuapp.com/payforwards/#{@gy_comment.payforward_id}"
+    @url = "https://www.musubi.love/payforwards/#{@gy_comment.payforward_id}"
     mail(to: @comment_gy_id.user.email, subject: "【Musubi】あなたの投稿したギブユーにコメントがつきました。")
   end
 end
